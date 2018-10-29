@@ -3,8 +3,7 @@
     <string name="username_field">Username</string>
     <string name="password_field">Password</string>
     <string name="login_button">Login</string>
-
-    <string name="title_activity_splash">Kumu</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="species_field">Species Name</string>
+    <string name="step_1">Step 1: What rare plant species are you reporting?</string>
+    <string name="next_button">Next</string>
 </resources>
