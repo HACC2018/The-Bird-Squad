@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpeciesNameActivity"></activity>
+        <activity android:name=".SpeciesNameActivity" />
+        <activity android:name=".ImagesActivity"
+                    android:parentActivityName=".SpeciesNameActivity"></activity>
     </application>
 
 </manifest>
