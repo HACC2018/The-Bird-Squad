@@ -24,6 +24,7 @@ public class SpeciesNameActivity extends AppCompatActivity {
      */
     public void goToNext(View view) {
         Intent intent = new Intent(this, ImagesActivity.class);
+        EditText editText = (EditText) findViewById(R.id.editText2);
         String speciesName = editText.getText().toString();
         Form newForm = new Form(speciesName);
         KumuApp.getAppStorage().insertForm(newForm);
