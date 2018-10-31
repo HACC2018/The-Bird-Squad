@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -31,11 +32,7 @@ public class ImagesActivity extends AppCompatActivity {
         images.add(addIcon);
 
         final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-        if(gridview == null){
-            Log.d("DebugMePls", "null gridview");
-        } else {
-            Log.d("DebugMePls", "not null gridview");
-        }
+        
         gridview.setAdapter(new PhotoAdapter(this, android.R.layout.simple_gallery_item, images));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,7 +64,10 @@ public class ImagesActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Log.d("DebugMePls", "here");
             images.add(0, imageBitmap);
+            final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+            ((ArrayAdapter<Bitmap>)gridview.getAdapter()).notifyDataSetChanged();
         }
     }
 
