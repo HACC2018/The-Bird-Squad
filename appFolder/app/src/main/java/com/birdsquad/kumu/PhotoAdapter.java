@@ -7,20 +7,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class PhotoAdapter extends ArrayAdapter {
 
     private Context context;
 
-    private Bitmap[] photos;
+    private ArrayList<Bitmap> photos;
 
-    public PhotoAdapter(Context context, int resource, Bitmap[] objects) {
+    public PhotoAdapter(Context context, int resource, ArrayList<Bitmap> objects) {
         super(context, resource, objects);
         this.photos = objects;
         this.context = context;
-    }
-
-    public int getCount() {
-        return photos.length;
     }
 
     @Override
@@ -36,7 +34,7 @@ public class PhotoAdapter extends ArrayAdapter {
             imageView = (ImageView) convertView;
         }
 
-        imageView.setImageBitmap(photos[position]);
+        imageView.setImageBitmap(photos.get(position));
         return imageView;
     }
 
