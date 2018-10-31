@@ -1,7 +1,9 @@
 package com.birdsquad.kumu;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -15,28 +17,43 @@ public class PhotoAdapter extends ArrayAdapter {
 
     private ArrayList<Bitmap> photos;
 
+    private int resource;
+
     public PhotoAdapter(Context context, int resource, ArrayList<Bitmap> objects) {
         super(context, resource, objects);
         this.photos = objects;
         this.context = context;
+        this.resource = resource;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
-        if (convertView == null) {
-            // if it's not recycled, initialize some attributes
-            imageView = new ImageView(context);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(85, 85));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
+   public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
+        ViewHolder holder = null;
+
+        if (row == null) {
+            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+            row = inflater.inflate(resource, parent, false);
+            holder = new ViewHolder();
+            holder.image = (ImageView) row.findViewById(R.id.image);
+            row.setTag(holder);
+        }
+        else {
+            holder = (ViewHolder) row.getTag();
         }
 
-        imageView.setImageBitmap(photos.get(position));
-        return imageView;
+        Bitmap photo = photos.get(position);
+        holder.image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        holder.image.setImageBitmap(photo);
+        return row;
+
     }
+
+    static class ViewHolder {
+        ImageView image;
+    }
+
+
 
 
 }

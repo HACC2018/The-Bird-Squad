@@ -28,18 +28,18 @@ public class ImagesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_images);
         this.images = new ArrayList<Bitmap>();
         // set first image to + icon
-        Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
+        Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
         images.add(addIcon);
 
         final GridView gridview = (GridView) findViewById(R.id.imageGridView);
         
-        gridview.setAdapter(new PhotoAdapter(this, android.R.layout.simple_gallery_item, images));
+        gridview.setAdapter(new PhotoAdapter(this, R.layout.grid_item_layout, images));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 if (position == images.size() - 1) {
-                    if (images.size() >= 10) {
+                    if (images.size() >= 11) {
                         Toast.makeText(ImagesActivity.this, "You already have 10 images.",
                                 Toast.LENGTH_SHORT).show();
                     }
