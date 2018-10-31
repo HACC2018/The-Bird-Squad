@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -23,13 +24,18 @@ public class ImagesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_images);
         this.images = new ArrayList<Bitmap>();
         // set first image to + icon
         Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_icon);
         images.add(addIcon);
 
-        final GridView gridview = (GridView) findViewById(R.id.gridview);
+        final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+        if(gridview == null){
+            Log.d("DebugMePls", "null gridview");
+        } else {
+            Log.d("DebugMePls", "not null gridview");
+        }
         gridview.setAdapter(new PhotoAdapter(this, android.R.layout.simple_gallery_item, images));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -47,8 +53,6 @@ public class ImagesActivity extends AppCompatActivity {
 
             }
         });
-
-        setContentView(R.layout.activity_images);
     }
 
     private void dispatchTakePictureIntent() {

@@ -7,7 +7,7 @@
     tools:context=".ImagesActivity">
 
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
+        android:id="@+id/imageGridView"
         android:layout_width="346dp"
         android:layout_height="283dp"
         android:layout_marginStart="8dp"
@@ -27,10 +27,10 @@
         android:id="@+id/frameLayout"
         android:layout_width="346dp"
         android:layout_height="57dp"
-        app:layout_constraintBottom_toTopOf="@+id/gridview"
-        app:layout_constraintEnd_toEndOf="@+id/gridview"
+        app:layout_constraintBottom_toTopOf="@id/imageGridView"
+        app:layout_constraintEnd_toEndOf="@id/imageGridView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/gridview">
+        app:layout_constraintStart_toStartOf="@id/imageGridView">
 
         <TextView
             android:id="@+id/textView"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridview" />
+        app:layout_constraintTop_toBottomOf="@id/imageGridView" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -58,9 +58,9 @@
         android:layout_height="63dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="@+id/gridview"
+        app:layout_constraintEnd_toEndOf="@id/imageGridView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/gridview">
+        app:layout_constraintStart_toStartOf="@id/imageGridView">
 
         <TextView
             android:id="@+id/textView4"
@@ -70,7 +70,7 @@
             android:text="TextView"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-            app:layout_constraintStart_toStartOf="@+id/gridview" />
+            app:layout_constraintStart_toStartOf="@id/imageGridView" />
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
