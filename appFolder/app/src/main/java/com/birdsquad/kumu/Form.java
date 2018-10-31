@@ -12,13 +12,11 @@ public class Form {
 
     /**
      * Creates a new Form object with just a speciesName (used for SpeciesNameActivity)
-     * Inserts the new form into the Storage object where it will be set as the currentForm
      * Other activities will update the form with other fields.
      * @param speciesName the rare plant species name input by the user on SpeciesNameActivity
      */
     public Form(String speciesName) {
         this.speciesName = speciesName;
-        // insert into global Storage variable form list
     }
 
     /**
