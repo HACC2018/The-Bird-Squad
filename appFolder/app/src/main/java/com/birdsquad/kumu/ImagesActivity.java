@@ -71,4 +71,9 @@ public class ImagesActivity extends AppCompatActivity {
         }
     }
 
+    public void goToForm(View view) {
+        // intent to go to next form
+        KumuApp.getAppStorage().getCurrentForm().addImages(images);
+    }
+
 }
