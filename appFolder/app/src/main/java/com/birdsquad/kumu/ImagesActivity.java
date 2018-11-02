@@ -72,8 +72,9 @@ public class ImagesActivity extends AppCompatActivity {
     }
 
     public void goToForm(View view) {
-        // intent to go to next form
+        Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
+        startActivity(intent);
     }
 
 }
