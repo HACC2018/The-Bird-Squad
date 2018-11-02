@@ -5,7 +5,7 @@ import android.app.Application;
 public class KumuApp extends Application {
 
     private static KumuApp singleton;
-    private static Storage appStorage;
+    private static Storage appStorage = new Storage();
 
     public static KumuApp getInstance() {
         return singleton;
@@ -18,7 +18,6 @@ public class KumuApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        this.appStorage = new Storage();
         singleton = this;
     }
 }
