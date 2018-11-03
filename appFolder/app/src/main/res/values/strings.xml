@@ -84,10 +84,20 @@
     <string name="plant_air_layers">Amount of Air Layers Collected</string>
     <string name="plant_flowers">Amount of Flowers Collected</string>
     <string name="population_data">Are you Entering Population Data?</string>
+    <string name="population_phenology">Population Phenology</string>
     <string name="population_phenology_vegetative">% of Plants Vegetative</string>
     <string name="population_phenology_buds">% of Plants with Flower Buds</string>
     <string name="population_phenology_flower">$ of Plants in Flower</string>
     <string name="population_phenology_fruit">$ of Plants with Fruit</string>
     <string name="population_phenology_mature_fruit">$ of Plants with Mature Fruit</string>
-    <string name="population_condition"></string>
+    <string name="population_condition">Population Condition</string>
+    <string name="population_condition_plants_healthy">% of Plants Healthy</string>
+    <string name="population_condition_plants_moderate">% of Plants Moderate</string>
+    <string name="population_condition_plants_poor">% of Plants Poor</string>
+    <string name="population_condition_plants_dead">% of Plants Dead</string>
+    <string name="population_light_level">Light Level</string>
+    <string name="population_light_level_full">% of Plants in Full Sun</string>
+    <string name="population_light_level_partial">% of Plants in Partial Sun</string>
+    <string name="population_light_level_partialshade">% of Plants in Partial Shade</string>
+    <string name="population_light_level_deepshade">% of Plants in Deep Shade</string>
 </resources>
