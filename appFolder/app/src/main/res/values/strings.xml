@@ -8,6 +8,12 @@
     <string name="next_button">Next</string>
     <string name="step_2">Step 2: Please upload up to 10 images of the plant.</string>
     <string name="save_for_later">Finish Later</string>
+    <string name="section_1">General Information</string>
+    <string name="section_2">Population Structure</string>
+    <string name="section_3">Individual Plant Data</string>
+    <string name="section_4">Population Data</string>
+    <string name="section_5">Habitat Characteristics</string>
+    <string name="section_6">Threats</string>
     <string name="wild_or_outplanted">Wild or Outplanted</string>
     <string-array name="status_array">
         <item>Wild</item>

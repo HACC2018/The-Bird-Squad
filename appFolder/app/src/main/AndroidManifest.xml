@@ -28,6 +28,9 @@
         <activity
             android:name=".FormActivity"
             android:parentActivityName=".ImagesActivity" />
+        <activity
+            android:name=".FormActivity2"
+            android:parentActivityName=".FormActivity" />
     </application>
 
 </manifest>
