@@ -8,11 +8,12 @@ import java.util.Date;
 public class Form {
 
     private String speciesName;
+    private boolean isFinished = false;
+    private Date dateCreated;
     // Section 1
     private String wildOrOutplanted;
     private String taxonName;
     private ArrayList<Bitmap> images;
-    private Date observationDate;
     private String observerName;
     private String organizationName;
     private String island;
@@ -98,7 +99,6 @@ public class Form {
      * Missing: location and elevation
      * @param wildOrOutplanted
      * @param taxonName
-     * @param observationDate
      * @param observerName
      * @param organizationName
      * @param island

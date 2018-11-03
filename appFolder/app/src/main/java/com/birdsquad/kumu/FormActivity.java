@@ -16,6 +16,10 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form);
     }
 
+    /**
+     * Submits section 1 form data to the current form, goes to next section of the form.
+     * @param view
+     */
     public void goToSection2(View view) {
         // check all fields and submit to current form
         Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
