@@ -37,6 +37,12 @@
         <activity
             android:name=".FormActivity4"
             android:parentActivityName=".FormActivity3" />
+        <activity
+            android:name=".FormActivity5"
+            android:parentActivityName=".FormActivity4" />
+        <activity
+            android:name=".FormActivity6"
+            android:parentActivityName=".FormActivity5"/>
     </application>
 
 </manifest>

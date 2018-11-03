@@ -24,14 +24,14 @@
     <string name="observed_by">Observer Name</string>
     <string name="island">Island</string>
     <string-array name="islands">
-        <item>Hawai'i</item>
+        <item>Hawaii</item>
         <item>Maui</item>
-        <item>O'ahu</item>
-        <item>Moloka'i</item>
-        <item>Kaua'i</item>
-        <item>Ni'ihau</item>
-        <item>Lana'i</item>
-        <item>Kaho'olawe</item>
+        <item>Oahu</item>
+        <item>Molokai</item>
+        <item>Kauai</item>
+        <item>Niihau</item>
+        <item>Lanai</item>
+        <item>Kahoolawe</item>
     </string-array>
     <string name="area_code">Population Reference Area (3 letter code)</string>
     <string name="ref_site">Populatiion Reference Site (A-Z)</string>
