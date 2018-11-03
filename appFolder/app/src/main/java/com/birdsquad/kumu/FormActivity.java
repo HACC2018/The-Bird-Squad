@@ -20,6 +20,7 @@ public class FormActivity extends AppCompatActivity {
         Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
         EditText tNameBox = (EditText) findViewById(R.id.taxonNameBox);
         EditText obsBox = (EditText) findViewById(R.id.observerNameBox);
+        EditText orgBox = (EditText) findViewById(R.id.orgNameBox);
         Spinner islSpinner = (Spinner) findViewById(R.id.islandDropdown);
         EditText aCodeBox = (EditText) findViewById(R.id.areaCodeBox);
         EditText rSiteBox = (EditText) findViewById(R.id.refSiteBox);
@@ -28,6 +29,7 @@ public class FormActivity extends AppCompatActivity {
         String wildOutplanted = woSpinner.getSelectedItem().toString();
         String tName = tNameBox.getText().toString();
         String obs = obsBox.getText().toString();
+        String orgName = orgBox.getText().toString();
         String island = islSpinner.getSelectedItem().toString();
         String aCode = aCodeBox.getText().toString();
         String rSite = rSiteBox.getText().toString();
@@ -37,6 +39,7 @@ public class FormActivity extends AppCompatActivity {
                 wildOutplanted,
                 tName,
                 obs,
+                orgName,
                 island,
                 aCode,
                 rSite,

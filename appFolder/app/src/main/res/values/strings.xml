@@ -22,6 +22,7 @@
     </string-array>
     <string name="taxon_name">Taxon Name</string>
     <string name="observed_by">Observer Name</string>
+    <string name="org_name">Organization Name</string>
     <string name="island">Island</string>
     <string-array name="islands">
         <item>Hawaii</item>
