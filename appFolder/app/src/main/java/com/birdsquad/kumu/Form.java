@@ -109,7 +109,6 @@ public class Form {
     public void addFieldsSection1(
             String wildOrOutplanted,
             String taxonName,
-            Date observationDate,
             String observerName,
             String organizationName,
             String island,
@@ -119,7 +118,6 @@ public class Form {
     ) {
         this.wildOrOutplanted = wildOrOutplanted;
         this.taxonName = taxonName;
-        this.observationDate = observationDate;
         this.observerName = observerName;
         this.organizationName = organizationName;
         this.island = island;
