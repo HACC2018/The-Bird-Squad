@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class IslandMaster extends Model
 {
 
    /**
@@ -12,7 +12,7 @@ class User extends Model
      *
      * @var string
      */
-    protected $table = 'UserTbl';
+    protected $table = 'IslandMasterTbl';
 
 }
 

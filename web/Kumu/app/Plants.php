@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PlantTbl extends Model
+class Plant extends Model
 {
 
    /**

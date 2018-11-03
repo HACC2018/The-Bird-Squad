@@ -24,6 +24,7 @@
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
+		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
 		<!-- Title -->
@@ -35,25 +36,25 @@
 		<div id="filters">
 			<div>
 				<label>Search: </label>
-				<input type="text" id="filter_plant" placeholder="Plant Name" />
+				<input type="text" id="filter_plant" class="filter" placeholder="Plant Name" />
 			</div>
 			<div>
 				<label>Island: </label>
-				<select>
+				<select id="filter_island" class="filter">
 					<option value="none">None</option>
-					<option value="hawaii">Hawaiʻi</option>
-					<option value="maui">Maui</option>
-					<option value="oahu">Oʻahu</option>
-					<option value="kauai">Kauaʻi</option>
-					<option value="molokai">Molokaʻi</option>
-					<option value="lanai">Lānaʻi[</option>
-					<option value="niihau">Niʻihau</option>
-					<option value="kahoolawe">Kahoʻolawe</option>
+					<option value="1">Hawaiʻi</option>
+					<option value="2">Maui</option>
+					<option value="3">Oʻahu</option>
+					<option value="4">Kauaʻi</option>
+					<option value="5">Molokaʻi</option>
+					<option value="6">Lānaʻi</option>
+					<option value="7">Niʻihau</option>
+					<option value="8">Kahoʻolawe</option>
 				</select>
 			</div>
 			<div>
 				<label>Plant Age: </label>
-				<select>
+				<select id="filter_plant_age" class="filter">
 					<option value="any">Any</option>
 					<option value="adult">Adult</option>
 					<option value="seedling">Seedling</option>
@@ -75,6 +76,31 @@
 			//On load
 			$(document).ready(function(){
 				//Use AJAX to get all pinmarks
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+					}
+				});
+
+				$(".filter").change(function() { 
+					let obj = {'filter_plant': $('#filter_plant').val(), 'filter_island': $('#filter_island').find(':selected').val(), 'filter_plant_age': $('#filter_plant_age').find(':selected').val()};
+					let jsonSend = JSON.stringify(obj);
+					console.log(obj);
+					console.log(jsonSend);
+
+					event.preventDefault();
+					$.ajax({
+						type: "POST",  
+						url : '/', 
+						data: {json: jsonSend},
+						success: function(msg){
+							if(msg == 'ok')
+							{ 
+								console.log('here');
+							}
+						}
+					});
+				});
 			});
 
 		</script>
