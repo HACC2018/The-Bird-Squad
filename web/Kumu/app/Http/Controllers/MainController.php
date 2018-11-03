@@ -17,15 +17,17 @@ class MainController extends Controller
 	public function RequestReports(Request $request){
 		$it = json_decode($request->json);
 		
-
-		$res = Form::where(function($query) use ($it){
-				$query->where([
-				['IslandID', '=', $it->filter_island],
-				['Age', '=', $it->filter_age]
-			]);
-		})->where(function($query) use ($it){
-				$query->where('PlantTaxaName', '=', $it->filter_plant)->orWhere('PlantTaxaName', '=', $it->filter_plant);
-		})->get();
-		return 'ok';
+		$resultSet = DB::select('exec FindForm_Filter ?,?,?',[$it->filter_island, $it->filter_plant_age, $it->filter_plant]);
+		$returnSet = array();
+		foreach($resultSet as $val) {
+			array_push(
+				$returnSet, array(
+					'FormID' => $val->FormID,
+					'TaxaName' => $val->PlantTaxaName,
+					'CommonName' => $val->PlantCommonName,
+					'PlantType' => $val->PlantType
+				));
+		}
+		return json_encode($returnSet);
 	}
 }
