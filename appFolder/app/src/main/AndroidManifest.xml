@@ -31,6 +31,9 @@
         <activity
             android:name=".FormActivity2"
             android:parentActivityName=".FormActivity" />
+        <activity
+            android:name=".FormActivity3"
+            android:parentActivityName=".FormActivity2" />
     </application>
 
 </manifest>
