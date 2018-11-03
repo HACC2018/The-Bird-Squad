@@ -7,4 +7,81 @@
     <string name="step_1">Step 1: What rare plant species are you reporting?</string>
     <string name="next_button">Next</string>
     <string name="step_2">Step 2: Please upload up to 10 images of the plant.</string>
+    <string name="save_for_later">Finish Later</string>
+    <string name="wild_or_outplanted">Wild or Outplanted</string>
+    <string-array name="status_array">
+        <item>Wild</item>
+        <item>Outplanted</item>
+        <item>InterSitu (i.e. Garden, Seed, Orchard)</item>
+    </string-array>
+    <string name="taxon_name">Taxon Name</string>
+    <string name="observed_by">Observer Name</string>
+    <string name="island">Island</string>
+    <string-array name="islands">
+        <item>Hawai'i</item>
+        <item>Maui</item>
+        <item>O'ahu</item>
+        <item>Moloka'i</item>
+        <item>Kaua'i</item>
+        <item>Ni'ihau</item>
+        <item>Lana'i</item>
+        <item>Kaho'olawe</item>
+    </string-array>
+    <string name="area_code">Population Reference Area (3 letter code)</string>
+    <string name="ref_site">Populatiion Reference Site (A-Z)</string>
+    <string name="location_notes">Location Notes</string>
+    <string name="elevation">Elevation (feet)</string>
+    <string name="population_structure">Are you Entering Population Structure? (Total number of plants on site)</string>
+    <string name="mature_plants">Number of Mature Plants</string>
+    <string name="immature_plants">Number of Immature Plants</string>
+    <string name="seedlings">Number of Seedlings</string>
+    <string name="individual_plant">Are you Collecting Data on an Individual Plant?</string>
+    <string name="plant_number">Individual Plant Number</string>
+    <string name="plant_tagged">This Plant is Tagged</string>
+    <string name="plant_gender">Sex</string>
+    <string-array name="plant_genders">
+        <item>Unknown</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Both Male and Female</item>
+        <item>Perfect Flowers (Hermaphrodite)</item>
+        <item>N/A</item>
+        <item>Male?</item>
+        <item>Female?</item>
+    </string-array>
+    <string name="plant_height">Plant Height (Meters)</string>
+    <string name="plant_diameter">Basal Diameter (Centimeters)</string>
+    <string name="plant_age">Age</string>
+    <string-array name="plant_ages">
+        <item>Mature</item>
+        <item>Immature</item>
+        <item>Seedling (With Cotyledons)</item>
+    </string-array>
+    <string name="plant_reproductive">Reproductive Status</string>
+    <string-array name="reproductive_statuses">
+        <item>Vegetative (No flowers, buds, or fruit)</item>
+        <item>Flower Buds</item>
+        <item>Immature Fruit</item>
+        <item>Mature Fruit</item>
+        <item>Dormant</item>
+    </string-array>
+    <string name="plant_vigor">Vigor</string>
+    <string-array name="vigors">
+        <item>Healthy</item>
+        <item>Moderate</item>
+        <item>Poor</item>
+        <item>Dead</item>
+    </string-array>
+    <string name="plant_immature_fruit">Amount of Immature Fruit Collected</string>
+    <string name="plant_mature_fruit">Amount of Mature Fruit Collected</string>
+    <string name="plant_cuttings">Amount of Cuttings Collected</string>
+    <string name="plant_air_layers">Amount of Air Layers Collected</string>
+    <string name="plant_flowers">Amount of Flowers Collected</string>
+    <string name="population_data">Are you Entering Population Data?</string>
+    <string name="population_phenology_vegetative">% of Plants Vegetative</string>
+    <string name="population_phenology_buds">% of Plants with Flower Buds</string>
+    <string name="population_phenology_flower">$ of Plants in Flower</string>
+    <string name="population_phenology_fruit">$ of Plants with Fruit</string>
+    <string name="population_phenology_mature_fruit">$ of Plants with Mature Fruit</string>
+    <string name="population_condition"></string>
 </resources>
