@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.birdsquad.kumu"
-    android:name=".KumuApp">
+    android:name=".KumuApp"
+    package="com.birdsquad.kumu">
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <application
@@ -21,8 +22,27 @@
             </intent-filter>
         </activity>
         <activity android:name=".SpeciesNameActivity" />
-        <activity android:name=".ImagesActivity"
-                    android:parentActivityName=".SpeciesNameActivity"></activity>
+        <activity
+            android:name=".ImagesActivity"
+            android:parentActivityName=".SpeciesNameActivity" />
+        <activity
+            android:name=".FormActivity"
+            android:parentActivityName=".ImagesActivity" />
+        <activity
+            android:name=".FormActivity2"
+            android:parentActivityName=".FormActivity" />
+        <activity
+            android:name=".FormActivity3"
+            android:parentActivityName=".FormActivity2" />
+        <activity
+            android:name=".FormActivity4"
+            android:parentActivityName=".FormActivity3" />
+        <activity
+            android:name=".FormActivity5"
+            android:parentActivityName=".FormActivity4" />
+        <activity
+            android:name=".FormActivity6"
+            android:parentActivityName=".FormActivity5"/>
     </application>
 
 </manifest>
