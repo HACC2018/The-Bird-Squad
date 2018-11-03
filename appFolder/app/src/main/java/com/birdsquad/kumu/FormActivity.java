@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -80,6 +81,9 @@ public class FormActivity extends AppCompatActivity {
                 rSite,
                 locNotes
         );
+
+        Toast.makeText(FormActivity.this, "Form saved for later.",
+                Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
