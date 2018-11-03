@@ -3,7 +3,14 @@ package com.birdsquad.kumu;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class FormActivity2 extends AppCompatActivity {
 
@@ -13,9 +20,88 @@ public class FormActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_form2);
     }
 
+    /**
+     * Submits field values to current form only if the person has selected to fill out population structure data
+     * Does not let user leave fields empty, if they have chosen to fill out this form.
+     * @param view
+     */
     public void goToSection3(View view) {
-        // check all fields and submit to current form if the user has selected yes
-        Intent intent = new Intent(this, FormActivity3.class);
+        Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
+        EditText numMatureBox = (EditText) findViewById(R.id.numMaturePlantsBox);
+        EditText numImmatureBox = (EditText) findViewById(R.id.numImmaturePlantsBox);
+        EditText numSeedlingBox = (EditText) findViewById(R.id.numSeedlingsBox);
+        CheckBox currentCensusCheck = (CheckBox) findViewById(R.id.currentCensusCheckbox);
+
+        boolean enterPopStruc = enterPopulationStructure.isChecked();
+
+        if (enterPopStruc) {
+            String numMatureString = numMatureBox.getText().toString();
+            String numImmatureString = numImmatureBox.getText().toString();
+            String numSeedlingsString = numSeedlingBox.getText().toString();
+
+            boolean anyFieldsEmpty = TextUtils.isEmpty(numMatureString) ||
+                    TextUtils.isEmpty(numImmatureString) ||
+                    TextUtils.isEmpty(numSeedlingsString);
+
+            if (!anyFieldsEmpty) {
+                Number numMature = Integer.parseInt(numMatureString);
+                Number numImmature = Integer.parseInt(numImmatureString);
+                Number numSeedlings = Integer.parseInt(numSeedlingsString);
+                boolean currentCensus = currentCensusCheck.isChecked();
+                KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                        numMature,
+                        numImmature,
+                        numSeedlings,
+                        currentCensus
+                );
+                Intent intent = new Intent(this, FormActivity3.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(FormActivity2.this, "You must complete all fields.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+        else {
+            Intent intent = new Intent(this, FormActivity3.class);
+            startActivity(intent);
+        }
+    }
+
+    /**
+     * Submit unfinished form to be completed later, go back to home screen
+     * @param view
+     */
+    public void finishLaterSection2(View view) {
+        Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
+        EditText numMatureBox = (EditText) findViewById(R.id.numMaturePlantsBox);
+        EditText numImmatureBox = (EditText) findViewById(R.id.numImmaturePlantsBox);
+        EditText numSeedlingBox = (EditText) findViewById(R.id.numSeedlingsBox);
+        CheckBox currentCensusCheck = (CheckBox) findViewById(R.id.currentCensusCheckbox);
+
+        boolean enterPopStruc = enterPopulationStructure.isChecked();
+
+        if (enterPopStruc) {
+            String numMatureString = numMatureBox.getText().toString();
+            String numImmatureString = numImmatureBox.getText().toString();
+            String numSeedlingsString = numSeedlingBox.getText().toString();
+
+            Number numMature = (TextUtils.isEmpty(numMatureString)) ? 0 : Integer.parseInt(numMatureString);
+            Number numImmature = (TextUtils.isEmpty(numImmatureString)) ? 0 : Integer.parseInt(numImmatureString);
+            Number numSeedlings = (TextUtils.isEmpty(numSeedlingsString)) ? 0 : Integer.parseInt(numSeedlingsString);
+            boolean currentCensus = currentCensusCheck.isChecked();
+
+            KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                    numMature,
+                    numImmature,
+                    numSeedlings,
+                    currentCensus
+            );
+        }
+        Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
+        Toast.makeText(FormActivity2.this, "Form saved for later.",
+                Toast.LENGTH_SHORT).show();
+
     }
 }
