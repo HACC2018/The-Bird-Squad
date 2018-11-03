@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/{filter}', function(){
-	
-});
+Route::post('/', 'MainController@RequestReports');
