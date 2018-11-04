@@ -7,74 +7,74 @@ import java.util.Date;
 
 public class Form {
 
-    private String speciesName;
-    private boolean isFinished = false;
-    private Date dateCreated;
+    public String speciesName;
+    public boolean isFinished = false;
+    public Date dateCreated;
     // Section 1
-    private String wildOrOutplanted;
-    private String taxonName;
-    private ArrayList<Bitmap> images;
-    private String observerName;
-    private String organizationName;
-    private String island;
-    private String areaCode;
-    private String refSite;
-    private String locationNotes;
+    public String wildOrOutplanted;
+    public String taxonName;
+    public ArrayList<Bitmap> images;
+    public String observerName;
+    public String organizationName;
+    public String island;
+    public String areaCode;
+    public String refSite;
+    public String locationNotes;
     // needs location gps point
     // needs elevation
     // Section 2
-    private boolean reportPopulationStructure;
-    private Number numMaturePlants;
-    private Number numImmaturePlants;
-    private Number numSeedlings;
-    private boolean mostCurrentCensus;
+    public boolean reportPopulationStructure;
+    public Number numMaturePlants;
+    public Number numImmaturePlants;
+    public Number numSeedlings;
+    public boolean mostCurrentCensus;
     // Section 3
-    private boolean reportIndividualPlant;
-    private Number plantNumber;
-    private boolean plantTagged;
-    private String plantGender;
-    private Number plantHeight;
-    private Number plantBaseDiameter;
-    private String plantAge;
-    private String plantReproductive;
-    private String plantVigor;
-    private Number amountImmatureFruit;
-    private Number amountMatureFruit;
-    private Number amountCuttings;
-    private Number amountAirLayers;
-    private Number amountFlowers;
+    public boolean reportIndividualPlant;
+    public Number plantNumber;
+    public boolean plantTagged;
+    public String plantGender;
+    public Number plantHeight;
+    public Number plantBaseDiameter;
+    public String plantAge;
+    public String plantReproductive;
+    public String plantVigor;
+    public Number amountImmatureFruit;
+    public Number amountMatureFruit;
+    public Number amountCuttings;
+    public Number amountAirLayers;
+    public Number amountFlowers;
     // Section 4
-    private boolean reportPopulationData;
+    public boolean reportPopulationData;
     // Phenology
-    private Number percentVegative;
-    private Number percentBuds;
-    private Number percentFlower;
-    private Number percentImmatureFruit;
-    private Number percentMatureFruit;
+    public Number percentVegative;
+    public Number percentBuds;
+    public Number percentFlower;
+    public Number percentImmatureFruit;
+    public Number percentMatureFruit;
     // Health condition
-    private Number percentHealthy;
-    private Number percentModerate;
-    private Number percentPoor;
-    private Number percentDead;
+    public Number percentHealthy;
+    public Number percentModerate;
+    public Number percentPoor;
+    public Number percentDead;
     // Light level
-    private Number percentFullSun;
-    private Number percentPartialSun;
-    private Number percentPartialShade;
-    private Number percentDeepShade;
+    public Number percentFullSun;
+    public Number percentPartialSun;
+    public Number percentPartialShade;
+    public Number percentDeepShade;
     // section 5
-    private String[] observatoryClosure;
-    private String[] observatoryHeight;
-    private String[] understoryClosure;
-    private String[] soilDrainage;
-    private String[] topography;
-    private String[] aspect;
-    private String assocObsSpecies;
-    private String assocUndSpecies;
-    private String[] substrate;
+    public String[] observatoryClosure;
+    public String[] observatoryHeight;
+    public String[] understoryClosure;
+    public String[] soilDrainage;
+    public String[] topography;
+    public String[] aspect;
+    public String assocObsSpecies;
+    public String assocUndSpecies;
+    public String[] substrate;
     // section 6
-    private boolean reportThreats;
-    private String threats;
-    private String threatManagementNotes;
+    public boolean reportThreats;
+    public String threats;
+    public String threatManagementNotes;
 
     public void setReportPopulationStructure(boolean reportPopulationStructure) {
         this.reportPopulationStructure = reportPopulationStructure;
@@ -88,233 +88,6 @@ public class Form {
         this.reportPopulationData = reportPopulationData;
     }
 
-    public String getSpeciesName() {
-        return speciesName;
-    }
-
-    public boolean isFinished() {
-        return isFinished;
-    }
-
-    public Date getDateCreated() {
-        return dateCreated;
-    }
-
-    public String getWildOrOutplanted() {
-        return wildOrOutplanted;
-    }
-
-    public String getTaxonName() {
-        return taxonName;
-    }
-
-    public ArrayList<Bitmap> getImages() {
-        return images;
-    }
-
-    public String getObserverName() {
-        return observerName;
-    }
-
-    public String getOrganizationName() {
-        return organizationName;
-    }
-
-    public String getIsland() {
-        return island;
-    }
-
-    public String getAreaCode() {
-        return areaCode;
-    }
-
-    public String getRefSite() {
-        return refSite;
-    }
-
-    public String getLocationNotes() {
-        return locationNotes;
-    }
-
-    public boolean isReportPopulationStructure() {
-        return reportPopulationStructure;
-    }
-
-    public Number getNumMaturePlants() {
-        return numMaturePlants;
-    }
-
-    public Number getNumImmaturePlants() {
-        return numImmaturePlants;
-    }
-
-    public Number getNumSeedlings() {
-        return numSeedlings;
-    }
-
-    public boolean isMostCurrentCensus() {
-        return mostCurrentCensus;
-    }
-
-    public boolean isReportIndividualPlant() {
-        return reportIndividualPlant;
-    }
-
-    public Number getPlantNumber() {
-        return plantNumber;
-    }
-
-    public boolean isPlantTagged() {
-        return plantTagged;
-    }
-
-    public String getPlantGender() {
-        return plantGender;
-    }
-
-    public Number getPlantHeight() {
-        return plantHeight;
-    }
-
-    public Number getPlantBaseDiameter() {
-        return plantBaseDiameter;
-    }
-
-    public String getPlantAge() {
-        return plantAge;
-    }
-
-    public String getPlantReproductive() {
-        return plantReproductive;
-    }
-
-    public String getPlantVigor() {
-        return plantVigor;
-    }
-
-    public Number getAmountImmatureFruit() {
-        return amountImmatureFruit;
-    }
-
-    public Number getAmountMatureFruit() {
-        return amountMatureFruit;
-    }
-
-    public Number getAmountCuttings() {
-        return amountCuttings;
-    }
-
-    public Number getAmountAirLayers() {
-        return amountAirLayers;
-    }
-
-    public Number getAmountFlowers() {
-        return amountFlowers;
-    }
-
-    public boolean isReportPopulationData() {
-        return reportPopulationData;
-    }
-
-    public Number getPercentVegative() {
-        return percentVegative;
-    }
-
-    public Number getPercentBuds() {
-        return percentBuds;
-    }
-
-    public Number getPercentFlower() {
-        return percentFlower;
-    }
-
-    public Number getPercentImmatureFruit() {
-        return percentImmatureFruit;
-    }
-
-    public Number getPercentMatureFruit() {
-        return percentMatureFruit;
-    }
-
-    public Number getPercentHealthy() {
-        return percentHealthy;
-    }
-
-    public Number getPercentModerate() {
-        return percentModerate;
-    }
-
-    public Number getPercentPoor() {
-        return percentPoor;
-    }
-
-    public Number getPercentDead() {
-        return percentDead;
-    }
-
-    public Number getPercentFullSun() {
-        return percentFullSun;
-    }
-
-    public Number getPercentPartialSun() {
-        return percentPartialSun;
-    }
-
-    public Number getPercentPartialShade() {
-        return percentPartialShade;
-    }
-
-    public Number getPercentDeepShade() {
-        return percentDeepShade;
-    }
-
-    public String[] getObservatoryClosure() {
-        return observatoryClosure;
-    }
-
-    public String[] getObservatoryHeight() {
-        return observatoryHeight;
-    }
-
-    public String[] getUnderstoryClosure() {
-        return understoryClosure;
-    }
-
-    public String[] getSoilDrainage() {
-        return soilDrainage;
-    }
-
-    public String[] getTopography() {
-        return topography;
-    }
-
-    public String[] getAspect() {
-        return aspect;
-    }
-
-    public String getAssocObsSpecies() {
-        return assocObsSpecies;
-    }
-
-    public String getAssocUndSpecies() {
-        return assocUndSpecies;
-    }
-
-    public String[] getSubstrate() {
-        return substrate;
-    }
-
-    public boolean isReportThreats() {
-        return reportThreats;
-    }
-
-    public String getThreats() {
-        return threats;
-    }
-
-    public String getThreatManagementNotes() {
-        return threatManagementNotes;
-    }
 
     /**
      * Creates a new Form object with just a speciesName (used for SpeciesNameActivity)

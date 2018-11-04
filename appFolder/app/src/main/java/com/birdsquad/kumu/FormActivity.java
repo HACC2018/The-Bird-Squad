@@ -108,8 +108,8 @@ public class FormActivity extends AppCompatActivity {
         EditText locNoteBox = (EditText) findViewById(R.id.locationNoteBox);
 
         int woSpinnerIndex;
-        if (KumuApp.getAppStorage().getCurrentForm().getWildOrOutplanted() != null) {
-            switch(KumuApp.getAppStorage().getCurrentForm().getWildOrOutplanted()) {
+        if (KumuApp.getAppStorage().getCurrentForm().wildOrOutplanted != null) {
+            switch(KumuApp.getAppStorage().getCurrentForm().wildOrOutplanted) {
                 case "Wild" : woSpinnerIndex = 0;
                     break;
                 case "Outplanted" : woSpinnerIndex = 1;
@@ -127,8 +127,8 @@ public class FormActivity extends AppCompatActivity {
         woSpinner.setSelection(woSpinnerIndex);
 
         int islandSpinnerIndex;
-        if (KumuApp.getAppStorage().getCurrentForm().getIsland() != null) {
-            switch(KumuApp.getAppStorage().getCurrentForm().getIsland()) {
+        if (KumuApp.getAppStorage().getCurrentForm().island != null) {
+            switch(KumuApp.getAppStorage().getCurrentForm().island) {
                 case "Hawaii" : islandSpinnerIndex = 0;
                     break;
                 case "Maui" : islandSpinnerIndex = 1;
@@ -155,11 +155,11 @@ public class FormActivity extends AppCompatActivity {
 
         islSpinner.setSelection(islandSpinnerIndex);
 
-        tNameBox.setText(KumuApp.getAppStorage().getCurrentForm().getTaxonName());
-        obsBox.setText(KumuApp.getAppStorage().getCurrentForm().getObserverName());
-        orgBox.setText(KumuApp.getAppStorage().getCurrentForm().getOrganizationName());
-        aCodeBox.setText(KumuApp.getAppStorage().getCurrentForm().getAreaCode());
-        rSiteBox.setText(KumuApp.getAppStorage().getCurrentForm().getRefSite());
-        locNoteBox.setText(KumuApp.getAppStorage().getCurrentForm().getLocationNotes());
+        tNameBox.setText(KumuApp.getAppStorage().getCurrentForm().taxonName);
+        obsBox.setText(KumuApp.getAppStorage().getCurrentForm().observerName);
+        orgBox.setText(KumuApp.getAppStorage().getCurrentForm().organizationName);
+        aCodeBox.setText(KumuApp.getAppStorage().getCurrentForm().areaCode);
+        rSiteBox.setText(KumuApp.getAppStorage().getCurrentForm().refSite);
+        locNoteBox.setText(KumuApp.getAppStorage().getCurrentForm().locationNotes);
     }
 }

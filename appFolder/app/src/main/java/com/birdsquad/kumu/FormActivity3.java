@@ -227,23 +227,23 @@ public class FormActivity3 extends AppCompatActivity {
         EditText amtAirLayerBox = (EditText) findViewById(R.id.amtAirLayersBox);
         EditText amtFlowersBox = (EditText) findViewById(R.id.amtFlowersBox);
 
-        boolean reportIndividualPlant = KumuApp.getAppStorage().getCurrentForm().isReportIndividualPlant();
+        boolean reportIndividualPlant = KumuApp.getAppStorage().getCurrentForm().reportIndividualPlant;
         enterIndividual.setChecked(reportIndividualPlant);
 
         if (reportIndividualPlant) {
-            plantNoBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantNumber().toString());
-            plantHeightBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantHeight().toString());
-            plantDiameterBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantBaseDiameter().toString());
-            amtImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountImmatureFruit().toString());
-            amtMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountMatureFruit().toString());
-            amtCuttingBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountCuttings().toString());
-            amtAirLayerBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountAirLayers().toString());
-            amtFlowersBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountFlowers().toString());
-            plantTaggedCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().isPlantTagged());
+            plantNoBox.setText(KumuApp.getAppStorage().getCurrentForm().plantNumber.toString());
+            plantHeightBox.setText(KumuApp.getAppStorage().getCurrentForm().plantHeight.toString());
+            plantDiameterBox.setText(KumuApp.getAppStorage().getCurrentForm().plantBaseDiameter.toString());
+            amtImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().amountImmatureFruit.toString());
+            amtMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().amountMatureFruit.toString());
+            amtCuttingBox.setText(KumuApp.getAppStorage().getCurrentForm().amountCuttings.toString());
+            amtAirLayerBox.setText(KumuApp.getAppStorage().getCurrentForm().amountAirLayers.toString());
+            amtFlowersBox.setText(KumuApp.getAppStorage().getCurrentForm().amountFlowers.toString());
+            plantTaggedCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().plantTagged);
 
             int plantGenderIndex;
-            if (KumuApp.getAppStorage().getCurrentForm().getPlantGender() != null) {
-                switch (KumuApp.getAppStorage().getCurrentForm().getPlantGender()) {
+            if (KumuApp.getAppStorage().getCurrentForm().plantGender != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().plantGender) {
                     case "Unknown":
                         plantGenderIndex = 0;
                         break;
@@ -280,8 +280,8 @@ public class FormActivity3 extends AppCompatActivity {
             plantGenderDropdown.setSelection(plantGenderIndex);
 
             int plantAgeIndex;
-            if (KumuApp.getAppStorage().getCurrentForm().getPlantAge() != null) {
-                switch (KumuApp.getAppStorage().getCurrentForm().getPlantAge()) {
+            if (KumuApp.getAppStorage().getCurrentForm().plantAge != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().plantAge) {
                     case "Mature":
                         plantAgeIndex = 0;
                         break;
@@ -303,8 +303,8 @@ public class FormActivity3 extends AppCompatActivity {
             plantAgeDropdown.setSelection(plantAgeIndex);
 
             int plantRepIndex;
-            if (KumuApp.getAppStorage().getCurrentForm().getPlantReproductive() != null) {
-                switch (KumuApp.getAppStorage().getCurrentForm().getPlantReproductive()) {
+            if (KumuApp.getAppStorage().getCurrentForm().plantReproductive != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().plantReproductive) {
                     case "Vegetative (No flowers, buds, or fruit)":
                         plantRepIndex = 0;
                         break;
@@ -332,8 +332,8 @@ public class FormActivity3 extends AppCompatActivity {
             plantRepDropdown.setSelection(plantRepIndex);
 
             int plantHealthIndex;
-            if (KumuApp.getAppStorage().getCurrentForm().getPlantVigor() != null) {
-                switch (KumuApp.getAppStorage().getCurrentForm().getPlantVigor()) {
+            if (KumuApp.getAppStorage().getCurrentForm().plantVigor != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().plantVigor) {
                     case "Healthy":
                         plantHealthIndex = 0;
                         break;
