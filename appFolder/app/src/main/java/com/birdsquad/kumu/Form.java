@@ -13,7 +13,7 @@ public class Form {
     // Section 1
     public String wildOrOutplanted;
     public String taxonName;
-    public ArrayList<Bitmap> images;
+    public ArrayList<Photo> images;
     public String observerName;
     public String organizationName;
     public String island;
@@ -109,7 +109,7 @@ public class Form {
      * Sets the form's list of images to the images taken by the user in ImagesActivity
      * @param images
      */
-    public void addImages(ArrayList<Bitmap> images) {
+    public void addImages(ArrayList<Photo> images) {
         this.images = images;
     }
 

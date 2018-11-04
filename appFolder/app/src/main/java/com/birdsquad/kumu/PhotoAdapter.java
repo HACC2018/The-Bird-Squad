@@ -15,11 +15,11 @@ public class PhotoAdapter extends ArrayAdapter {
 
     private Context context;
 
-    private ArrayList<Bitmap> photos;
+    private ArrayList<Photo> photos;
 
     private int resource;
 
-    public PhotoAdapter(Context context, int resource, ArrayList<Bitmap> objects) {
+    public PhotoAdapter(Context context, int resource, ArrayList<Photo> objects) {
         super(context, resource, objects);
         this.photos = objects;
         this.context = context;
@@ -42,9 +42,9 @@ public class PhotoAdapter extends ArrayAdapter {
             holder = (ViewHolder) row.getTag();
         }
 
-        Bitmap photo = photos.get(position);
+        Photo photo = photos.get(position);
         holder.image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        holder.image.setImageBitmap(photo);
+        holder.image.setImageBitmap(photo.getPhoto());
         return row;
 
     }
