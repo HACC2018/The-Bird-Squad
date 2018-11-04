@@ -24,7 +24,7 @@ public class FormActivity2 extends AppCompatActivity {
         Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.population_structure_layout);
 
-        boolean setVisible = setFields();
+        boolean setVisible = setFieldsSection2();
         if (setVisible) {
             innerFields.setVisibility(View.VISIBLE);
         }
@@ -136,7 +136,7 @@ public class FormActivity2 extends AppCompatActivity {
 
     }
 
-    public boolean setFields() {
+    public boolean setFieldsSection2() {
         Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
         EditText numMatureBox = (EditText) findViewById(R.id.numMaturePlantsBox);
         EditText numImmatureBox = (EditText) findViewById(R.id.numImmaturePlantsBox);
