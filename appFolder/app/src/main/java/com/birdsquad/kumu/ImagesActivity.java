@@ -1,18 +1,26 @@
 package com.birdsquad.kumu;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Location;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 
@@ -20,19 +28,70 @@ public class ImagesActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    private ArrayList<Bitmap> images;
+    private FusedLocationProviderClient mFusedLocationClient;
+
+    private ArrayList<Photo> images;
+
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
+    private static boolean locationEnabled;
+
+    private static Location thisLocation;
+
+    public boolean checkLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSIONS_REQUEST_LOCATION);
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    locationEnabled = true;
+
+                }
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
-        this.images = new ArrayList<Bitmap>();
+        this.images = new ArrayList<Photo>();
         // set first image to + icon
         Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
-        images.add(addIcon);
+        Photo addIconPhoto = new Photo(addIcon);
+        images.add(addIconPhoto);
+
+        // For location services
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // Check if the person has enabled location permissions
+        locationEnabled = checkLocationPermission();
 
         final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-        
+
         gridview.setAdapter(new PhotoAdapter(this, R.layout.grid_item_layout, images));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,8 +101,7 @@ public class ImagesActivity extends AppCompatActivity {
                     if (images.size() >= 11) {
                         Toast.makeText(ImagesActivity.this, "You already have 10 images.",
                                 Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+                    } else {
                         dispatchTakePictureIntent();
                     }
                 }
@@ -59,15 +117,32 @@ public class ImagesActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            Log.d("DebugMePls", "here");
-            images.add(0, imageBitmap);
+
+            Photo newPhoto = new Photo(imageBitmap);
+
+            if (locationEnabled) {
+                mFusedLocationClient.getLastLocation()
+                        .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                            @Override
+                            public void onSuccess(Location location) {
+                                // Got last known location. In some rare situations this can be null.
+                                if (location != null) {
+                                    thisLocation = location;
+                                }
+                            }
+                        });
+                newPhoto.setLocation(thisLocation);
+            }
+
+            images.add(0, newPhoto);
             final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-            ((ArrayAdapter<Bitmap>)gridview.getAdapter()).notifyDataSetChanged();
+            ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
         }
     }
 
