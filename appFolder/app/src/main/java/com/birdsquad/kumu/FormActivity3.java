@@ -90,6 +90,7 @@ public class FormActivity3 extends AppCompatActivity {
                 Number amtFlowersNum = Integer.parseInt(amtFlowers);
 
                 KumuApp.getAppStorage().getCurrentForm().addFieldsSection3(
+                        reportIndividual,
                         plantNoNum,
                         plantTagged,
                         plantGender,
@@ -162,6 +163,7 @@ public class FormActivity3 extends AppCompatActivity {
             boolean plantTagged = plantTaggedCheck.isChecked();
 
             KumuApp.getAppStorage().getCurrentForm().addFieldsSection3(
+                    reportIndividual,
                     plantNoNum,
                     plantTagged,
                     plantGender,

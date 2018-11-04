@@ -66,6 +66,7 @@ public class FormActivity2 extends AppCompatActivity {
                 Number numSeedlings = Integer.parseInt(numSeedlingsString);
                 boolean currentCensus = currentCensusCheck.isChecked();
                 KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                        enterPopStruc,
                         numMature,
                         numImmature,
                         numSeedlings,
@@ -109,6 +110,7 @@ public class FormActivity2 extends AppCompatActivity {
             boolean currentCensus = currentCensusCheck.isChecked();
 
             KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                    enterPopStruc,
                     numMature,
                     numImmature,
                     numSeedlings,
