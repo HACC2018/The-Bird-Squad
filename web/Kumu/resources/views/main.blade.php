@@ -68,6 +68,8 @@
 		<!-- When user clicks on image in popup preview, display in large -->
 		<div id="largeImageOnClick"></div>
 
+
+	<script>var base_url = '{{ asset("/") }}';</script>
 	<script src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

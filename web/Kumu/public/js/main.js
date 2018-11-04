@@ -1,5 +1,3 @@
-var base_url = '{{ asset("/") }}';
-
 var map = L.map('mapid').setView([21.47, -157.98], 8);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	maxZoom: 18,
