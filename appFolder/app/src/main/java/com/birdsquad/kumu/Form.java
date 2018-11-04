@@ -76,6 +76,18 @@ public class Form {
     private String threats;
     private String threatManagementNotes;
 
+    public void setReportPopulationStructure(boolean reportPopulationStructure) {
+        this.reportPopulationStructure = reportPopulationStructure;
+    }
+
+    public void setReportIndividualPlant(boolean reportIndividualPlant) {
+        this.reportIndividualPlant = reportIndividualPlant;
+    }
+
+    public void setReportPopulationData(boolean reportPopulationData) {
+        this.reportPopulationData = reportPopulationData;
+    }
+
     public String getSpeciesName() {
         return speciesName;
     }

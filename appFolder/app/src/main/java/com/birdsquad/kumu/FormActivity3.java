@@ -114,6 +114,7 @@ public class FormActivity3 extends AppCompatActivity {
             }
         }
         else {
+            KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
             Intent intent = new Intent(this, FormActivity4.class);
             startActivity(intent);
         }
@@ -179,6 +180,9 @@ public class FormActivity3 extends AppCompatActivity {
                     amtFlowersNum
             );
 
+        }
+        else {
+            KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
         }
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
