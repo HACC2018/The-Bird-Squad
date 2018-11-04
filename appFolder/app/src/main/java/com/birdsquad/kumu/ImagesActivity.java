@@ -72,6 +72,7 @@ public class ImagesActivity extends AppCompatActivity {
     }
 
     public void goToForm(View view) {
+        images.remove(images.size() - 1);
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
         startActivity(intent);

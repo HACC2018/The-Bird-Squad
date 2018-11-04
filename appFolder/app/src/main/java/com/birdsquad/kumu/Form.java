@@ -35,7 +35,7 @@ public class Form {
     private String plantGender;
     private Number plantHeight;
     private Number plantBaseDiameter;
-    private Number plantAge;
+    private String plantAge;
     private String plantReproductive;
     private String plantVigor;
     private Number amountImmatureFruit;
@@ -85,6 +85,8 @@ public class Form {
     public Form(String speciesName) {
         this.speciesName = speciesName;
     }
+
+    
 
     /**
      * Sets the form's list of images to the images taken by the user in ImagesActivity
@@ -167,7 +169,7 @@ public class Form {
             String plantGender,
             Number plantHeight,
             Number plantBaseDiameter,
-            Number plantAge,
+            String plantAge,
             String plantReproductive,
             String plantVigor,
             Number amountImmatureFruit,

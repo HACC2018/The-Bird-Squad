@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -18,6 +20,21 @@ public class FormActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2);
+
+        Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
+        final LinearLayout innerFields = (LinearLayout) findViewById(R.id.population_structure_layout);
+
+        enterPopulationStructure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    innerFields.setVisibility(View.VISIBLE);
+                }
+                else {
+                    innerFields.setVisibility(View.GONE);
+                }
+            }
+        });
+
     }
 
     /**
