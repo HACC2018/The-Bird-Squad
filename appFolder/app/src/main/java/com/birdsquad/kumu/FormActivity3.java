@@ -23,6 +23,14 @@ public class FormActivity3 extends AppCompatActivity {
         Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.individual_plant);
 
+        boolean setVisible = setFieldsSection3();
+        if (setVisible) {
+            innerFields.setVisibility(View.VISIBLE);
+        }
+        else {
+            innerFields.setVisibility(View.GONE);
+        }
+
         enterIndividual.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -90,6 +98,7 @@ public class FormActivity3 extends AppCompatActivity {
                 Number amtFlowersNum = Integer.parseInt(amtFlowers);
 
                 KumuApp.getAppStorage().getCurrentForm().addFieldsSection3(
+                        reportIndividual,
                         plantNoNum,
                         plantTagged,
                         plantGender,
@@ -113,6 +122,7 @@ public class FormActivity3 extends AppCompatActivity {
             }
         }
         else {
+            KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
             Intent intent = new Intent(this, FormActivity4.class);
             startActivity(intent);
         }
@@ -162,6 +172,7 @@ public class FormActivity3 extends AppCompatActivity {
             boolean plantTagged = plantTaggedCheck.isChecked();
 
             KumuApp.getAppStorage().getCurrentForm().addFieldsSection3(
+                    reportIndividual,
                     plantNoNum,
                     plantTagged,
                     plantGender,
@@ -178,10 +189,165 @@ public class FormActivity3 extends AppCompatActivity {
             );
 
         }
+        else {
+            KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
+        }
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
         Toast.makeText(FormActivity3.this, "Form saved for later.",
                 Toast.LENGTH_SHORT).show();
+
+    }
+
+    public boolean setFieldsSection3() {
+        Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
+        EditText plantNoBox = (EditText) findViewById(R.id.plantNoBox);
+        CheckBox plantTaggedCheck = (CheckBox) findViewById(R.id.plantTaggedCheckbox);
+        Spinner plantGenderDropdown = (Spinner) findViewById(R.id.plantGenderDropdown);
+        EditText plantHeightBox = (EditText) findViewById(R.id.plantHeightBox);
+        EditText plantDiameterBox = (EditText) findViewById(R.id.plantDiameterBox);
+        Spinner plantAgeDropdown = (Spinner) findViewById(R.id.plantAgeDropdown);
+        Spinner plantRepDropdown = (Spinner) findViewById(R.id.plantReproductiveDropdown);
+        Spinner plantHealthDropdown = (Spinner) findViewById(R.id.plantHealthDropdown);
+        EditText amtImmatureBox = (EditText) findViewById(R.id.amtImmatureFruitBox);
+        EditText amtMatureBox = (EditText) findViewById(R.id.amtMatureFruitBox);
+        EditText amtCuttingBox  = (EditText) findViewById(R.id.amtCuttingsBox);
+        EditText amtAirLayerBox = (EditText) findViewById(R.id.amtAirLayersBox);
+        EditText amtFlowersBox = (EditText) findViewById(R.id.amtFlowersBox);
+
+        boolean reportIndividualPlant = KumuApp.getAppStorage().getCurrentForm().isReportIndividualPlant();
+        enterIndividual.setChecked(reportIndividualPlant);
+
+        if (reportIndividualPlant) {
+            plantNoBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantNumber().toString());
+            plantHeightBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantHeight().toString());
+            plantDiameterBox.setText(KumuApp.getAppStorage().getCurrentForm().getPlantBaseDiameter().toString());
+            amtImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountImmatureFruit().toString());
+            amtMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountMatureFruit().toString());
+            amtCuttingBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountCuttings().toString());
+            amtAirLayerBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountAirLayers().toString());
+            amtFlowersBox.setText(KumuApp.getAppStorage().getCurrentForm().getAmountFlowers().toString());
+            plantTaggedCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().isPlantTagged());
+
+            int plantGenderIndex;
+            if (KumuApp.getAppStorage().getCurrentForm().getPlantGender() != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().getPlantGender()) {
+                    case "Unknown":
+                        plantGenderIndex = 0;
+                        break;
+                    case "Male":
+                        plantGenderIndex = 1;
+                        break;
+                    case "Female":
+                        plantGenderIndex = 2;
+                        break;
+                    case "Both Male and Female":
+                        plantGenderIndex = 3;
+                        break;
+                    case "Perfect Flowers (Hermaphrodite)":
+                        plantGenderIndex = 4;
+                        break;
+                    case "N/A":
+                        plantGenderIndex = 5;
+                        break;
+                    case "Male?":
+                        plantGenderIndex = 6;
+                        break;
+                    case "Female?":
+                        plantGenderIndex = 7;
+                        break;
+                    default:
+                        plantGenderIndex = 0;
+                        break;
+                }
+            }
+            else {
+                plantGenderIndex = 0;
+            }
+
+            plantGenderDropdown.setSelection(plantGenderIndex);
+
+            int plantAgeIndex;
+            if (KumuApp.getAppStorage().getCurrentForm().getPlantAge() != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().getPlantAge()) {
+                    case "Mature":
+                        plantAgeIndex = 0;
+                        break;
+                    case "Immature":
+                        plantAgeIndex = 1;
+                        break;
+                    case "Seedling (With Cotyledons)":
+                        plantAgeIndex = 2;
+                        break;
+                    default:
+                        plantAgeIndex = 0;
+                        break;
+                }
+            }
+            else {
+                plantAgeIndex = 0;
+            }
+
+            plantAgeDropdown.setSelection(plantAgeIndex);
+
+            int plantRepIndex;
+            if (KumuApp.getAppStorage().getCurrentForm().getPlantReproductive() != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().getPlantReproductive()) {
+                    case "Vegetative (No flowers, buds, or fruit)":
+                        plantRepIndex = 0;
+                        break;
+                    case "Flower Buds":
+                        plantRepIndex = 1;
+                        break;
+                    case "Immature Fruit":
+                        plantRepIndex = 2;
+                        break;
+                    case "Mature Fruit":
+                        plantRepIndex = 3;
+                        break;
+                    case "Dormant":
+                        plantRepIndex = 4;
+                        break;
+                    default:
+                        plantRepIndex = 0;
+                        break;
+                }
+            }
+            else {
+                plantRepIndex = 0;
+            }
+
+            plantRepDropdown.setSelection(plantRepIndex);
+
+            int plantHealthIndex;
+            if (KumuApp.getAppStorage().getCurrentForm().getPlantVigor() != null) {
+                switch (KumuApp.getAppStorage().getCurrentForm().getPlantVigor()) {
+                    case "Healthy":
+                        plantHealthIndex = 0;
+                        break;
+                    case "Moderate":
+                        plantHealthIndex = 1;
+                        break;
+                    case "Poor":
+                        plantHealthIndex = 2;
+                        break;
+                    case "Dead":
+                        plantHealthIndex = 3;
+                        break;
+                    default:
+                        plantHealthIndex = 0;
+                        break;
+                }
+            }
+            else {
+                plantHealthIndex = 0;
+            }
+
+            plantHealthDropdown.setSelection(plantHealthIndex);
+
+        }
+
+        return reportIndividualPlant;
 
     }
 

@@ -23,11 +23,11 @@ public class Storage {
     }
 
     public ArrayList<Form> getForms() {
-        return this.forms;
+        return forms;
     }
 
     public Form getCurrentForm() {
-        return this.currentForm;
+        return currentForm;
     }
 
     /**

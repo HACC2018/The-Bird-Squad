@@ -14,6 +14,7 @@ public class FormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+        setFields();
     }
 
     /**
@@ -91,5 +92,74 @@ public class FormActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Initialize fields with current form data.
+     */
+    public void setFields() {
+        Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
+        EditText tNameBox = (EditText) findViewById(R.id.taxonNameBox);
+        EditText obsBox = (EditText) findViewById(R.id.observerNameBox);
+        EditText orgBox = (EditText) findViewById(R.id.orgNameBox);
+        Spinner islSpinner = (Spinner) findViewById(R.id.islandDropdown);
+        EditText aCodeBox = (EditText) findViewById(R.id.areaCodeBox);
+        EditText rSiteBox = (EditText) findViewById(R.id.refSiteBox);
+        EditText locNoteBox = (EditText) findViewById(R.id.locationNoteBox);
+
+        int woSpinnerIndex;
+        if (KumuApp.getAppStorage().getCurrentForm().getWildOrOutplanted() != null) {
+            switch(KumuApp.getAppStorage().getCurrentForm().getWildOrOutplanted()) {
+                case "Wild" : woSpinnerIndex = 0;
+                    break;
+                case "Outplanted" : woSpinnerIndex = 1;
+                    break;
+                case "InterSitu (i.e. Garden, Seed, Orchard)" : woSpinnerIndex = 2;
+                    break;
+                default : woSpinnerIndex = 0;
+                    break;
+            }
+        }
+        else {
+            woSpinnerIndex = 0;
+        }
+
+        woSpinner.setSelection(woSpinnerIndex);
+
+        int islandSpinnerIndex;
+        if (KumuApp.getAppStorage().getCurrentForm().getIsland() != null) {
+            switch(KumuApp.getAppStorage().getCurrentForm().getIsland()) {
+                case "Hawaii" : islandSpinnerIndex = 0;
+                    break;
+                case "Maui" : islandSpinnerIndex = 1;
+                    break;
+                case "Oahu" : islandSpinnerIndex = 2;
+                    break;
+                case "Molokai" : islandSpinnerIndex = 3;
+                    break;
+                case "Kauai" : islandSpinnerIndex = 4;
+                    break;
+                case "Niihau" : islandSpinnerIndex = 5;
+                    break;
+                case "Lanai" : islandSpinnerIndex = 6;
+                    break;
+                case "Kahoolawe" : islandSpinnerIndex = 7;
+                    break;
+                default : islandSpinnerIndex = 0;
+                    break;
+            }
+        }
+        else {
+            islandSpinnerIndex = 0;
+        }
+
+        islSpinner.setSelection(islandSpinnerIndex);
+
+        tNameBox.setText(KumuApp.getAppStorage().getCurrentForm().getTaxonName());
+        obsBox.setText(KumuApp.getAppStorage().getCurrentForm().getObserverName());
+        orgBox.setText(KumuApp.getAppStorage().getCurrentForm().getOrganizationName());
+        aCodeBox.setText(KumuApp.getAppStorage().getCurrentForm().getAreaCode());
+        rSiteBox.setText(KumuApp.getAppStorage().getCurrentForm().getRefSite());
+        locNoteBox.setText(KumuApp.getAppStorage().getCurrentForm().getLocationNotes());
     }
 }

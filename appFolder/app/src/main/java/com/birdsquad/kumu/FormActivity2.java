@@ -24,6 +24,14 @@ public class FormActivity2 extends AppCompatActivity {
         Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.population_structure_layout);
 
+        boolean setVisible = setFieldsSection2();
+        if (setVisible) {
+            innerFields.setVisibility(View.VISIBLE);
+        }
+        else {
+            innerFields.setVisibility(View.GONE);
+        }
+
         enterPopulationStructure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -66,6 +74,7 @@ public class FormActivity2 extends AppCompatActivity {
                 Number numSeedlings = Integer.parseInt(numSeedlingsString);
                 boolean currentCensus = currentCensusCheck.isChecked();
                 KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                        enterPopStruc,
                         numMature,
                         numImmature,
                         numSeedlings,
@@ -80,6 +89,7 @@ public class FormActivity2 extends AppCompatActivity {
             }
         }
         else {
+            KumuApp.getAppStorage().getCurrentForm().setReportPopulationStructure(false);
             Intent intent = new Intent(this, FormActivity3.class);
             startActivity(intent);
         }
@@ -109,16 +119,39 @@ public class FormActivity2 extends AppCompatActivity {
             boolean currentCensus = currentCensusCheck.isChecked();
 
             KumuApp.getAppStorage().getCurrentForm().addFieldsSection2(
+                    enterPopStruc,
                     numMature,
                     numImmature,
                     numSeedlings,
                     currentCensus
             );
         }
+        else {
+            KumuApp.getAppStorage().getCurrentForm().setReportPopulationStructure(false);
+        }
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
         Toast.makeText(FormActivity2.this, "Form saved for later.",
                 Toast.LENGTH_SHORT).show();
 
+    }
+
+    public boolean setFieldsSection2() {
+        Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
+        EditText numMatureBox = (EditText) findViewById(R.id.numMaturePlantsBox);
+        EditText numImmatureBox = (EditText) findViewById(R.id.numImmaturePlantsBox);
+        EditText numSeedlingBox = (EditText) findViewById(R.id.numSeedlingsBox);
+        CheckBox currentCensusCheck = (CheckBox) findViewById(R.id.currentCensusCheckbox);
+
+        boolean reportPopStruct = KumuApp.getAppStorage().getCurrentForm().isReportPopulationStructure();
+        enterPopulationStructure.setChecked(reportPopStruct);
+
+        if (reportPopStruct) {
+            numMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumMaturePlants().toString());
+            numImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumMaturePlants().toString());
+            numSeedlingBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumSeedlings().toString());
+            currentCensusCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().isMostCurrentCensus());
+        }
+        return reportPopStruct;
     }
 }
