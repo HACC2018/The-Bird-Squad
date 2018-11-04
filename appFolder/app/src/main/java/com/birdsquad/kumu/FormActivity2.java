@@ -143,14 +143,14 @@ public class FormActivity2 extends AppCompatActivity {
         EditText numSeedlingBox = (EditText) findViewById(R.id.numSeedlingsBox);
         CheckBox currentCensusCheck = (CheckBox) findViewById(R.id.currentCensusCheckbox);
 
-        boolean reportPopStruct = KumuApp.getAppStorage().getCurrentForm().isReportPopulationStructure();
+        boolean reportPopStruct = KumuApp.getAppStorage().getCurrentForm().reportPopulationStructure;
         enterPopulationStructure.setChecked(reportPopStruct);
 
         if (reportPopStruct) {
-            numMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumMaturePlants().toString());
-            numImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumMaturePlants().toString());
-            numSeedlingBox.setText(KumuApp.getAppStorage().getCurrentForm().getNumSeedlings().toString());
-            currentCensusCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().isMostCurrentCensus());
+            numMatureBox.setText(KumuApp.getAppStorage().getCurrentForm().numMaturePlants.toString());
+            numImmatureBox.setText(KumuApp.getAppStorage().getCurrentForm().numImmaturePlants.toString());
+            numSeedlingBox.setText(KumuApp.getAppStorage().getCurrentForm().numSeedlings.toString());
+            currentCensusCheck.setChecked(KumuApp.getAppStorage().getCurrentForm().mostCurrentCensus);
         }
         return reportPopStruct;
     }
