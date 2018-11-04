@@ -98,9 +98,9 @@
     <string name="population_phenology">Population Phenology</string>
     <string name="population_phenology_vegetative">% of Plants Vegetative</string>
     <string name="population_phenology_buds">% of Plants with Flower Buds</string>
-    <string name="population_phenology_flower">$ of Plants in Flower</string>
-    <string name="population_phenology_fruit">$ of Plants with Fruit</string>
-    <string name="population_phenology_mature_fruit">$ of Plants with Mature Fruit</string>
+    <string name="population_phenology_flower">% of Plants in Flower</string>
+    <string name="population_phenology_fruit">% of Plants with Fruit</string>
+    <string name="population_phenology_mature_fruit">% of Plants with Mature Fruit</string>
 
     <string name="population_condition">Population Condition</string>
     <string name="population_condition_plants_healthy">% of Plants Healthy</string>
@@ -130,7 +130,7 @@
 
     // SECTION 6
     <string name="threats">Are you entering Threats?</string>
-    <string name="threats_management">Threats & Management</string>
+    <string name="threats_management">Threats and Management</string>
     <string-array name="threat_types">
         <item>Pigs</item>
         <item>Goats</item>
@@ -143,6 +143,6 @@
         <item>Pathogen</item>
         <item>Other</item>
     </string-array>
-    <string name="threats_notes">Threat & Management Notes</string>
+    <string name="threats_notes">Threat and Management Notes</string>
     
 </resources>
