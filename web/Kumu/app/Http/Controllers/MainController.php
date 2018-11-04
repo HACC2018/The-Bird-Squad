@@ -17,7 +17,14 @@ class MainController extends Controller
 	public function RequestReports(Request $request){
 		$it = json_decode($request->json);
 		
-		$resultSet = DB::select('exec FindForm_Filter ?,?,?',[$it->filter_island, $it->filter_plant_age, $it->filter_plant]);
+		//Default to all
+		$num = -1;
+
+		if(is_numeric($it->filter_island)){
+			$num = $it->filter_island;
+		}
+		
+		$resultSet = DB::select('exec FindForm_Filter ?,?,?',[$num, $it->filter_plant_age, $it->filter_plant]);
 		$returnSet = array();
 		foreach($resultSet as $val) {
 			array_push(
@@ -25,7 +32,9 @@ class MainController extends Controller
 					'FormID' => $val->FormID,
 					'TaxaName' => $val->PlantTaxaName,
 					'CommonName' => $val->PlantCommonName,
-					'PlantType' => $val->PlantType
+					'PlantType' => $val->PlantType,
+					'FedStatus' => $val->PlantFedStatus,
+					'LocationNotes' => $val->LocationNotes
 				));
 		}
 		return json_encode($returnSet);
