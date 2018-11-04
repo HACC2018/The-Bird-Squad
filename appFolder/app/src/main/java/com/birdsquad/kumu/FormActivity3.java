@@ -43,6 +43,10 @@ public class FormActivity3 extends AppCompatActivity {
         });
     }
 
+    /**
+     * Submit all section 3 data to current form, go on to section 4
+     * @param view
+     */
     public void goToSection4(View view) {
         Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
         EditText plantNoBox = (EditText) findViewById(R.id.plantNoBox);
@@ -128,6 +132,10 @@ public class FormActivity3 extends AppCompatActivity {
         }
     }
 
+    /**
+     * Submit existing section 3 data to current form to be finished later
+     * @param view
+     */
     public void finishLaterSection3(View view) {
         Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
         EditText plantNoBox = (EditText) findViewById(R.id.plantNoBox);
@@ -199,6 +207,10 @@ public class FormActivity3 extends AppCompatActivity {
 
     }
 
+    /**
+     * Initialize all fields
+     * @return
+     */
     public boolean setFieldsSection3() {
         Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
         EditText plantNoBox = (EditText) findViewById(R.id.plantNoBox);
