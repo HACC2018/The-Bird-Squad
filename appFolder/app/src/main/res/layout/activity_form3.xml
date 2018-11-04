@@ -31,7 +31,7 @@
                 android:text="@string/individual_plant" />
 
             <Switch
-                android:id="@+id/switch2"
+                android:id="@+id/enterIndividualSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:showText="true"
@@ -56,7 +56,7 @@
                     android:text="@string/plant_number" />
 
                 <EditText
-                    android:id="@+id/editText14"
+                    android:id="@+id/plantNoBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -67,7 +67,7 @@
                     android:layout_height="10dp" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/plantTaggedCheckbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/plant_tagged" />
@@ -83,7 +83,7 @@
                     android:text="@string/plant_gender" />
 
                 <Spinner
-                    android:id="@+id/spinner3"
+                    android:id="@+id/plantGenderDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:entries="@array/plant_genders" />
@@ -99,7 +99,7 @@
                     android:text="@string/plant_height" />
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/plantHeightBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -116,7 +116,7 @@
                     android:text="@string/plant_diameter" />
 
                 <EditText
-                    android:id="@+id/editText10"
+                    android:id="@+id/plantDiameterBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -133,7 +133,7 @@
                     android:text="@string/plant_age" />
 
                 <Spinner
-                    android:id="@+id/spinner4"
+                    android:id="@+id/plantAgeDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:entries="@array/plant_ages" />
@@ -149,7 +149,7 @@
                     android:text="@string/plant_reproductive" />
 
                 <Spinner
-                    android:id="@+id/spinner5"
+                    android:id="@+id/plantReproductiveDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:entries="@array/reproductive_statuses" />
@@ -165,7 +165,7 @@
                     android:text="@string/plant_vigor" />
 
                 <Spinner
-                    android:id="@+id/spinner6"
+                    android:id="@+id/plantHealthDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:entries="@array/vigors" />
@@ -181,7 +181,7 @@
                     android:text="@string/plant_immature_fruit" />
 
                 <EditText
-                    android:id="@+id/editText15"
+                    android:id="@+id/amtImmatureFruitBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -195,10 +195,10 @@
                     android:id="@+id/textView29"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/plant_immature_fruit" />
+                    android:text="@string/plant_mature_fruit" />
 
                 <EditText
-                    android:id="@+id/editText16"
+                    android:id="@+id/amtMatureFruitBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -215,7 +215,7 @@
                     android:text="@string/plant_cuttings" />
 
                 <EditText
-                    android:id="@+id/editText17"
+                    android:id="@+id/amtCuttingsBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -232,7 +232,7 @@
                     android:text="@string/plant_air_layers" />
 
                 <EditText
-                    android:id="@+id/editText18"
+                    android:id="@+id/amtAirLayersBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -249,7 +249,7 @@
                     android:text="@string/plant_flowers" />
 
                 <EditText
-                    android:id="@+id/editText19"
+                    android:id="@+id/amtFlowersBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

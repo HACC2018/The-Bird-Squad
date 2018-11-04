@@ -8,11 +8,12 @@ import java.util.Date;
 public class Form {
 
     private String speciesName;
+    private boolean isFinished = false;
+    private Date dateCreated;
     // Section 1
     private String wildOrOutplanted;
     private String taxonName;
     private ArrayList<Bitmap> images;
-    private Date observationDate;
     private String observerName;
     private String organizationName;
     private String island;
@@ -34,7 +35,7 @@ public class Form {
     private String plantGender;
     private Number plantHeight;
     private Number plantBaseDiameter;
-    private Number plantAge;
+    private String plantAge;
     private String plantReproductive;
     private String plantVigor;
     private Number amountImmatureFruit;
@@ -85,6 +86,8 @@ public class Form {
         this.speciesName = speciesName;
     }
 
+    
+
     /**
      * Sets the form's list of images to the images taken by the user in ImagesActivity
      * @param images
@@ -98,7 +101,6 @@ public class Form {
      * Missing: location and elevation
      * @param wildOrOutplanted
      * @param taxonName
-     * @param observationDate
      * @param observerName
      * @param organizationName
      * @param island
@@ -167,7 +169,7 @@ public class Form {
             String plantGender,
             Number plantHeight,
             Number plantBaseDiameter,
-            Number plantAge,
+            String plantAge,
             String plantReproductive,
             String plantVigor,
             Number amountImmatureFruit,
