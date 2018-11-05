@@ -6,6 +6,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -14,12 +15,13 @@ import android.widget.EditText;
 public class SpeciesNameActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
+    private SpeciesNameActivity context = this;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_species_name);
-
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -29,15 +31,25 @@ public class SpeciesNameActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
 
+                        int id = menuItem.getItemId();
+                        switch (getResources().getResourceEntryName(id)) {
+                            case "nav_incomplete" :
+                                Intent incompleteFormIntent = new Intent(context, IncompleteFormsActivity.class);
+                                startActivity(incompleteFormIntent);
+                                break;
+                            case "nav_historical" :
+                                Intent historicalFormIntent = new Intent(context, HistoricalFormsActivity.class);
+                                startActivity(historicalFormIntent);
+                                break;
+                            case "nav_map" :
+                                Intent mapIntent = new Intent(context, MapActivity.class);
+                                startActivity(mapIntent);
+                                break;
+                            default:
+                                break;
+                        }
 
-
-                        // close drawer when item is tapped
                         drawerLayout.closeDrawers();
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
-
 
                         return true;
                     }
