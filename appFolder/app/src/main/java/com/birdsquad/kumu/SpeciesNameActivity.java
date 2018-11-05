@@ -42,8 +42,8 @@ public class SpeciesNameActivity extends AppCompatActivity {
                                 startActivity(historicalFormIntent);
                                 break;
                             case "nav_map" :
-                                Intent mapIntent = new Intent(context, MapActivity.class);
-                                startActivity(mapIntent);
+                                /*Intent mapIntent = new Intent(context, MapActivity.class);
+                                startActivity(mapIntent);*/
                                 break;
                             default:
                                 break;

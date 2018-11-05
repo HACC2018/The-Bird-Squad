@@ -101,4 +101,5 @@
     <string name="population_light_level_partial">% of Plants in Partial Sun</string>
     <string name="population_light_level_partialshade">% of Plants in Partial Shade</string>
     <string name="population_light_level_deepshade">% of Plants in Deep Shade</string>
+    <string name="title_activity_map">Map</string>
 </resources>
