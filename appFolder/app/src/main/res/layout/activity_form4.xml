@@ -23,11 +23,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-            
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/population_data"/>
+                android:text="@string/population_data" />
 
             <Switch
                 android:id="@+id/population_data_switch"
@@ -61,6 +61,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_phenology_vegetative"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -77,6 +78,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_phenology_buds"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -94,6 +96,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_phenology_flower"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -110,6 +113,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_phenology_fruit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -118,7 +122,6 @@
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
-
 
 
                 <TextView
@@ -133,6 +136,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_condition_plants_healthy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -149,6 +153,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_condition_plants_moderate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -165,6 +170,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_condition_plants_poor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -181,6 +187,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_condition_plants_dead"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -189,7 +196,6 @@
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
-
 
 
                 <TextView
@@ -205,6 +211,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_light_level_full"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -222,6 +229,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_light_level_partial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -239,6 +247,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_light_level_partialshade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -249,7 +258,6 @@
                     android:layout_height="10dp" />
 
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -257,6 +265,7 @@
 
 
                 <EditText
+                    android:id="@+id/population_light_level_deepshade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -274,7 +283,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/PopulationDataTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -285,7 +294,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/finish_later_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
