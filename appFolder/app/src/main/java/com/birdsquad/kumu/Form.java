@@ -108,6 +108,10 @@ public class Form {
         this.images = images;
     }
 
+    public void setDate(Date date) {
+        this.dateCreated = date;
+    }
+
     /**
      * Add section 1 fields to the form
      * Missing: location and elevation

@@ -26,6 +26,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ImagesActivity extends AppCompatActivity {
 
@@ -162,6 +163,7 @@ public class ImagesActivity extends AppCompatActivity {
         images.remove(images.size() - 1);
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
+        KumuApp.getAppStorage().getCurrentForm().setDate(new Date());
         startActivity(intent);
     }
 
