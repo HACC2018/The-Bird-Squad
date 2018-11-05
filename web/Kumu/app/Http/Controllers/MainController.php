@@ -39,4 +39,16 @@ class MainController extends Controller
 		}
 		return json_encode($returnSet);
 	}
+
+	//Autocomplete plant name
+	public function AutoCompletePlantName($plantName){
+		$resultSet = DB::select('exec AutoCompletePlantName_Search ?',[$plantName]);
+		$temp = array();
+		foreach($resultSet as $val) {
+			$bit['value'] = $val->PlantName;
+			array_push($temp, $bit);
+		}
+		error_log(json_encode($temp));
+		return json_encode($temp);
+	}
 }

@@ -20,9 +20,19 @@
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin="anonymous"></script>
-		
+		<script src="{{ asset('jqueryui/jquery.easy-autocomplete.js') }}"></script>
+		<link rel="stylesheet" href="{{ asset('jqueryui/easy-autocomplete.css') }}" />
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+
+	<style>
+		.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+		.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+		.autocomplete-selected { background: #F0F0F0; }
+		.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+		.autocomplete-group { padding: 2px 5px; }
+		.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+	</style>
 
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -36,7 +46,7 @@
 		<div id="filters">
 			<div>
 				<label>Search: </label>
-				<input type="text" id="filter_plant" class="filter" placeholder="Plant Name" />
+				<input type="text" id="filter_plant" placeholder="Plant Name (Taxa or Common)"/>
 			</div>
 			<div>
 				<label>Island: </label>
