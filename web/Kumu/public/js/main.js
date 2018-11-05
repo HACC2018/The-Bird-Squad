@@ -1,3 +1,6 @@
+let auto = [];
+let test = ['test'];
+
 var map = L.map('mapid').setView([21.47, -157.98], 8);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	maxZoom: 18,
@@ -15,6 +18,30 @@ function closeImage() {
 //On load
 $(document).ready(function () {
 
+	//Autocomplete
+	var options = {
+
+		url: function (phrase) {
+			return "auto/" + $('#filter_plant').val();
+		},
+
+		getValue: function (element) {
+			return element.value;
+		},
+
+		ajaxSettings: {
+			dataType: "json",
+			method: "GET",
+			data: {
+				dataType: "json"
+			}
+		},
+
+		requestDelay: 400
+	};
+
+	$("#filter_plant").easyAutocomplete(options);
+
 	$('body').on('click', 'a.image_click', function () {
 		$('#largeImageOnClick').html('<img src="' + $(this).find('img').attr('src') + '" /><button onclick="closeImage()">Close Image</button>');
 	});
@@ -28,8 +55,8 @@ $(document).ready(function () {
 
 	let obj = { 'filter_plant': $('#filter_plant').val(), 'filter_island': $('#filter_island').find(':selected').val(), 'filter_plant_age': $('#filter_plant_age').find(':selected').val() };
 	let jsonSend = JSON.stringify(obj);
-
 	console.log(jsonSend);
+
 	//On first load, get markers for all locations
 	$.ajax({
 		type: "POST",
@@ -43,7 +70,6 @@ $(document).ready(function () {
 	$(".filter").change(function () {
 		obj = { 'filter_plant': $('#filter_plant').val(), 'filter_island': $('#filter_island').find(':selected').val(), 'filter_plant_age': $('#filter_plant_age').find(':selected').val() };
 		jsonSend = JSON.stringify(obj);
-
 		markers.clearLayers();
 		e.preventDefault();
 		$.ajax({

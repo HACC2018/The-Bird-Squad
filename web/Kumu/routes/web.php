@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('image/{formID}/{index}', 'ImageController@GetImage');
 
 Route::post('/', 'MainController@RequestReports');
+
+Route::get('auto/{plantName}', 'MainController@AutoCompletePlantName');
