@@ -25,14 +25,7 @@
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-	<style>
-		.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-		.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-		.autocomplete-selected { background: #F0F0F0; }
-		.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-		.autocomplete-group { padding: 2px 5px; }
-		.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
-	</style>
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}"
 
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -44,11 +37,11 @@
 
 		<!-- Filters -->
 		<div id="filters">
-			<div>
+			<div id ="searchBar">
 				<label>Search: </label>
 				<input type="text" id="filter_plant" placeholder="Plant Name (Taxa or Common)"/>
 			</div>
-			<div>
+			<div id ="filterIsland">
 				<label>Island: </label>
 				<select id="filter_island" class="filter">
 					<option value="none">None</option>
@@ -62,7 +55,7 @@
 					<option value="8">Kahoʻolawe</option>
 				</select>
 			</div>
-			<div>
+			<div id="filterPlantAge">
 				<label>Plant Age: </label>
 				<select id="filter_plant_age" class="filter">
 					<option value="any">Any</option>
@@ -70,7 +63,7 @@
 					<option value="seedling">Seedling</option>
 				</select>
 			</div>
-			<div>
+			<div id="filterFedStatus">
 				<label>Federal Status: </label>
 				<select id="filter_fed_status" class="filter">
 					<option value="any">Any</option>
@@ -82,12 +75,12 @@
 
 		<!-- Clicked marker results -->
 		<div id="markerRes">
-			<div id="marker_taxaname"></div>
-			<div id="marker_commonname"></div>
-			<div id="marker_fedstatus"></div>
-			<div id="marker_planttype"></div>
-			<div id="marker_locationnotes"></div>
-			<div id="marker_images"></div>
+			<div id="marker_taxaname">Fake TaxaName</div>
+			<div id="marker_commonname">Fake Common Name</div>
+			<div id="marker_fedstatus">E</div>
+			<div id="marker_planttype">Idk</div>
+			<div id="marker_locationnotes">On top of a rock over there</div>
+			<div id="marker_images"><a class="image_click" href="#"><img src="{{asset('kalo.jpg')}}" /></a></div>
 		</div>
 
 		<!-- Map -->
