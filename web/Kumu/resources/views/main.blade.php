@@ -70,6 +70,24 @@
 					<option value="seedling">Seedling</option>
 				</select>
 			</div>
+			<div>
+				<label>Federal Status: </label>
+				<select id="filter_fed_status" class="filter">
+					<option value="any">Any</option>
+					<option value="e">Endangered</option>
+					<option value="t">Threatened</option>
+				</select>
+			</div>
+		</div>
+
+		<!-- Clicked marker results -->
+		<div id="markerRes">
+			<div id="marker_taxaname"></div>
+			<div id="marker_commonname"></div>
+			<div id="marker_fedstatus"></div>
+			<div id="marker_planttype"></div>
+			<div id="marker_locationnotes"></div>
+			<div id="marker_images"></div>
 		</div>
 
 		<!-- Map -->

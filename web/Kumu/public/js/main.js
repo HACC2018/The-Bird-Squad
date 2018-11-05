@@ -1,6 +1,3 @@
-let auto = [];
-let test = ['test'];
-
 var map = L.map('mapid').setView([21.47, -157.98], 8);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 	maxZoom: 18,
@@ -11,8 +8,17 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 var markers = L.layerGroup().addTo(map);
 
 function closeImage() {
-
 	$('#largeImageOnClick').html('');
+}
+
+function markerClick(e){
+	$('#marker_taxaname').html(e.target.taxaname);
+	$('#marker_commonname').html(e.target.commonname);
+	$('#marker_fedstatus').html(e.target.fedstatus);
+	$('#marker_planttype').html(e.target.planttype);
+	$('#marker_locationnotes').html(e.target.locationnotes);
+	$('#marker_images').html(e.target.imagehtml);
+	console.log(e);
 }
 
 //On load
@@ -53,9 +59,13 @@ $(document).ready(function () {
 		}
 	});
 
-	let obj = { 'filter_plant': $('#filter_plant').val(), 'filter_island': $('#filter_island').find(':selected').val(), 'filter_plant_age': $('#filter_plant_age').find(':selected').val() };
+	let obj = { 
+			'filter_plant': $('#filter_plant').val(), 
+			'filter_island': $('#filter_island').find(':selected').val(), 
+			'filter_plant_age': $('#filter_plant_age').find(':selected').val(), 
+			'filter_fed_status': $('#filter_fed_status').find(':selected').val() 
+		};
 	let jsonSend = JSON.stringify(obj);
-	console.log(jsonSend);
 
 	//On first load, get markers for all locations
 	$.ajax({
@@ -68,10 +78,14 @@ $(document).ready(function () {
 	});
 
 	$(".filter").change(function () {
-		obj = { 'filter_plant': $('#filter_plant').val(), 'filter_island': $('#filter_island').find(':selected').val(), 'filter_plant_age': $('#filter_plant_age').find(':selected').val() };
+		obj = {
+			'filter_plant': $('#filter_plant').val(),
+			'filter_island': $('#filter_island').find(':selected').val(),
+			'filter_plant_age': $('#filter_plant_age').find(':selected').val(),
+			'filter_fed_status': $('#filter_fed_status').find(':selected').val()
+		};
 		jsonSend = JSON.stringify(obj);
 		markers.clearLayers();
-		e.preventDefault();
 		$.ajax({
 			type: "POST",
 			url: '/',
@@ -115,31 +129,29 @@ $(document).ready(function () {
 							imageHTML += '</div>';
 
 							let commonName = jsonGet[ind].CommonName;
-							let plantType = '<strong>Plant Type</strong>: ' + jsonGet[ind].PlantType;
+							let plantType = jsonGet[ind].PlantType;
 							let locationNotes = jsonGet[ind].LocationNotes;
 							let fedStatus = jsonGet[ind].FedStatus;
 							if(!commonName) {
 								commonName = 'No common name';
-							} else {
-								commonName = '<strong>Common Name</strong>: ' + commonName;
 							}
 							if(!fedStatus){
 								fedStatus = 'Non-endangered or not reported';
-							} else {
-								fedStatus = '<strong>Fed Status</strong>: ' + fedStatus;
 							}
 							if(!locationNotes){
 								locationNotes = 'No location notes';
-							} else {
-								locationNotes = '<strong>Location Notes</strong>:<br>' + locationNotes;
 							}
 
-							L.marker([lat, long]).addTo(markers)
-								.bindPopup('<font size="5"><strong>' + jsonGet[ind].TaxaName + '</strong></font><br>' +
-									'<font size="3">' + commonName + '</font><br><font size="2">' +
-									fedStatus + '<br>' +
-									plantType + '<br>' + 
-									locationNotes + '</font><br>' + imageHTML);
+							let marker = L.marker([lat, long]);
+							marker.taxaname = jsonGet[ind].TaxaName;
+							marker.fedstatus = fedStatus;
+							marker.commonname = commonName;
+							marker.planttype = plantType;
+							marker.locationnotes = locationNotes;
+							marker.imagehtml = imageHTML;
+							marker.on('click', markerClick);
+
+							marker.addTo(markers);
 						}
 					}
 				});
