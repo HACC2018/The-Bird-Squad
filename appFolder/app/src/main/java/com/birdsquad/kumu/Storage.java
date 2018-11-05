@@ -62,4 +62,33 @@ public class Storage {
         return unsyncedCompletedForms;
     }
 
+    public ArrayList<Form> getUnfinishedForms(){
+        ArrayList<Form> unfin = new ArrayList<Form>();
+        for(Form f : forms){
+            if(!f.isFinished) {
+                unfin.add(f);
+            }
+        }
+        return unfin;
+    }
+
+    public ArrayList<Form> getCompletedForms(){
+        ArrayList<Form> comp = new ArrayList<Form>();
+        for(Form f : forms){
+            if(f.isFinished){
+                comp.add(f);
+            }
+        }
+        return comp;
+    }
+
+    public void saveForms(){
+        //If the currentForm isn't added to form list, add it
+        if(!forms.contains(currentForm))
+            forms.add(currentForm);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(KumuApp.getInstance());
+        preferences.edit().putString("json", new Gson().toJson(forms));
+        preferences.edit().commit();
+    }
+
 }
