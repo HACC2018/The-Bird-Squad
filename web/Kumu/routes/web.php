@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+//{index} refers to the index in the for loop originating from the first ajax call when filtering
+Route::get('image/{formID}/{index}', 'ImageController@GetImage');
+
+Route::post('/', 'MainController@RequestReports');
+
+Route::get('auto/{plantName}', 'MainController@AutoCompletePlantName');
