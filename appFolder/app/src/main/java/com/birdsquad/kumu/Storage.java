@@ -87,8 +87,9 @@ public class Storage {
         if(!forms.contains(currentForm))
             forms.add(currentForm);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(KumuApp.getInstance());
-        preferences.edit().putString("json", new Gson().toJson(forms));
-        preferences.edit().commit();
+        SharedPreferences.Editor ed = preferences.edit();
+        ed.putString("json", new Gson().toJson(forms));
+        ed.commit();
     }
 
 }
