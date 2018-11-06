@@ -165,6 +165,7 @@ public class ImagesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
         KumuApp.getAppStorage().getCurrentForm().setDate(new Date());
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 

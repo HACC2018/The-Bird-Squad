@@ -32,6 +32,7 @@ public class SpeciesNameActivity extends BaseActivity {
         String speciesName = editText.getText().toString();
         Form newForm = new Form(speciesName);
         KumuApp.getAppStorage().insertForm(newForm);
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 
