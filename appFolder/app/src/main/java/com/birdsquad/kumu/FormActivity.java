@@ -4,17 +4,23 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class FormActivity extends AppCompatActivity {
+public class FormActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
         setFields();
+        super.onCreateDrawer();
+
+        String[] taxaNames = getResources().getStringArray(R.array.autocomplete_taxaname);
+        ((AutoCompleteTextView)findViewById(R.id.taxonNameBox)).setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taxaNames));
     }
 
     /**
@@ -24,7 +30,7 @@ public class FormActivity extends AppCompatActivity {
     public void goToSection2(View view) {
         // check all fields and submit to current form
         Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
-        EditText tNameBox = (EditText) findViewById(R.id.taxonNameBox);
+        AutoCompleteTextView tNameBox = (AutoCompleteTextView) findViewById(R.id.taxonNameBox);
         EditText obsBox = (EditText) findViewById(R.id.observerNameBox);
         EditText orgBox = (EditText) findViewById(R.id.orgNameBox);
         Spinner islSpinner = (Spinner) findViewById(R.id.islandDropdown);
@@ -61,7 +67,7 @@ public class FormActivity extends AppCompatActivity {
     public void finishLaterSection1(View view) {
 
         Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
-        EditText tNameBox = (EditText) findViewById(R.id.taxonNameBox);
+        AutoCompleteTextView tNameBox = (AutoCompleteTextView) findViewById(R.id.taxonNameBox);
         EditText obsBox = (EditText) findViewById(R.id.observerNameBox);
         EditText orgBox = (EditText) findViewById(R.id.orgNameBox);
         Spinner islSpinner = (Spinner) findViewById(R.id.islandDropdown);
@@ -103,7 +109,7 @@ public class FormActivity extends AppCompatActivity {
      */
     public void setFields() {
         Spinner woSpinner = (Spinner) findViewById(R.id.wildOutplantedDropdown);
-        EditText tNameBox = (EditText) findViewById(R.id.taxonNameBox);
+        AutoCompleteTextView tNameBox = (AutoCompleteTextView) findViewById(R.id.taxonNameBox);
         EditText obsBox = (EditText) findViewById(R.id.observerNameBox);
         EditText orgBox = (EditText) findViewById(R.id.orgNameBox);
         Spinner islSpinner = (Spinner) findViewById(R.id.islandDropdown);

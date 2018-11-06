@@ -29,6 +29,10 @@ public class BaseActivity extends AppCompatActivity {
 
                         int id = menuItem.getItemId();
                         switch (getResources().getResourceEntryName(id)) {
+                            case "nav_current" :
+                                Intent currentFormIntent = new Intent(context, SpeciesNameActivity.class);
+                                startActivity(currentFormIntent);
+                                break;
                             case "nav_incomplete" :
                                 Intent incompleteFormIntent = new Intent(context, IncompleteFormsActivity.class);
                                 startActivity(incompleteFormIntent);

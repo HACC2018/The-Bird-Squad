@@ -14,12 +14,13 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class FormActivity2 extends AppCompatActivity {
+public class FormActivity2 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form2);
+        super.onCreateDrawer();
 
         Switch enterPopulationStructure = (Switch) findViewById(R.id.enterPopStrucSwitch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.population_structure_layout);

@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ImagesActivity extends AppCompatActivity {
+public class ImagesActivity extends BaseActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -82,6 +83,8 @@ public class ImagesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
+        super.onCreateDrawer();
+
         this.images = new ArrayList<Photo>();
         // set first image to + icon
         Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
@@ -141,6 +144,12 @@ public class ImagesActivity extends AppCompatActivity {
                                     Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
                                     thisLocation = location;
                                     newPhoto.setLocation(thisLocation);
+                                    
+                                    images.add(0, newPhoto);
+                                    final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+                                    ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
+                                } else {
+                                    Log.d("MapDemoActivity", "Location turned null");
                                 }
                             }
                         })
@@ -151,12 +160,10 @@ public class ImagesActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         });
-
+            } else {
+                Snackbar errorMessage = Snackbar.make(findViewById(R.id.mainLoginConstraintLayout), "Please enable location services", Snackbar.LENGTH_LONG);
+                errorMessage.show();
             }
-
-            images.add(0, newPhoto);
-            final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-            ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
         }
     }
 
@@ -165,6 +172,23 @@ public class ImagesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
         KumuApp.getAppStorage().getCurrentForm().setDate(new Date());
+
+        /* If location or images are null, it means things stay broke so uncomment this to debug
+        Log.d("testtest", "" + KumuApp.getAppStorage().getCurrentForm().images.size());
+        Log.d("testtest", KumuApp.getAppStorage().getForms().size() + " forms");
+        for(Photo p : KumuApp.getAppStorage().getCurrentForm().images){
+            Log.d("testtest", p.getLocation().getLatitude() + " " + p.getLocation().getLongitude());
+        }
+
+        for(Form f : KumuApp.getAppStorage().getForms()){
+            if(f.equals(KumuApp.getAppStorage().getCurrentForm())){
+                Log.d("testtest", "reee");
+            }
+            for(Photo p : f.images){
+                Log.d("testtest2", p.getLocation().getLatitude() + " " + p.getLocation().getLongitude());
+            }
+        }*/
+
         KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
