@@ -35,6 +35,7 @@ public class SpeciesNameActivity extends BaseActivity {
         Form newForm = new Form(speciesName);
         newForm.setDate(Calendar.getInstance().getTime());
         KumuApp.getAppStorage().insertForm(newForm);
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 

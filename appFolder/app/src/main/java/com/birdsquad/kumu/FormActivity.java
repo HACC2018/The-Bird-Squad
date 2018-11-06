@@ -52,6 +52,8 @@ public class FormActivity extends AppCompatActivity {
                 locNotes
         );
 
+        KumuApp.getAppStorage().saveForms();
+
         Intent intent = new Intent(this, FormActivity2.class);
         startActivity(intent);
     }
@@ -86,6 +88,8 @@ public class FormActivity extends AppCompatActivity {
                 rSite,
                 locNotes
         );
+
+        KumuApp.getAppStorage().saveForms();
 
         Toast.makeText(FormActivity.this, "Form saved for later.",
                 Toast.LENGTH_SHORT).show();

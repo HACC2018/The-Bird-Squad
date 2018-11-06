@@ -117,6 +117,7 @@ public class FormActivity3 extends AppCompatActivity {
                         amtAirNum,
                         amtFlowersNum
                 );
+                KumuApp.getAppStorage().saveForms();
                 Intent intent = new Intent(this, FormActivity4.class);
                 startActivity(intent);
             }
@@ -127,6 +128,7 @@ public class FormActivity3 extends AppCompatActivity {
         }
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
+            KumuApp.getAppStorage().saveForms();
             Intent intent = new Intent(this, FormActivity4.class);
             startActivity(intent);
         }
@@ -200,6 +202,7 @@ public class FormActivity3 extends AppCompatActivity {
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
         }
+        KumuApp.getAppStorage().saveForms();
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
         Toast.makeText(FormActivity3.this, "Form saved for later.",

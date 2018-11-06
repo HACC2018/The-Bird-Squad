@@ -187,6 +187,7 @@ public class ImagesActivity extends AppCompatActivity {
             }
         }*/
 
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 
