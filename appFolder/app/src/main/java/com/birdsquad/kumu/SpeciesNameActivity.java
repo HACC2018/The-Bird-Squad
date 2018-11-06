@@ -12,49 +12,13 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class SpeciesNameActivity extends AppCompatActivity {
-
-    private DrawerLayout drawerLayout;
-    private SpeciesNameActivity context = this;
-
+public class SpeciesNameActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_species_name);
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-
-                        int id = menuItem.getItemId();
-                        switch (getResources().getResourceEntryName(id)) {
-                            case "nav_incomplete" :
-                                Intent incompleteFormIntent = new Intent(context, IncompleteFormsActivity.class);
-                                startActivity(incompleteFormIntent);
-                                break;
-                            case "nav_historical" :
-                                Intent historicalFormIntent = new Intent(context, HistoricalFormsActivity.class);
-                                startActivity(historicalFormIntent);
-                                break;
-                            case "nav_map" :
-                                Intent mapIntent = new Intent(context, MapActivity.class);
-                                startActivity(mapIntent);
-                                break;
-                            default:
-                                break;
-                        }
-
-                        drawerLayout.closeDrawers();
-
-                        return true;
-                    }
-                });
-
+        super.onCreateDrawer();
     }
 
     /**
@@ -68,10 +32,8 @@ public class SpeciesNameActivity extends AppCompatActivity {
         String speciesName = editText.getText().toString();
         Form newForm = new Form(speciesName);
         KumuApp.getAppStorage().insertForm(newForm);
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 
-    public void openDrawer(View view) {
-        drawerLayout.openDrawer(GravityCompat.START);
-    }
 }

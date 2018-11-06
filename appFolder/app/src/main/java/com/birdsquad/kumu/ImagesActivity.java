@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -128,7 +129,7 @@ public class ImagesActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
 
-            Photo newPhoto = new Photo(imageBitmap);
+            final Photo newPhoto = new Photo(imageBitmap);
 
             if (locationEnabled) {
                 mFusedLocationClient.getLastLocation()
@@ -138,8 +139,15 @@ public class ImagesActivity extends AppCompatActivity {
                                 Log.d("MapDemoActivity", "No error");
                                 // Got last known location. In some rare situations this can be null.
                                 if (location != null) {
-                                    Log.d("MapDemoActivity", location.getLatitude() + "");
+                                    Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
                                     thisLocation = location;
+                                    newPhoto.setLocation(thisLocation);
+                                    
+                                    images.add(0, newPhoto);
+                                    final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+                                    ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
+                                } else {
+                                    Log.d("MapDemoActivity", "Location turned null");
                                 }
                             }
                         })
@@ -150,12 +158,10 @@ public class ImagesActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         });
-                newPhoto.setLocation(thisLocation);
+            } else {
+                Snackbar errorMessage = Snackbar.make(findViewById(R.id.mainLoginConstraintLayout), "Please enable location services", Snackbar.LENGTH_LONG);
+                errorMessage.show();
             }
-
-            images.add(0, newPhoto);
-            final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-            ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
         }
     }
 
@@ -164,6 +170,24 @@ public class ImagesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
         KumuApp.getAppStorage().getCurrentForm().setDate(new Date());
+
+        /* If location or images are null, it means things stay broke so uncomment this to debug
+        Log.d("testtest", "" + KumuApp.getAppStorage().getCurrentForm().images.size());
+        Log.d("testtest", KumuApp.getAppStorage().getForms().size() + " forms");
+        for(Photo p : KumuApp.getAppStorage().getCurrentForm().images){
+            Log.d("testtest", p.getLocation().getLatitude() + " " + p.getLocation().getLongitude());
+        }
+
+        for(Form f : KumuApp.getAppStorage().getForms()){
+            if(f.equals(KumuApp.getAppStorage().getCurrentForm())){
+                Log.d("testtest", "reee");
+            }
+            for(Photo p : f.images){
+                Log.d("testtest2", p.getLocation().getLatitude() + " " + p.getLocation().getLongitude());
+            }
+        }*/
+
+        KumuApp.getAppStorage().saveForms();
         startActivity(intent);
     }
 

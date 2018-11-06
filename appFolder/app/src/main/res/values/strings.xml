@@ -145,4 +145,7 @@
     </string-array>
     <string name="threats_notes">Threat and Management Notes</string>
     
+    <string name="title_activity_map">Map</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

@@ -9,6 +9,7 @@ public class Form {
 
     public String speciesName;
     public boolean isFinished = false;
+    public boolean isSynced = false;
     public Date dateCreated;
     // Section 1
     public String wildOrOutplanted;
