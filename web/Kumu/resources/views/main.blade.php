@@ -88,14 +88,17 @@
 				<!-- Clicked marker results -->
 				<div id="markerRes">
 				
-					<div id="marker_images"><a class="image_click" href="#"><img id="myImg" src="{{asset('kalo.jpg')}}" /></a></div>
-					<div id="marker_taxaname">TaxaName</div>
-
-					<div id="marker_commonname">Commonname</div>
-					<div id="marker_fedstatus">Endangered</div>
-					<div id="marker_planttype">Planttype</div>
-					<div id="marker_locationnotes">Locationnotes</div>
-					<div><p><?php include('lipsum.txt'); ?></p></div>
+					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic" src="{{asset('kalo.jpg')}}" /></a></div>
+					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
+					<div class= "markerLabel" > Common Name </div>
+					<div id="marker_commonname" class= "markerValue" >Taro, Kalo</div>
+					<div class= "markerLabel" > Federal Status </div>
+					<div id="marker_fedstatus" class= "markerValue" >Endangered</div>
+					<div class= "markerLabel" > Plant Type </div>
+					<div id="marker_planttype" class= "markerValue" >Root Vegetables</div>
+					<div class= "markerLabel" > Location Notes </div>
+					<div id="marker_locationnotes" class= "markerValue" >Grown in ground</div>
+					<div  class= "markerValue"><p><?php include('lipsum.txt'); ?></p></div>
 				</div>
 			</div>
 		</div>
