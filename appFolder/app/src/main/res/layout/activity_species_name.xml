@@ -19,6 +19,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -27,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.676" />
 
     <Button
         android:id="@+id/button"
@@ -37,11 +38,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="50dp"
         android:onClick="goToNext"
         android:text="@string/next_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speciesNameBox" />
+        app:layout_constraintTop_toBottomOf="@+id/speciesNameBox"
+        app:layout_constraintVertical_bias="0.736" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
@@ -61,7 +66,7 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="84dp"
+            android:layout_height="79dp"
             android:layout_marginBottom="44dp"
             android:text="@string/step_1"
             android:textSize="18sp"
@@ -82,7 +87,7 @@
         android:id="@+id/imageView2"
         android:layout_width="138dp"
         android:layout_height="117dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="32dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
