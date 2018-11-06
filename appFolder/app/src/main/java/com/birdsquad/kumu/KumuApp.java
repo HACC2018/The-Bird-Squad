@@ -5,7 +5,8 @@ import android.util.Log;
 
 public class KumuApp extends Application {
 
-    public static String URLToServerPostForms = "192.168.2.2:8000/api";
+    public static String URLToServerPostForms = "http://192.168.2.2:8000/api";
+    public static String URLToServerPostImage = "http://192.168.2.2:8000/apiImage";
 
     private static KumuApp singleton;
     private static Storage appStorage;

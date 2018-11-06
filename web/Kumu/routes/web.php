@@ -24,4 +24,6 @@ Route::get('auto/{plantName}', 'MainController@AutoCompletePlantName');
 
 Route::post('api', 'ApiController@FormInsert');
 
+Route::post('apiImage', 'ApiController@ImageInsert');
+
 ?>

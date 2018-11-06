@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class ApiController extends Controller
 {
+	public function ImageInsert(Request $request){
+		error_log(var_dump($request));
+	}
+
     //Filter with post
 	public function FormInsert(Request $request){
         $form = new \stdClass();
@@ -349,7 +355,7 @@ class ApiController extends Controller
 			$form->percentVegative,
 			$form->percentBuds,
 			$form->percentFlower,
-			$form->percentImmatureFlower,
+			$form->percentImmatureFruit,
 			$form->percentMatureFruit,
 			$form->percentHealthy,
 			$form->percentModerate,
@@ -361,7 +367,7 @@ class ApiController extends Controller
 			$form->observatoryClosure,
 			$form->observatoryHeight,
 			$form->understoryClosure,
-			$form->soilDranage,
+			$form->soilDrainage,
 			$form->topography,
 			$form->aspect,
 			$form->assocObsSpecies,
@@ -370,5 +376,12 @@ class ApiController extends Controller
 			$form->threats,
 			$form->threatManagementNotes
 		]);
+		
+		if($resultSet[0]->status == 'true'){
+			return $resultSet[0]->FormID;
+		} else {
+			return 'error';
+		}
+
     }
 }
