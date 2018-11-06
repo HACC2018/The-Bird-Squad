@@ -26,7 +26,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,47 +84,63 @@ public class SplashScreenActivity extends Activity {
             if(KumuApp.getAppStorage() == null){
                 Log.d("StorageDebug", "Storage is null");
             }
+            //Wait for init
+            while(KumuApp.getAppStorage() == null){}
 
             final ArrayList<Form> forms = KumuApp.getAppStorage().getFormsToSync();
 
             if(forms.size() > 0){
                 Log.d("PostToServer", "There exists unsychronized forms");
-                final String formsJson = new Gson().toJson(forms);
 
-                RequestQueue queue = Volley.newRequestQueue(this);
-                String url = KumuApp.URLToServerPostForms;
+                for(int i = 0; i<forms.size(); i++){
+                    final Form f = forms.get(i);
+                    final int tempI = i;
+                    final ArrayList<Photo> imagesCache = f.images;
+                    f.images = null;
+                    final String formsJson = new Gson().toJson(f);
+                    Log.d("PostToServer", formsJson);
+                    RequestQueue queue = Volley.newRequestQueue(this);
+                    String url = KumuApp.URLToServerPostForms;
 
-                // Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                // Display the first 500 characters of the response string.
-                                Log.d("PostToServer", "SUCCESS: " + response);
+                    // Request a string response from the provided URL.
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    // Display the first 500 characters of the response string.
+                                    Log.d("PostToServer", "SUCCESS: " + response);
 
-                                try{
-                                    int ind = Integer.parseInt(response);
-                                    forms.get(ind).isSynced = true;
-                                } catch(NumberFormatException e){
-                                    Log.d("PostToServer", "FAILED TO PARSE RESPONSE! Returned response should be a number corresponding to the index of the json array that was successful");
+                                    try{
+                                        int formID = Integer.parseInt(response);
+                                        for(int i = 0; i<imagesCache.size(); i++){
+                                            new UploadFile(imagesCache.get(i).getPhoto(), imagesCache.get(i).getLocation(), formID, getApplicationContext()).execute();
+                                        }
+
+                                        f.isSynced = true;
+                                    } catch(NumberFormatException e){
+                                        Log.d("PostToServer", "FAILED TO PARSE RESPONSE! Returned response should be a number corresponding to the index of the json array that was successful");
+                                    }
                                 }
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("PostToServer", "Error posting json to server: " + error.getMessage());
-                    }
-                }){
-                    @Override
-                    protected Map<String, String> getParams(){
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("json", formsJson);
-                        return params;
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.d("PostToServer", "Error posting json to server: " + error.getMessage());
+                        }
+                    }){
+                        @Override
+                        protected Map<String, String> getParams(){
+                            Map<String, String> params = new HashMap<String, String>();
+                            params.put("json", formsJson);
+                            return params;
 
-                    }
-                };
-                // Add the request to the RequestQueue.
-                queue.add(stringRequest);
+                        }
+                    };
+                    // Add the request to the RequestQueue.
+                    stringRequest.setShouldCache(false);
+                    queue.add(stringRequest);
+                    f.images = imagesCache;
+                    KumuApp.getAppStorage().saveForms();
+                }
 
             } else {
                 Log.d("PostToServer", "No forms to sync");

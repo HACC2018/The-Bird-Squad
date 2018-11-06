@@ -26,6 +26,12 @@ public class Storage {
         if(jsonForms != null){
             Log.d("StorageDebug", "Not null, it is: " + jsonForms);
             this.forms = new Gson().fromJson(jsonForms, new TypeToken<ArrayList<Form>>(){}.getType());
+            //Let's see if images exist on any of these
+            for(Form f : forms){
+                if(f.images != null){
+                    Log.d("StorageDebug", "Not null image: " + f.images.size());
+                }
+            }
         }
     }
 
