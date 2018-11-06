@@ -139,7 +139,7 @@ public class ImagesActivity extends AppCompatActivity {
                                 Log.d("MapDemoActivity", "No error");
                                 // Got last known location. In some rare situations this can be null.
                                 if (location != null) {
-                                    Log.d("MapDemoActivity", location.getLatitude() + "");
+                                    Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
                                     thisLocation = location;
                                     newPhoto.setLocation(thisLocation);
                                     
