@@ -21,7 +21,7 @@ public class SpeciesNameActivity extends BaseActivity {
         super.onCreateDrawer();
 
         String[] taxaNames = getResources().getStringArray(R.array.autocomplete_taxaname);
-        ((AutoCompleteTextView)findViewById(R.id.editText2)).setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taxaNames));
+        ((AutoCompleteTextView)findViewById(R.id.speciesNameBox)).setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taxaNames));
     }
 
     /**
