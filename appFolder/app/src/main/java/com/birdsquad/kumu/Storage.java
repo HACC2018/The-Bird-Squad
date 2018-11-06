@@ -47,6 +47,11 @@ public class Storage {
         return currentForm;
     }
 
+    public void setCurrentForm(Form f){
+        currentForm = f;
+        Log.d("StorageDebug", "Set current form " + currentForm.speciesName);
+    }
+
     /**
      *  Makes a json of forms array list
      */
@@ -66,6 +71,7 @@ public class Storage {
 
     public ArrayList<Form> getUnfinishedForms(){
         ArrayList<Form> unfin = new ArrayList<Form>();
+        Log.d("StorageDebug", forms.size() + " there are this many forms");
         for(Form f : forms){
             if(!f.isFinished) {
                 unfin.add(f);
@@ -85,9 +91,6 @@ public class Storage {
     }
 
     public void saveForms(){
-        //If the currentForm isn't added to form list, add it
-        if(!forms.contains(currentForm))
-            forms.add(currentForm);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(KumuApp.getInstance());
         SharedPreferences.Editor ed = preferences.edit();
         ed.putString("json", new Gson().toJson(forms));

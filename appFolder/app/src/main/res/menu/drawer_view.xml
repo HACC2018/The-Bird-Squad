@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_current"
+            android:icon="@drawable/form"
+            android:title="Current Form" />
+
+        <item
             android:id="@+id/nav_incomplete"
             android:icon="@drawable/incomplete_icon"
             android:title="Incomplete Forms" />
