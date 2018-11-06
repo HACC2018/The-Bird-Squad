@@ -80,6 +80,7 @@ public class FormActivity2 extends AppCompatActivity {
                         numSeedlings,
                         currentCensus
                 );
+                KumuApp.getAppStorage().saveForms();
                 Intent intent = new Intent(this, FormActivity3.class);
                 startActivity(intent);
             }
@@ -90,6 +91,7 @@ public class FormActivity2 extends AppCompatActivity {
         }
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportPopulationStructure(false);
+            KumuApp.getAppStorage().saveForms();
             Intent intent = new Intent(this, FormActivity3.class);
             startActivity(intent);
         }
@@ -129,6 +131,9 @@ public class FormActivity2 extends AppCompatActivity {
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportPopulationStructure(false);
         }
+
+        KumuApp.getAppStorage().saveForms();
+
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
         Toast.makeText(FormActivity2.this, "Form saved for later.",
