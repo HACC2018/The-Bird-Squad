@@ -7,7 +7,6 @@ import java.util.Date;
 
 public class Form {
 
-    public String speciesName;
     public boolean isFinished = false;
     public boolean isSynced = false;
     public Date dateCreated;
@@ -101,7 +100,7 @@ public class Form {
      * @param speciesName the rare plant species name input by the user on SpeciesNameActivity
      */
     public Form(String speciesName) {
-        this.speciesName = speciesName;
+        this.taxonName = speciesName;
     }
 
 

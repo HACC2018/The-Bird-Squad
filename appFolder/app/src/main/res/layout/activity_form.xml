@@ -58,7 +58,7 @@
                 tools:layout_editor_absoluteX="42dp"
                 tools:layout_editor_absoluteY="107dp" />
 
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/taxonNameBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

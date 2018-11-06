@@ -52,7 +52,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         mMap = googleMap;
         ArrayList<Form> myForms = KumuApp.getAppStorage().getForms(); // will change to completed forms later
         for (Form form : myForms) {
-            String formName = form.speciesName;
+            String formName = form.taxonName;
             Date formDate = form.dateCreated;
             if (form.reportIndividualPlant) {
                 if (form.images != null) {

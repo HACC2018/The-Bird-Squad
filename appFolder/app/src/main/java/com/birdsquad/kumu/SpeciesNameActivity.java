@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 import java.util.Calendar;
@@ -21,6 +23,9 @@ public class SpeciesNameActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_species_name);
         super.onCreateDrawer();
+
+        String[] taxaNames = getResources().getStringArray(R.array.autocomplete_taxaname);
+        ((AutoCompleteTextView)findViewById(R.id.editText2)).setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taxaNames));
     }
 
     /**
@@ -30,7 +35,7 @@ public class SpeciesNameActivity extends BaseActivity {
      */
     public void goToNext(View view) {
         Intent intent = new Intent(this, ImagesActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText2);
+        AutoCompleteTextView editText = (AutoCompleteTextView) findViewById(R.id.editText2);
         String speciesName = editText.getText().toString();
         Form newForm = new Form(speciesName);
         newForm.setDate(Calendar.getInstance().getTime());

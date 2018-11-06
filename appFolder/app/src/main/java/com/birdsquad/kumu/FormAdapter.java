@@ -54,7 +54,7 @@ public class FormAdapter extends ArrayAdapter<Form> {
 
 
 
-            holder.display_speciesname.setText(forms.get(position).speciesName);
+            holder.display_speciesname.setText(forms.get(position).taxonName);
             holder.display_datetime.setText(forms.get(position).dateCreated.toString());
 
 

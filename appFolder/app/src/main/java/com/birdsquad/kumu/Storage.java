@@ -49,7 +49,7 @@ public class Storage {
 
     public void setCurrentForm(Form f){
         currentForm = f;
-        Log.d("StorageDebug", "Set current form " + currentForm.speciesName);
+        Log.d("StorageDebug", "Set current form " + currentForm.taxonName);
     }
 
     /**
