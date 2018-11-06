@@ -53,7 +53,151 @@
                 android:id="@+id/habitat_characteristics_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Observatory Closure" />
+
+                <Spinner
+                    android:id="@+id/obsClosureDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/observatory_closures" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Observatory Height" />
+
+                <Spinner
+                    android:id="@+id/obsHeightDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/observatory_heights" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Understory Closure" />
+
+                <Spinner
+                    android:id="@+id/undClosureDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/understory_closures" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Drainage" />
+
+                <Spinner
+                    android:id="@+id/soilDrainageDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/soil_drainage" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Topography" />
+
+                <Spinner
+                    android:id="@+id/topographyDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/topography" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aspect" />
+
+                <Spinner
+                    android:id="@+id/aspectDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/aspect" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Associated Observatory Species (Six/nine-letter code)" />
+
+                <EditText
+                    android:id="@+id/assocObsSpeciesBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Associated Understory Species" />
+
+                <EditText
+                    android:id="@+id/assocUndSpeciesBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Substrate" />
+
+                <Spinner
+                    android:id="@+id/substrateDropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:entries="@array/substrate" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
