@@ -1,5 +1,6 @@
 package com.birdsquad.kumu;
 
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -56,12 +58,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             Date formDate = form.dateCreated;
             if (form.images != null) {
                 Location formLocation = form.images.get(0).getLocation();
+                Bitmap image = form.images.get(0).getPhoto();
                 if (formLocation != null) {
                     Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
                     LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
                     mMap.addMarker(new MarkerOptions()
                             .position(coordinates)
-                            .title(formName + " " + formDate.toString()));
+                            .title(formName + " " + formDate.toString())
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.kumu_map_icon)));
                 }
             }
         }
