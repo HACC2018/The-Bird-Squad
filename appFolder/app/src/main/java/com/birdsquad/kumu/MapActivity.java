@@ -1,5 +1,6 @@
 package com.birdsquad.kumu;
 
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -22,6 +26,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // For testing
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -44,6 +50,33 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     public void onMapReady(GoogleMap googleMap) {
         Log.d("GoogleMapActivity", "The map was found to be ready");
         mMap = googleMap;
+        ArrayList<Form> myForms = KumuApp.getAppStorage().getForms(); // will change to completed forms later
+        for (Form form : myForms) {
+            String formName = form.speciesName;
+            Date formDate = form.dateCreated;
+            if (form.reportIndividualPlant) {
+                Location formLocation = form.images.get(0).getLocation();
+                if (formLocation != null) {
+                    Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
+                    LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
+                    mMap.addMarker(new MarkerOptions()
+                        .position(coordinates)
+                        .title(formName + " " + formDate.toString()));
+                }
+            }
+            else {
+                for (Photo photo : form.images) {
+                    Location photoLocation = photo.getLocation();
+                    if (photoLocation != null) {
+                        Log.d("MappingForms", "The location was found as " + photoLocation.getLatitude() + ", " + photoLocation.getLongitude());
+                        LatLng coordinates = new LatLng(photoLocation.getLatitude(), photoLocation.getLongitude());
+                        mMap.addMarker(new MarkerOptions()
+                                .position(coordinates)
+                                .title(formName + " image " + formDate.toString()));
+                    }
+                }
+            }
+        }
 
         /*
         // Add a marker in Sydney and move the camera
@@ -60,7 +93,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .title("Sydney"));
 */
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(HAWAII.getCenter(), 10));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(HAWAII, 0));
 
 
 
