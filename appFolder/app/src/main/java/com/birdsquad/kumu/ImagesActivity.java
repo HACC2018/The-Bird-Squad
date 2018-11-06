@@ -128,7 +128,7 @@ public class ImagesActivity extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
 
-            Photo newPhoto = new Photo(imageBitmap);
+            final Photo newPhoto = new Photo(imageBitmap);
 
             if (locationEnabled) {
                 mFusedLocationClient.getLastLocation()
@@ -140,6 +140,7 @@ public class ImagesActivity extends AppCompatActivity {
                                 if (location != null) {
                                     Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
                                     thisLocation = location;
+                                    newPhoto.setLocation(thisLocation);
                                 }
                             }
                         })
@@ -150,7 +151,7 @@ public class ImagesActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         });
-                newPhoto.setLocation(thisLocation);
+
             }
 
             images.add(0, newPhoto);
