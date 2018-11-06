@@ -13,12 +13,13 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class FormActivity4 extends AppCompatActivity {
+public class FormActivity4 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form4);
+        super.onCreateDrawer();
 
         Switch enterPopulation = (Switch) findViewById(R.id.population_data_switch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.population_data_layout);

@@ -9,12 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class FormActivity6 extends AppCompatActivity {
+public class FormActivity6 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form6);
+        super.onCreateDrawer();
 
         Switch enterThreats = (Switch) findViewById(R.id.threat_switch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.threat_layout);

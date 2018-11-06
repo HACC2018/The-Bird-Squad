@@ -8,13 +8,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class FormActivity extends AppCompatActivity {
+public class FormActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
         setFields();
+        super.onCreateDrawer();
     }
 
     /**
