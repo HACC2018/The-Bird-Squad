@@ -125,7 +125,7 @@ $(document).ready(function () {
 							for (var k in images) {
 								var image = images[k].ImageName;
 								if (typeof image !== 'undefined') {
-									imageHTML += '<a class="image_click" href="#"><img src="' + base_url + images[k].ImageName + '" style="width:100px;" /></a>';
+									imageHTML += '<a class="image_click" href="#"><img class="circlePic" src="' + base_url + images[k].ImageName + '" style="width:100px;" /></a>';
 								}
 							}
 							imageHTML += '</div>';

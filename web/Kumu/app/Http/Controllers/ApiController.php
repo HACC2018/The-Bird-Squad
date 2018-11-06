@@ -11,25 +11,18 @@ use Log;
 class ApiController extends Controller
 {
 	public function ImageInsert(Request $request){
-		ini_set('log_errors_max_len', 0);
-		Log::info(print_r($request->post(), true));
-
 		$image = $request->image;
 
-		Log::info(print_r($image, true));
 		$imageName = time().'.'.$image->getClientOriginalName();
-		Log::info(print_r('image name ' . $imageName, true));
 		
-		Image::make($image->getRealPath())->resize(350, 350)->save( public_path('/' . $imageName ) );
+		Image::make($image->getRealPath())->save( public_path('/' . $imageName ) );
 
-		Log::info('here4');
 		$resultSet = DB::select('exec ImageInsert_proc ?,?,?,?', [
 			$request->formid,
 			$imageName,
 			$request->latitude,
 			$request->longitude
 		]);
-		Log::info('here5');
 
 		return $resultSet[0]->status;
 	}
