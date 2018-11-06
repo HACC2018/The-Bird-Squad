@@ -9,7 +9,16 @@ use DB;
 class ApiController extends Controller
 {
 	public function ImageInsert(Request $request){
-		error_log(var_dump($request));
+		$imageName = time().'.'.$request->image->getClientOriginalExtension();
+		$request->image->move(public_path('/'), $imageName);
+		$resultSet = DB::select('exec FormInsert_proc ?,?,?,?', [
+			$request->formid,
+			$imageName,
+			$request->latitude,
+			$request->longitude
+		];
+
+		return $resultSet[0]->status;
 	}
 
     //Filter with post
