@@ -88,7 +88,7 @@
 				<!-- Clicked marker results -->
 				<div id="markerRes">
 				
-					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic" src="{{asset('kalo.jpg')}}" /></a></div>
+					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('kalo.jpg')}}"/></a></div>
 					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
 					<div class= "markerLabel" > Common Name </div>
 					<div id="marker_commonname" class= "markerValue" >Taro, Kalo</div>
