@@ -89,7 +89,7 @@ public class SplashScreenActivity extends Activity {
                 String url = KumuApp.URLToServerPostForms;
 
                 // Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
