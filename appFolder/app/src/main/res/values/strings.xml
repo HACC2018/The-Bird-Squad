@@ -118,6 +118,53 @@
     // SECTION 5
     <string name="habitat_characteristics">Are you Entering Habitat Characteristics?</string>
     <string name="habitat_overstory_closure">Overstory Closure</string>
+    <string-array name="observatory_closures">
+        <item>Closed 75 to 100%</item>
+        <item>Intermediate 25 to 75%</item>
+        <item>Open 0 to 25%</item>
+    </string-array>
+    <string-array name="observatory_heights">
+        <item>2 to 5m</item>
+        <item>5 to 10m</item>
+        <item>10m or more</item>
+    </string-array>
+    <string-array name="understory_closures">
+        <item>Closed 75 to 100%</item>
+        <item>Intermediate 25 to 75%</item>
+        <item>Open 0 to 25%</item>
+    </string-array>
+    <string-array name="soil_drainage">
+        <item>Well</item>
+        <item>Moderate</item>
+        <item>Poor</item>
+        <item>Hydric</item>
+    </string-array>
+    <string-array name="topography">
+        <item>Crest</item>
+        <item>Upper Slope</item>
+        <item>Mid Slope</item>
+        <item>Lower Slope</item>
+        <item>Gulch Bottom</item>
+        <item>Plateau-Flat</item>
+    </string-array>
+    <string-array name="aspect">
+        <item>North</item>
+        <item>NorthEast</item>
+        <item>East</item>
+        <item>SouthEast</item>
+        <item>South</item>
+        <item>SouthWest</item>
+        <item>West</item>
+        <item>NorthWest</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="substrate">
+        <item>A'a</item>
+        <item>Pahoehoe</item>
+        <item>Soil</item>
+        <item>Rock Talus</item>
+        <item>Sand</item>
+    </string-array>
     <string name="habitat_overstory_height">Overstory Height</string>
     <string name="habitat_understory_closure">Overstory Height</string>
     <string name="habitat_soil_drainage">Soil Drainage</string>
