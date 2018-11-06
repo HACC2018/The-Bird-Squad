@@ -7,11 +7,14 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +29,9 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -117,10 +123,44 @@ public class ImagesActivity extends BaseActivity {
         });
     }
 
+    File mCurrentPhoto;
+
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhoto = image;
+        return image;
+    }
+
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                Log.d("ImagesActivity", "Could not create image file");
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "com.birdsquad.kumu.fileprovider",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            } else {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
         }
     }
 
@@ -128,40 +168,50 @@ public class ImagesActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            Bitmap imageBitmap = null;
+            try {
+                imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.fromFile(mCurrentPhoto));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-            final Photo newPhoto = new Photo(imageBitmap);
+            if(imageBitmap != null){
+                final Photo newPhoto = new Photo(imageBitmap);
+                newPhoto.setFile(mCurrentPhoto);
 
-            if (locationEnabled) {
-                mFusedLocationClient.getLastLocation()
-                        .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                            @Override
-                            public void onSuccess(Location location) {
-                                Log.d("MapDemoActivity", "No error");
-                                // Got last known location. In some rare situations this can be null.
-                                if (location != null) {
-                                    Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
-                                    thisLocation = location;
-                                    newPhoto.setLocation(thisLocation);
-                                    
-                                    images.add(0, newPhoto);
-                                    final GridView gridview = (GridView) findViewById(R.id.imageGridView);
-                                    ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
-                                } else {
-                                    Log.d("MapDemoActivity", "Location turned null");
+                if (locationEnabled) {
+                    mFusedLocationClient.getLastLocation()
+                            .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                                @Override
+                                public void onSuccess(Location location) {
+                                    Log.d("MapDemoActivity", "No error");
+                                    // Got last known location. In some rare situations this can be null.
+                                    if (location != null) {
+                                        Log.d("MapDemoActivity", location.getLatitude() + " " + location.getLongitude());
+                                        thisLocation = location;
+                                        newPhoto.setLocation(thisLocation);
+
+                                        images.add(0, newPhoto);
+                                        final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+                                        ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
+                                    } else {
+                                        Log.d("MapDemoActivity", "Location turned null");
+                                    }
                                 }
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d("MapDemoActivity", "Error trying to get last GPS location");
-                                e.printStackTrace();
-                            }
-                        });
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d("MapDemoActivity", "Error trying to get last GPS location");
+                                    e.printStackTrace();
+                                }
+                            });
+                } else {
+                    Snackbar errorMessage = Snackbar.make(findViewById(R.id.mainLoginConstraintLayout), "Please enable location services", Snackbar.LENGTH_LONG);
+                    errorMessage.show();
+                }
             } else {
-                Snackbar errorMessage = Snackbar.make(findViewById(R.id.mainLoginConstraintLayout), "Please enable location services", Snackbar.LENGTH_LONG);
+                Snackbar errorMessage = Snackbar.make(findViewById(R.id.mainLoginConstraintLayout), "Error with photo, please try to take another", Snackbar.LENGTH_LONG);
                 errorMessage.show();
             }
         }

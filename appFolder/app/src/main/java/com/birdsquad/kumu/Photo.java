@@ -3,7 +3,11 @@ package com.birdsquad.kumu;
 import android.graphics.Bitmap;
 import android.location.Location;
 
+import java.io.File;
+
 public class Photo {
+
+    private File fileIt;
 
     private Bitmap image;
 
@@ -25,4 +29,9 @@ public class Photo {
         return this.location;
     }
 
+    public File getFile(){return this.fileIt;}
+
+    public void setFile(File f){
+        this.fileIt = f;
+    }
 }

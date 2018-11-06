@@ -2,6 +2,7 @@ package com.birdsquad.kumu;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -26,13 +27,13 @@ import java.util.Map;
 
 public class UploadFile extends AsyncTask<String, Void, String> {
 
-    private Bitmap bitmap;
+    private Photo photo;
     private int formID;
     private Location location;
     private Context context;
 
-    public UploadFile(Bitmap bm, Location loc, int formID, Context context){
-        this.bitmap = bm;
+    public UploadFile(Photo photo, Location loc, int formID, Context context){
+        this.photo = photo;
         this.formID = formID;
         this.location = loc;
         this.context = context;
@@ -40,44 +41,61 @@ public class UploadFile extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = context.getFilesDir() + File.separator + "temporary_file.jpg";
-        File file = new File( path);
-        //Generate random file
-        while(file.exists()){
-            path = context.getFilesDir() + File.separator + "temporary_file" + (Math.random()*100) + ".jpg";
-            file = new File(path);
-        }
-        try {
-            FileOutputStream fo = new FileOutputStream(file);
-            fo.write(bytes.toByteArray());
-            fo.flush();
-            fo.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        try{
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            Log.d("PostToServer", "not compressed");
 
-        String content = "";
-        String url = KumuApp.URLToServerPostImage;
+            final BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            options.inSampleSize = 2;  //you can also calculate your inSampleSize
+            options.inJustDecodeBounds = false;
+            options.inTempStorage = new byte[16 * 1024];
 
-        if(file != null) {
+            Bitmap bm = BitmapFactory.decodeFile(photo.getFile().getAbsolutePath(),options); //changed line code
+            bm.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
 
-            Map<String, String> pms = new HashMap<String, String>(2);
-            pms.put("longitude", location.getLongitude() + "");
-            pms.put("latitude", location.getLatitude() + "");
-            pms.put("formid", formID + "");
-
-            try{
-                String result = multipartRequest(url, pms, path, "image", "image/jpeg");
-                Log.d("PostToServer", "SUCCESS WE DID IT BOIIISS || " + result);
-            }catch(Exception e){
-                Log.d("PostToServer", "Error: " + e.getMessage());
+            Log.d("PostToServer", "currently compressed");
+            String path = context.getFilesDir() + File.separator + "temporary_file.jpg";
+            File file = new File( path);
+            //Generate random file
+            while(file.exists()){
+                path = context.getFilesDir() + File.separator + "temporary_file" + (Math.random()*100) + ".jpg";
+                file = new File(path);
             }
+            Log.d("PostToServer", "got temp file");
+            try {
+                FileOutputStream fo = new FileOutputStream(file);
+                fo.write(bytes.toByteArray());
+                fo.flush();
+                fo.close();
+            } catch (IOException e) {
+                Log.d("PostToServer", e.getMessage());
+            }
+            Log.d("PostToServer", "done did");
 
-            file.delete();
-        } else {
-            Log.d("PostToServer", "Image file is null");
+            String content = "";
+            String url = KumuApp.URLToServerPostImage;
+
+            if(file != null) {
+
+                Map<String, String> pms = new HashMap<String, String>(2);
+                pms.put("longitude", location.getLongitude() + "");
+                pms.put("latitude", location.getLatitude() + "");
+                pms.put("formid", formID + "");
+
+                try{
+                    String result = multipartRequest(url, pms, path, "image", "image/jpeg");
+                    Log.d("PostToServer", "SUCCESS WE DID IT BOIIISS || " + result);
+                }catch(Exception e){
+                    Log.d("PostToServer", "Error: " + e.getMessage());
+                }
+
+                file.delete();
+            } else {
+                Log.d("PostToServer", "Image file is null");
+            }
+        } catch(Exception e){
+            Log.d("PostToServer", "Error occurred: " + e.getMessage());
         }
 
         return "done";
@@ -115,6 +133,7 @@ public class UploadFile extends AsyncTask<String, Void, String> {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Connection", "Keep-Alive");
             connection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
+            connection.setRequestProperty("enctype", "multipart/form-data");
             connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
             outputStream = new DataOutputStream(connection.getOutputStream());
@@ -157,7 +176,7 @@ public class UploadFile extends AsyncTask<String, Void, String> {
 
 
             if (200 != connection.getResponseCode()) {
-                throw new Exception("Failed to upload code:" + connection.getResponseCode() + " " + connection.getResponseMessage());
+                throw new Exception("Failed to upload code: " + connection.getResponseCode() + " " + connection.getResponseMessage());
             }
 
             inputStream = connection.getInputStream();
@@ -176,7 +195,7 @@ public class UploadFile extends AsyncTask<String, Void, String> {
 
     }
 
-    private String convertStreamToString(InputStream is) {
+    private String convertStreamToString(InputStream is) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
 
@@ -186,12 +205,12 @@ public class UploadFile extends AsyncTask<String, Void, String> {
                 sb.append(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.d("PostToServer", e.getMessage());
         } finally {
             try {
                 is.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.d("PostToServer", e.getMessage());
             }
         }
         return sb.toString();
