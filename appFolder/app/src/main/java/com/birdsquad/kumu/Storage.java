@@ -69,6 +69,16 @@ public class Storage {
         return unsyncedCompletedForms;
     }
 
+    public ArrayList<Form> getHistoryCompletedForms(){
+        ArrayList<Form> comp = new ArrayList<Form>();
+        for(Form f : forms){
+            if(f.isFinished){
+                comp.add(f);
+            }
+        }
+        return comp;
+    }
+
     public ArrayList<Form> getUnfinishedForms(){
         ArrayList<Form> unfin = new ArrayList<Form>();
         Log.d("StorageDebug", forms.size() + " there are this many forms");

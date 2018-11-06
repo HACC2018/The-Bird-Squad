@@ -23,11 +23,8 @@ public class IncompleteFormsActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Form f = (Form)adapterView.getItemAtPosition(i);
-                if(f == null){
-                    Log.d("StorageDebug", "fucked up");
-                }
                 KumuApp.getAppStorage().setCurrentForm(f);
-                Intent in = new Intent(IncompleteFormsActivity.this, SpeciesNameActivity.class);
+                Intent in = new Intent(IncompleteFormsActivity.this, FormActivity.class);
                 startActivity(in);
             }
         });
