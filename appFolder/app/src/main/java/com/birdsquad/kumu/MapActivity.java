@@ -55,24 +55,28 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             String formName = form.speciesName;
             Date formDate = form.dateCreated;
             if (form.reportIndividualPlant) {
-                Location formLocation = form.images.get(0).getLocation();
-                if (formLocation != null) {
-                    Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
-                    LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
-                    mMap.addMarker(new MarkerOptions()
-                        .position(coordinates)
-                        .title(formName + " " + formDate.toString()));
+                if (form.images != null) {
+                    Location formLocation = form.images.get(0).getLocation();
+                    if (formLocation != null) {
+                        Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
+                        LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
+                        mMap.addMarker(new MarkerOptions()
+                                .position(coordinates)
+                                .title(formName + " " + formDate.toString()));
+                    }
                 }
             }
             else {
-                for (Photo photo : form.images) {
-                    Location photoLocation = photo.getLocation();
-                    if (photoLocation != null) {
-                        Log.d("MappingForms", "The location was found as " + photoLocation.getLatitude() + ", " + photoLocation.getLongitude());
-                        LatLng coordinates = new LatLng(photoLocation.getLatitude(), photoLocation.getLongitude());
-                        mMap.addMarker(new MarkerOptions()
-                                .position(coordinates)
-                                .title(formName + " image " + formDate.toString()));
+                if (form.images != null) {
+                    for (Photo photo : form.images) {
+                        Location photoLocation = photo.getLocation();
+                        if (photoLocation != null) {
+                            Log.d("MappingForms", "The location was found as " + photoLocation.getLatitude() + ", " + photoLocation.getLongitude());
+                            LatLng coordinates = new LatLng(photoLocation.getLatitude(), photoLocation.getLongitude());
+                            mMap.addMarker(new MarkerOptions()
+                                    .position(coordinates)
+                                    .title(formName + " image " + formDate.toString()));
+                        }
                     }
                 }
             }
