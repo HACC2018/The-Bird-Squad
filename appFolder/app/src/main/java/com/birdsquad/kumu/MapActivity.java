@@ -54,55 +54,19 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         for (Form form : myForms) {
             String formName = form.taxonName;
             Date formDate = form.dateCreated;
-            if (form.reportIndividualPlant) {
-                if (form.images != null) {
-                    Location formLocation = form.images.get(0).getLocation();
-                    if (formLocation != null) {
-                        Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
-                        LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
-                        mMap.addMarker(new MarkerOptions()
-                                .position(coordinates)
-                                .title(formName + " " + formDate.toString()));
-                    }
-                }
-            }
-            else {
-                if (form.images != null) {
-                    for (Photo photo : form.images) {
-                        Location photoLocation = photo.getLocation();
-                        if (photoLocation != null) {
-                            Log.d("MappingForms", "The location was found as " + photoLocation.getLatitude() + ", " + photoLocation.getLongitude());
-                            LatLng coordinates = new LatLng(photoLocation.getLatitude(), photoLocation.getLongitude());
-                            mMap.addMarker(new MarkerOptions()
-                                    .position(coordinates)
-                                    .title(formName + " image " + formDate.toString()));
-                        }
-                    }
+            if (form.images != null) {
+                Location formLocation = form.images.get(0).getLocation();
+                if (formLocation != null) {
+                    Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
+                    LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
+                    mMap.addMarker(new MarkerOptions()
+                            .position(coordinates)
+                            .title(formName + " " + formDate.toString()));
                 }
             }
         }
 
-        /*
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    */
-
-        /*
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("Sydney"));
-*/
-
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(HAWAII, 0));
 
-
-
-        // get the user's location
-        // get lat and long
-        // move camera to lat and long
     }
 }
