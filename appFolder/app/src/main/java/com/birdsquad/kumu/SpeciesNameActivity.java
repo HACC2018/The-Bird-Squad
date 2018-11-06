@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.Calendar;
+
 
 public class SpeciesNameActivity extends BaseActivity {
 
@@ -31,6 +33,7 @@ public class SpeciesNameActivity extends BaseActivity {
         EditText editText = (EditText) findViewById(R.id.editText2);
         String speciesName = editText.getText().toString();
         Form newForm = new Form(speciesName);
+        newForm.setDate(Calendar.getInstance().getTime());
         KumuApp.getAppStorage().insertForm(newForm);
         KumuApp.getAppStorage().saveForms();
         startActivity(intent);

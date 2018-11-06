@@ -9,12 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class FormActivity5 extends AppCompatActivity {
+public class FormActivity5 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form5);
+        super.onCreateDrawer();
 
         Switch enterHabitat = (Switch) findViewById(R.id.habitat_characteristics_switch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.habitat_characteristics_layout);

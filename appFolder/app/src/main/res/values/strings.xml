@@ -148,4 +148,8 @@
     <string name="title_activity_map">Map</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+    <string-array name="autocomplete_taxaname">
+
+    </string-array>
 </resources>

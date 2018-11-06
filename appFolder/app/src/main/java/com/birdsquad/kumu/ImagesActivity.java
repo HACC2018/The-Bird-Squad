@@ -29,7 +29,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class ImagesActivity extends AppCompatActivity {
+public class ImagesActivity extends BaseActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -83,6 +83,8 @@ public class ImagesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_images);
+        super.onCreateDrawer();
+
         this.images = new ArrayList<Photo>();
         // set first image to + icon
         Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
