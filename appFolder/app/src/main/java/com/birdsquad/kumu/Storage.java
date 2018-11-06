@@ -5,6 +5,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class Storage {
         //If json exists, load it
         if(jsonForms != null){
             Log.d("StorageDebug", "Not null, it is: " + jsonForms);
-            this.forms = new Gson().fromJson(jsonForms, ArrayList.class);
+            this.forms = new Gson().fromJson(jsonForms, new TypeToken<ArrayList<Form>>(){}.getType());
         }
     }
 
@@ -35,6 +36,7 @@ public class Storage {
     public void insertForm(Form form) {
         forms.add(form);
         currentForm = form; // The most recent inserted form will always be the current form
+        saveForms();
     }
 
     public ArrayList<Form> getForms() {
