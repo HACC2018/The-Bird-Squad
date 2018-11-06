@@ -1,0 +1,65 @@
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 55px auto;
+    grid-gap: 3px 1px;
+    grid-template-areas: "gSideBar gTopBar" "gSideBar gContent";
+  
+  }
+  
+  .gContent {
+    grid-area: gContent; 
+    overflow: auto;
+  }
+  
+  .gTopBar {
+    grid-area: gTopBar;
+    width: 100%;
+    overflow: auto;
+    top: 0;
+
+  }
+  
+  .gSideBar {
+    grid-area: gSideBar;
+    height: 100vh;
+    overflow: auto;
+  }
+
+
+
+  #mapid {
+    height: 100vh;
+    overflow: auto;
+
+  }
+  
+  #myImg {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width:200px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #myImg:hover {
+    opacity: 0.7;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+#searchBar {
+  float: left;
+  border: none;
+}
