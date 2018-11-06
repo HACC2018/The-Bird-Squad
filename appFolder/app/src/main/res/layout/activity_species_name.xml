@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +15,7 @@
 
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/speciesNameBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -40,16 +41,17 @@
         android:text="@string/next_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/speciesNameBox" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="0dp"
-        android:layout_height="102dp"
+        android:layout_height="85dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/speciesNameBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +65,9 @@
             android:layout_marginBottom="44dp"
             android:text="@string/step_1"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/editText2"
-            app:layout_constraintEnd_toEndOf="@+id/editText2"
-            app:layout_constraintStart_toStartOf="@+id/editText2" />
+            app:layout_constraintBottom_toTopOf="@+id/speciesNameBox"
+            app:layout_constraintEnd_toEndOf="@+id/speciesNameBox"
+            app:layout_constraintStart_toStartOf="@+id/speciesNameBox" />
     </FrameLayout>
 
     <TextView
@@ -73,8 +75,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/species_field"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toStartOf="@+id/speciesNameBox"
+        app:layout_constraintTop_toBottomOf="@+id/speciesNameBox" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="138dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kumu_logo" />
 
 
 </android.support.constraint.ConstraintLayout>
