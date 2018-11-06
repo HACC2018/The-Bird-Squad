@@ -11,6 +11,8 @@ function closeImage() {
 	$('#largeImageOnClick').html('');
 }
 
+
+
 function markerClick(e){
 	$('#marker_taxaname').html(e.target.taxaname);
 	$('#marker_commonname').html(e.target.commonname);

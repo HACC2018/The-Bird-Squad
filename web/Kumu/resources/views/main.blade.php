@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+		<link rel="stylesheet" href="css/style.css">
         <title>Kumu</title>
 
 		<!-- leafletjs CDNs -->
@@ -25,77 +25,83 @@
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-	<style>
-		.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-		.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-		.autocomplete-selected { background: #F0F0F0; }
-		.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-		.autocomplete-group { padding: 2px 5px; }
-		.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
-	</style>
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}"
 
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
-		<!-- Title -->
-        <div>
-			KUMU
-		</div>
-
-		<!-- Filters -->
-		<div id="filters">
-			<div>
-				<label>Search: </label>
-				<input type="text" id="filter_plant" placeholder="Plant Name (Taxa or Common)"/>
-			</div>
-			<div>
-				<label>Island: </label>
-				<select id="filter_island" class="filter">
-					<option value="none">None</option>
-					<option value="1">Hawaiʻi</option>
-					<option value="2">Maui</option>
-					<option value="3">Oʻahu</option>
-					<option value="4">Kauaʻi</option>
-					<option value="5">Molokaʻi</option>
-					<option value="6">Lānaʻi</option>
-					<option value="7">Niʻihau</option>
-					<option value="8">Kahoʻolawe</option>
-				</select>
-			</div>
-			<div>
-				<label>Plant Age: </label>
-				<select id="filter_plant_age" class="filter">
-					<option value="any">Any</option>
-					<option value="adult">Adult</option>
-					<option value="seedling">Seedling</option>
-				</select>
-			</div>
-			<div>
-				<label>Federal Status: </label>
-				<select id="filter_fed_status" class="filter">
-					<option value="any">Any</option>
-					<option value="e">Endangered</option>
-					<option value="t">Threatened</option>
-				</select>
-			</div>
-		</div>
-
-		<!-- Clicked marker results -->
-		<div id="markerRes">
-			<div id="marker_taxaname"></div>
-			<div id="marker_commonname"></div>
-			<div id="marker_fedstatus"></div>
-			<div id="marker_planttype"></div>
-			<div id="marker_locationnotes"></div>
-			<div id="marker_images"></div>
-		</div>
-
-		<!-- Map -->
-		<div id="mapid" style="height: 500px; "></div>
-
+	
 		<!-- When user clicks on image in popup preview, display in large -->
-		<div id="largeImageOnClick"></div>
+		<div id="largeImageOnClick">
+		</div>
 
+		<div class="grid-container">
+			<div class="gContent">
+				<!-- Map -->
+				<div id="mapid"></div>
+			</div>
+
+			<div class="gTopBar">
+				<!-- Filters -->
+				<div id="filters">
+				<ul>
+					<li id ="searchBar">
+						<input type="text" id="filter_plant" placeholder="Plant Name (Taxa or Common)"/>
+					</li>
+
+					<li id ="filterIsland">
+						<label>Island: </label>
+						<select id="filter_island" class="filter" placeholder="Island">
+							<option value="none">None</option>
+							<option value="1">Hawaiʻi</option>
+							<option value="2">Maui</option>
+							<option value="3">Oʻahu</option>
+							<option value="4">Kauaʻi</option>
+							<option value="5">Molokaʻi</option>
+							<option value="6">Lānaʻi</option>
+							<option value="7">Niʻihau</option>
+							<option value="8">Kahoʻolawe</option>
+						</select>
+					</li>
+					
+					<li id="filterPlantAge">
+						<label>Age: </label>
+						<select id="filter_plant_age" class="filter" placeholder="Age">
+							<option value="any">Any</option>
+							<option value="adult">Adult</option>
+							<option value="seedling">Seedling</option>
+						</select>
+					</li>
+
+					<li id="filterFedStatus">
+						<label>Status: </label>
+						<select id="filter_fed_status" class="filter" placeholder="Status">
+							<option value="any">Any</option>
+							<option value="e">Endangered</option>
+							<option value="t">Threatened</option>
+						</select>
+					</li>
+				</ul>
+				</div>
+			</div>
+			<div class="gSideBar">
+				<!-- Clicked marker results -->
+				<div id="markerRes">
+				
+					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('kalo.jpg')}}"/></a></div>
+					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
+					<div class= "markerLabel" > Common Name </div>
+					<div id="marker_commonname" class= "markerValue" >Taro, Kalo</div>
+					<div class= "markerLabel" > Federal Status </div>
+					<div id="marker_fedstatus" class= "markerValue" >Endangered</div>
+					<div class= "markerLabel" > Plant Type </div>
+					<div id="marker_planttype" class= "markerValue" >Root Vegetables</div>
+					<div class= "markerLabel" > Location Notes </div>
+					<div id="marker_locationnotes" class= "markerValue" >Grown in ground</div>
+					<div  class= "markerValue"><p><?php include('lipsum.txt'); ?></p></div>
+				</div>
+			</div>
+		</div>
 
 	<script>var base_url = '{{ asset("/") }}';</script>
 	<script src="{{ asset('js/main.js') }}"></script>
