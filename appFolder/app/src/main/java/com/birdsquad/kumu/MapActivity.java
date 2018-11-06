@@ -1,13 +1,104 @@
 package com.birdsquad.kumu;
 
-import android.support.v7.app.AppCompatActivity;
+import android.location.Location;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
-public class MapActivity extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+
+    private LatLngBounds HAWAII = new LatLngBounds(
+            new LatLng(19, -160), new LatLng(23, -154));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // For testing
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        MapFragment mapFragment = (MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        Log.d("GoogleMapActivity", "The map was found to be ready");
+        mMap = googleMap;
+        ArrayList<Form> myForms = KumuApp.getAppStorage().getForms(); // will change to completed forms later
+        for (Form form : myForms) {
+            String formName = form.speciesName;
+            Date formDate = form.dateCreated;
+            if (form.reportIndividualPlant) {
+                Location formLocation = form.images.get(0).getLocation();
+                if (formLocation != null) {
+                    Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
+                    LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
+                    mMap.addMarker(new MarkerOptions()
+                        .position(coordinates)
+                        .title(formName + " " + formDate.toString()));
+                }
+            }
+            else {
+                for (Photo photo : form.images) {
+                    Location photoLocation = photo.getLocation();
+                    if (photoLocation != null) {
+                        Log.d("MappingForms", "The location was found as " + photoLocation.getLatitude() + ", " + photoLocation.getLongitude());
+                        LatLng coordinates = new LatLng(photoLocation.getLatitude(), photoLocation.getLongitude());
+                        mMap.addMarker(new MarkerOptions()
+                                .position(coordinates)
+                                .title(formName + " image " + formDate.toString()));
+                    }
+                }
+            }
+        }
+
+        /*
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    */
+
+        /*
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.addMarker(new MarkerOptions()
+                .position(sydney)
+                .title("Sydney"));
+*/
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(HAWAII, 0));
+
+
+
+        // get the user's location
+        // get lat and long
+        // move camera to lat and long
     }
 }
