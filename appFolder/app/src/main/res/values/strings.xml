@@ -1,4 +1,5 @@
 <resources>
+    //SECTION 1
     <string name="app_name">Kumu</string>
     <string name="username_field">Username</string>
     <string name="password_field">Password</string>
@@ -38,10 +39,16 @@
     <string name="ref_site">Populatiion Reference Site (A-Z)</string>
     <string name="location_notes">Location Notes</string>
     <string name="elevation">Elevation (feet)</string>
+
+
+    // SECTION 2
     <string name="population_structure">Are you Entering Population Structure? (Total number of plants on site)</string>
     <string name="mature_plants">Number of Mature Plants</string>
     <string name="immature_plants">Number of Immature Plants</string>
     <string name="seedlings">Number of Seedlings</string>
+
+
+    // SECTION 3
     <string name="individual_plant">Are you Collecting Data on an Individual Plant?</string>
     <string name="plant_number">Individual Plant Number</string>
     <string name="plant_tagged">This Plant is Tagged</string>
@@ -84,23 +91,60 @@
     <string name="plant_cuttings">Amount of Cuttings Collected</string>
     <string name="plant_air_layers">Amount of Air Layers Collected</string>
     <string name="plant_flowers">Amount of Flowers Collected</string>
+
+
+    // SECTION 4
     <string name="population_data">Are you Entering Population Data?</string>
     <string name="population_phenology">Population Phenology</string>
     <string name="population_phenology_vegetative">% of Plants Vegetative</string>
     <string name="population_phenology_buds">% of Plants with Flower Buds</string>
-    <string name="population_phenology_flower">$ of Plants in Flower</string>
-    <string name="population_phenology_fruit">$ of Plants with Fruit</string>
-    <string name="population_phenology_mature_fruit">$ of Plants with Mature Fruit</string>
+    <string name="population_phenology_flower">% of Plants in Flower</string>
+    <string name="population_phenology_fruit">% of Plants with Fruit</string>
+    <string name="population_phenology_mature_fruit">% of Plants with Mature Fruit</string>
+
     <string name="population_condition">Population Condition</string>
     <string name="population_condition_plants_healthy">% of Plants Healthy</string>
     <string name="population_condition_plants_moderate">% of Plants Moderate</string>
     <string name="population_condition_plants_poor">% of Plants Poor</string>
     <string name="population_condition_plants_dead">% of Plants Dead</string>
+
     <string name="population_light_level">Light Level</string>
     <string name="population_light_level_full">% of Plants in Full Sun</string>
     <string name="population_light_level_partial">% of Plants in Partial Sun</string>
     <string name="population_light_level_partialshade">% of Plants in Partial Shade</string>
     <string name="population_light_level_deepshade">% of Plants in Deep Shade</string>
+
+
+    // SECTION 5
+    <string name="habitat_characteristics">Are you Entering Habitat Characteristics?</string>
+    <string name="habitat_overstory_closure">Overstory Closure</string>
+    <string name="habitat_overstory_height">Overstory Height</string>
+    <string name="habitat_understory_closure">Overstory Height</string>
+    <string name="habitat_soil_drainage">Soil Drainage</string>
+    <string name="habitat_topography">Topography</string>
+    <string name="habitat_aspect">Aspect</string>
+    <string name="habitat_associated_overstory_species">Associated Overstory Species</string>
+    <string name="habitat_associated_understory_species">Associated Understory Species</string>
+    <string name="habitat_substrate">Substrate</string>
+
+
+    // SECTION 6
+    <string name="threats">Are you entering Threats?</string>
+    <string name="threats_management">Threats and Management</string>
+    <string-array name="threat_types">
+        <item>Pigs</item>
+        <item>Goats</item>
+        <item>Deer</item>
+        <item>Sheep</item>
+        <item>Cattle</item>
+        <item>Weeds</item>
+        <item>Landslides</item>
+        <item>Anthropods</item>
+        <item>Pathogen</item>
+        <item>Other</item>
+    </string-array>
+    <string name="threats_notes">Threat and Management Notes</string>
+    
     <string name="title_activity_map">Map</string>
     <string name="open">Open</string>
     <string name="close">Close</string>

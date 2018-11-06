@@ -23,13 +23,15 @@ public class Form {
     public String locationNotes;
     // needs location gps point
     // needs elevation
-    // Section 2
+
+    // Section 2: Population Structure
     public boolean reportPopulationStructure;
     public Number numMaturePlants;
     public Number numImmaturePlants;
     public Number numSeedlings;
     public boolean mostCurrentCensus;
-    // Section 3
+
+    // Section 3: Individual Plant data
     public boolean reportIndividualPlant;
     public Number plantNumber;
     public boolean plantTagged;
@@ -44,7 +46,8 @@ public class Form {
     public Number amountCuttings;
     public Number amountAirLayers;
     public Number amountFlowers;
-    // Section 4
+
+    // Section 4: Population Data
     public boolean reportPopulationData;
     // Phenology
     public Number percentVegative;
@@ -62,7 +65,8 @@ public class Form {
     public Number percentPartialSun;
     public Number percentPartialShade;
     public Number percentDeepShade;
-    // section 5
+
+    // Section 5: Habitat
     public String[] observatoryClosure;
     public String[] observatoryHeight;
     public String[] understoryClosure;
@@ -72,7 +76,8 @@ public class Form {
     public String assocObsSpecies;
     public String assocUndSpecies;
     public String[] substrate;
-    // section 6
+
+    // Section 6: Threats
     public boolean reportThreats;
     public String threats;
     public String threatManagementNotes;
@@ -99,7 +104,7 @@ public class Form {
         this.speciesName = speciesName;
     }
 
-    
+
 
     /**
      * Sets the form's list of images to the images taken by the user in ImagesActivity
@@ -115,6 +120,7 @@ public class Form {
 
     /**
      * Add section 1 fields to the form
+     *
      * Missing: location and elevation
      * @param wildOrOutplanted
      * @param taxonName
@@ -146,7 +152,8 @@ public class Form {
     }
 
     /**
-     * Add section 2 fields to the form.
+     * Add Section 2 fields to the form.
+     * Population Structure
      * @param numMaturePlants
      * @param numImmaturePlants
      * @param numSeedlings
@@ -168,6 +175,7 @@ public class Form {
 
     /**
      * Add Section 3 fields of the form
+     * Individual Plant data
      * @param plantNumber
      * @param plantTagged
      * @param plantGender
@@ -212,6 +220,92 @@ public class Form {
         this.amountCuttings = amountCuttings;
         this.amountAirLayers = amountAirLayers;
         this.amountFlowers = amountFlowers;
+    }
+
+    /**
+     * Add Section 4 fields of the form
+     * Population Data
+     */
+    public void addFieldsSection4(
+            boolean reportPopulationData,
+            // Phenology
+            Number percentVegative,
+            Number percentBuds,
+            Number percentFlower,
+            Number percentImmatureFruit,
+            Number percentMatureFruit,
+            // Health condition
+            Number percentHealthy,
+            Number percentModerate,
+            Number percentPoor,
+            Number percentDead,
+            // Light level
+            Number percentFullSun,
+            Number percentPartialSun,
+            Number percentPartialShade,
+            Number percentDeepShade    ) {
+
+        this.reportPopulationData = reportPopulationData;
+        this.percentVegative = percentVegative;
+        this.percentBuds = percentBuds;
+        this.percentFlower = percentFlower;
+        this.percentImmatureFruit = percentImmatureFruit;
+        this.percentMatureFruit = percentMatureFruit;
+        this.percentHealthy = percentHealthy;
+        this.percentModerate = percentModerate;
+        this.percentPoor = percentPoor;
+        this.percentDead = percentDead;
+        this.percentFullSun = percentFullSun;
+        this.percentPartialSun = percentPartialSun;
+        this.percentPartialShade = percentPartialShade;
+        this.percentDeepShade = percentDeepShade;
+
+    }
+
+
+    /**
+     * Add Section 5 fields of the form
+     * Habitat Data
+     */
+    public void addFieldsSection5(
+            String[] observatoryClosure,
+            String[] observatoryHeight,
+            String[] understoryClosure,
+            String[] soilDrainage,
+            String[] topography,
+            String[] aspect,
+            String assocObsSpecies,
+            String assocUndSpecies,
+            String[] substrate
+    ) {
+
+        this.observatoryClosure = observatoryClosure;
+        this.observatoryHeight = observatoryHeight;
+        this.understoryClosure = understoryClosure;
+        this.soilDrainage = soilDrainage;
+        this.topography = topography;
+        this.aspect = aspect;
+        this.assocObsSpecies = assocObsSpecies;
+        this.assocUndSpecies = assocUndSpecies;
+        this.substrate = substrate;
+
+    }
+
+
+    /**
+     * Add Section 6 fields of the form
+     * Threats Data
+     */
+    public void addFieldsSection6(
+            boolean reportThreats,
+            String threats,
+            String threatManagementNotes
+    ) {
+
+        this.reportThreats = reportThreats;
+        this.threats = threats;
+        this.threatManagementNotes = threatManagementNotes;
+
     }
 
 }
