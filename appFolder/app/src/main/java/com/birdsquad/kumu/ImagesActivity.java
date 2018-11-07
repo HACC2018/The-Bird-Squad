@@ -170,16 +170,21 @@ public class ImagesActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bitmap imageBitmap = null;
+
             try {
                 imageBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), Uri.fromFile(mCurrentPhoto));
                 //rotate it because it rotates automatically for some reason
-                Matrix matrix = new Matrix();
+                //Matrix matrix = new Matrix();
 
-                matrix.postRotate(90);
+                //matrix.postRotate(90);
 
-                Bitmap scaledBitmap = Bitmap.createScaledBitmap(imageBitmap, imageBitmap.getWidth(), imageBitmap.getHeight(), true);
+                /*
+                Bitmap scaledBitmap = Bitmap.createScaledBitmap(imageBitmap, imageBitmap.getWidth()/2, imageBitmap.getHeight()/2, true);
 
                 imageBitmap = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+                */
+
+                imageBitmap = getResizedBitmap(imageBitmap, imageBitmap.getWidth()/20, imageBitmap.getHeight()/20);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -225,6 +230,25 @@ public class ImagesActivity extends BaseActivity {
                 errorMessage.show();
             }
         }
+    }
+
+
+    public Bitmap getResizedBitmap(Bitmap bm, int newWidth, int newHeight) {
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // CREATE A MATRIX FOR THE MANIPULATION
+        Matrix matrix = new Matrix();
+        // RESIZE THE BIT MAP
+        matrix.postScale(scaleWidth, scaleHeight);
+        matrix.postRotate(90);
+
+        // "RECREATE" THE NEW BITMAP
+        Bitmap resizedBitmap = Bitmap.createBitmap(
+                bm, 0, 0, width, height, matrix, false);
+        bm.recycle();
+        return resizedBitmap;
     }
 
     public void goToForm(View view) {
