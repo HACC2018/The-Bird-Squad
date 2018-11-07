@@ -11,7 +11,9 @@ function closeImage() {
 	$('#largeImageOnClick').html('');
 }
 
-
+var greenIcon = L.icon({
+    iconUrl: 'PIN.png',
+});
 
 function markerClick(e){
 	$('#marker_taxaname').html(e.target.taxaname);
@@ -149,7 +151,7 @@ $(document).ready(function () {
 								plantNotesOrStory = '<p>No plant notes or story</p>';
 							}
 
-							let marker = L.marker([lat, long]);
+							let marker = L.marker([lat, long, {icon: greenIcon}]);
 							marker.taxaname = jsonGet[ind].TaxaName;
 							marker.fedstatus = fedStatus;
 							marker.commonname = commonName;
