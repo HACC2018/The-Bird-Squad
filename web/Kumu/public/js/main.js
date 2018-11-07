@@ -19,7 +19,7 @@ function markerClick(e){
 	$('#marker_planttype').html(e.target.planttype);
 	$('#marker_locationnotes').html(e.target.locationnotes);
 	$('#marker_images').html(e.target.imagehtml);
-	console.log(e);
+	$('#marker_plantnotesorstory').html(e.target.plantnotesorstory);
 }
 
 //On load
@@ -136,6 +136,7 @@ $(document).ready(function () {
 							let plantType = jsonGet[ind].PlantType;
 							let locationNotes = jsonGet[ind].LocationNotes;
 							let fedStatus = jsonGet[ind].FedStatus;
+							let plantNotesOrStory = jsonGet[ind].PlantNotesOrStory;
 							if(!commonName) {
 								commonName = 'No common name';
 							}
@@ -145,6 +146,9 @@ $(document).ready(function () {
 							if(!locationNotes){
 								locationNotes = 'No location notes';
 							}
+							if(!plantNotesOrStory){
+								plantNotesOrStory = '<p>No plant notes or story</p>';
+							}
 
 							let marker = L.marker([lat, long]);
 							marker.taxaname = jsonGet[ind].TaxaName;
@@ -153,6 +157,7 @@ $(document).ready(function () {
 							marker.planttype = plantType;
 							marker.locationnotes = locationNotes;
 							marker.imagehtml = imageHTML;
+							marker.plantnotesorstory = plantNotesOrStory;
 							marker.on('click', markerClick);
 
 							marker.addTo(markers);

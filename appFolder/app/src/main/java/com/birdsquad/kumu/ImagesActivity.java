@@ -50,6 +50,8 @@ public class ImagesActivity extends BaseActivity {
 
     private static Location thisLocation;
 
+    private boolean firstLoad = false;
+
     public boolean checkLocationPermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
@@ -93,10 +95,13 @@ public class ImagesActivity extends BaseActivity {
         super.onCreateDrawer();
 
         this.images = new ArrayList<Photo>();
+
         // set first image to + icon
         Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
         Photo addIconPhoto = new Photo(addIcon);
         images.add(addIconPhoto);
+
+        Log.d("ImageActivity", "Size of images: " + this.images.size());
 
         // For location services
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -122,6 +127,26 @@ public class ImagesActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+        Log.d("ImageActivity", "firstLoad; " + this.firstLoad);
+
+        if(this.firstLoad){
+            // set first image to + icon
+            Bitmap addIcon = BitmapFactory.decodeResource(getResources(), R.drawable.add_photo_icon);
+            Photo addIconPhoto = new Photo(addIcon);
+            images.add(addIconPhoto);
+
+            final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+            ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
+
+            this.firstLoad = false;
+        }
+
     }
 
     File mCurrentPhoto;
@@ -252,7 +277,10 @@ public class ImagesActivity extends BaseActivity {
     }
 
     public void goToForm(View view) {
+        this.firstLoad = true;
         images.remove(images.size() - 1);
+        final GridView gridview = (GridView) findViewById(R.id.imageGridView);
+        ((ArrayAdapter<Photo>)gridview.getAdapter()).notifyDataSetChanged();
         Intent intent = new Intent(this, FormActivity.class);
         KumuApp.getAppStorage().getCurrentForm().addImages(images);
         KumuApp.getAppStorage().getCurrentForm().setDate(new Date());
