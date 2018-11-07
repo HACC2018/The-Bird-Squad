@@ -7,10 +7,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var markers = L.layerGroup().addTo(map);
 
-function closeImage() {
-	$('#largeImageOnClick').html('');
-}
-
 
 
 function markerClick(e){
@@ -50,9 +46,15 @@ $(document).ready(function () {
 
 	$("#filter_plant").easyAutocomplete(options);
 
+	
 	$('body').on('click', 'a.image_click', function () {
 		$('#largeImageOnClick').html('<img src="' + $(this).find('img').attr('src') + '" /><button onclick="closeImage()">Close Image</button>');
 	});
+
+	function closeImage() {
+		$('#largeImageOnClick').html('');
+	}
+	
 
 	//Use AJAX to get all pinmarks
 	$.ajaxSetup({
