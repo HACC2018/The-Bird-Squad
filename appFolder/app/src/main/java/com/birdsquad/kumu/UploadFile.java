@@ -29,13 +29,14 @@ public class UploadFile extends AsyncTask<String, Void, String> {
 
     private Photo photo;
     private int formID;
-    private Location location;
+    private Number latitude, longitude;
     private Context context;
 
-    public UploadFile(Photo photo, Location loc, int formID, Context context){
+    public UploadFile(Photo photo, Number latitude, Number longitude, int formID, Context context){
         this.photo = photo;
         this.formID = formID;
-        this.location = loc;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.context = context;
     }
 
@@ -79,8 +80,8 @@ public class UploadFile extends AsyncTask<String, Void, String> {
             if(file != null) {
 
                 Map<String, String> pms = new HashMap<String, String>(2);
-                pms.put("longitude", location.getLongitude() + "");
-                pms.put("latitude", location.getLatitude() + "");
+                pms.put("longitude", longitude + "");
+                pms.put("latitude", latitude + "");
                 pms.put("formid", formID + "");
 
                 try{
@@ -89,8 +90,6 @@ public class UploadFile extends AsyncTask<String, Void, String> {
                 }catch(Exception e){
                     Log.d("PostToServer", "Error: " + e.getMessage());
                 }
-
-                file.delete();
             } else {
                 Log.d("PostToServer", "Image file is null");
             }
@@ -148,13 +147,16 @@ public class UploadFile extends AsyncTask<String, Void, String> {
             bufferSize = Math.min(bytesAvailable, maxBufferSize);
             buffer = new byte[bufferSize];
 
+            int fileSize = 0;
             bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             while (bytesRead > 0) {
+                fileSize += bytesRead;
                 outputStream.write(buffer, 0, bufferSize);
                 bytesAvailable = fileInputStream.available();
                 bufferSize = Math.min(bytesAvailable, maxBufferSize);
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             }
+            Log.d("PostToServer", "Size of file: " + fileSize);
 
             outputStream.writeBytes(lineEnd);
 
@@ -187,6 +189,8 @@ public class UploadFile extends AsyncTask<String, Void, String> {
             inputStream.close();
             outputStream.flush();
             outputStream.close();
+
+            file.delete();
 
             return result;
         } catch (Exception e) {

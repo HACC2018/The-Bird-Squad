@@ -100,6 +100,7 @@ $(document).ready(function () {
 
 	function getAndSetImages(msg){
 		let jsonGet = JSON.parse(msg);
+		console.log(jsonGet);
 
 		let tempFormID = [];
 		for (var i = 0; i < jsonGet.length; i++) {

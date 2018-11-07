@@ -7,26 +7,23 @@ import java.io.File;
 
 public class Photo {
 
-    private String absPath;
+    public String absPath;
 
-    private Bitmap image;
+    public Bitmap image;
 
-    private Location location;
+    public Number latitude;
+    public Number longitude;
 
     public Photo(Bitmap image) {
         this.image = image;
     }
 
     public void setLocation(Location location) {
-        this.location = location;
+        this.latitude = location.getLatitude(); this.longitude = location.getLongitude();
     }
 
     public Bitmap getPhoto() {
         return this.image;
-    }
-
-    public Location getLocation() {
-        return this.location;
     }
 
     public String getFileAbsPath(){return this.absPath;}

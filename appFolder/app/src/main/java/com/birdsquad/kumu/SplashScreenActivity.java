@@ -113,7 +113,7 @@ public class SplashScreenActivity extends Activity {
                                     try{
                                         int formID = Integer.parseInt(response);
                                         for(int i = 0; i<imagesCache.size(); i++){
-                                            new UploadFile(imagesCache.get(i), imagesCache.get(i).getLocation(), formID, getApplicationContext()).execute();
+                                            new UploadFile(imagesCache.get(i), imagesCache.get(i).latitude, imagesCache.get(i).longitude, formID, getApplicationContext()).execute();
                                         }
 
                                         f.isSynced = true;

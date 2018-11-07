@@ -57,10 +57,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             String formName = form.taxonName;
             Date formDate = form.dateCreated;
             if (form.images != null) {
-                Location formLocation = form.images.get(0).getLocation();
-                if (formLocation != null) {
-                    Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
-                    LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
+                if (form.images.get(0) != null) {
+                    Log.d("MappingForms", "The location was found as " + form.images.get(0).latitude + ", " + form.images.get(0).longitude);
+                    LatLng coordinates = new LatLng(form.images.get(0).latitude.doubleValue(), form.images.get(0).longitude.doubleValue());
                     mMap.addMarker(new MarkerOptions()
                             .position(coordinates)
                             .title(formName + " " + formDate.toString())
