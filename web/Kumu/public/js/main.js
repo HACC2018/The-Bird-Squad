@@ -91,6 +91,7 @@ $(document).ready(function () {
 			'filter_plant_age': $('#filter_plant_age').find(':selected').val(),
 			'filter_fed_status': $('#filter_fed_status').find(':selected').val()
 		};
+		console.log('yo dawggg');
 		jsonSend = JSON.stringify(obj);
 		markers.clearLayers();
 		$.ajax({
@@ -141,16 +142,20 @@ $(document).ready(function () {
 							let locationNotes = jsonGet[ind].LocationNotes;
 							let fedStatus = jsonGet[ind].FedStatus;
 							let plantNotesOrStory = jsonGet[ind].PlantNotesOrStory;
-							if(!commonName) {
+							if(!commonName.trim()) {
 								commonName = 'No common name';
 							}
-							if(!fedStatus){
+							if(!fedStatus.trim()){
 								fedStatus = 'Non-endangered or not reported';
+							} else if(fedStatus.trim() === 'E'){
+								fedStatus = 'Endangered';
+							} else {
+								fedStatus = 'Threatened';
 							}
-							if(!locationNotes){
+							if(!locationNotes.trim()){
 								locationNotes = 'No location notes';
 							}
-							if(!plantNotesOrStory){
+							if(!plantNotesOrStory.trim()){
 								plantNotesOrStory = '<p>No plant notes or story</p>';
 							}
 

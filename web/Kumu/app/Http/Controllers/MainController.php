@@ -27,6 +27,7 @@ class MainController extends Controller
 		$resultSet = DB::select('exec FindForm_Filter ?,?,?,?',[$num, $it->filter_plant_age, $it->filter_plant, $it->filter_fed_status]);
 		$returnSet = array();
 		foreach($resultSet as $val) {
+			error_log($val->PlantNotesOrStory);
 			array_push(
 				$returnSet, array(
 					'FormID' => $val->FormID,
