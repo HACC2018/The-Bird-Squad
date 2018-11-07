@@ -25,7 +25,7 @@
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-		<link rel="stylesheet" href="{{ asset('css/style.css') }}"
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -85,7 +85,7 @@
 				<!-- Clicked marker results -->
 				<div id="markerRes">
 				
-					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('kalo.jpg')}}"/></a></div>
+					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
 					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
 					<div class= "markerLabel" > Common Name </div>
 					<div id="marker_commonname" class= "markerValue" >Taro, Kalo</div>

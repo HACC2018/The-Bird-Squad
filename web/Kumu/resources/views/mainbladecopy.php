@@ -25,7 +25,7 @@
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-		<link rel="stylesheet" href="{{ asset('css/style.css') }}"
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>

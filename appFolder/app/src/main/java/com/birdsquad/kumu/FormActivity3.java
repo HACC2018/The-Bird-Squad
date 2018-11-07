@@ -13,12 +13,13 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
-public class FormActivity3 extends AppCompatActivity {
+public class FormActivity3 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form3);
+        super.onCreateDrawer();
 
         Switch enterIndividual = (Switch) findViewById(R.id.enterIndividualSwitch);
         final LinearLayout innerFields = (LinearLayout) findViewById(R.id.individual_plant);
@@ -117,6 +118,7 @@ public class FormActivity3 extends AppCompatActivity {
                         amtAirNum,
                         amtFlowersNum
                 );
+                KumuApp.getAppStorage().saveForms();
                 Intent intent = new Intent(this, FormActivity4.class);
                 startActivity(intent);
             }
@@ -127,6 +129,7 @@ public class FormActivity3 extends AppCompatActivity {
         }
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
+            KumuApp.getAppStorage().saveForms();
             Intent intent = new Intent(this, FormActivity4.class);
             startActivity(intent);
         }
@@ -200,6 +203,7 @@ public class FormActivity3 extends AppCompatActivity {
         else {
             KumuApp.getAppStorage().getCurrentForm().setReportIndividualPlant(false);
         }
+        KumuApp.getAppStorage().saveForms();
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         startActivity(intent);
         Toast.makeText(FormActivity3.this, "Form saved for later.",

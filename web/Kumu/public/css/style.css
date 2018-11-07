@@ -78,7 +78,7 @@
 .grid-container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 275px auto;
     grid-template-rows: 55px auto;
     grid-gap: 3px 1px;
     grid-template-areas: "gSideBar gTopBar" "gSideBar gContent";
@@ -93,7 +93,7 @@
   .gTopBar {
     grid-area: gTopBar;
     width: 100%;
-    overflow: auto;
+    overflow: visible;
     top: 0;
     background-color: #008A45;
 
@@ -118,6 +118,21 @@
 
   }
   
+  #marker_images {
+    object-fit: cover;
+    border-radius: 50%;
+    width:200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+
   .circlePic {
     object-fit: cover;
     border-radius: 50%;
@@ -131,6 +146,24 @@
     cursor: pointer;
     transition: 0.3s;
   }
+
+
+  
+
+  .circlePic img {
+    object-fit: cover;
+    border-radius: 50%;
+    width:200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
 
 
   .circlePic:hover {
@@ -171,19 +204,14 @@ select {
   position: relative;
 }
 
-input {
-  -webkit-border-radius: 2px;
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-padding-end: 10px;
-  -webkit-padding-start: 2px;
-  background-image: -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  border: 1px solid #AAA;
-  color: #555;
+#searchBar {
+  margin-right: 10px;
+  margin-left: 20px;
+  margin-top: 11px;
+  margin-bottom: 20px;
   font-size: 14px;
-  margin: 10px;
-  overflow: hidden;
-  padding: 5px 10px;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
   white-space: nowrap;
   width: 15vw;
   font-family: 'robotolight', sans-serif;
@@ -205,4 +233,7 @@ html {
   background: #FF0000;
 }
 
+.easy-autocomplete-container {
+z-index: 5500;
+}
 

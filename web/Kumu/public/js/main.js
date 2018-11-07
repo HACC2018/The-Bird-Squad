@@ -102,6 +102,7 @@ $(document).ready(function () {
 
 	function getAndSetImages(msg){
 		let jsonGet = JSON.parse(msg);
+		console.log(jsonGet);
 
 		let tempFormID = [];
 		for (var i = 0; i < jsonGet.length; i++) {
@@ -127,7 +128,7 @@ $(document).ready(function () {
 							for (var k in images) {
 								var image = images[k].ImageName;
 								if (typeof image !== 'undefined') {
-									imageHTML += '<a class="image_click" href="#"><img src="' + base_url + images[k].ImageName + '" style="width:100px;" /></a>';
+									imageHTML += '<a class="image_click" href="#"><img class="circlePic" src="' + base_url + images[k].ImageName + '"  /></a>';
 								}
 							}
 							imageHTML += '</div>';

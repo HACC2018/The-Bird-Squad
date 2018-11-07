@@ -1,4 +1,5 @@
 <resources>
+    //SECTION 1
     <string name="app_name">Kumu</string>
     <string name="username_field">Username</string>
     <string name="password_field">Password</string>
@@ -38,10 +39,16 @@
     <string name="ref_site">Populatiion Reference Site (A-Z)</string>
     <string name="location_notes">Location Notes</string>
     <string name="elevation">Elevation (feet)</string>
+
+
+    // SECTION 2
     <string name="population_structure">Are you Entering Population Structure? (Total number of plants on site)</string>
     <string name="mature_plants">Number of Mature Plants</string>
     <string name="immature_plants">Number of Immature Plants</string>
     <string name="seedlings">Number of Seedlings</string>
+
+
+    // SECTION 3
     <string name="individual_plant">Are you Collecting Data on an Individual Plant?</string>
     <string name="plant_number">Individual Plant Number</string>
     <string name="plant_tagged">This Plant is Tagged</string>
@@ -84,21 +91,1491 @@
     <string name="plant_cuttings">Amount of Cuttings Collected</string>
     <string name="plant_air_layers">Amount of Air Layers Collected</string>
     <string name="plant_flowers">Amount of Flowers Collected</string>
+
+
+    // SECTION 4
     <string name="population_data">Are you Entering Population Data?</string>
     <string name="population_phenology">Population Phenology</string>
     <string name="population_phenology_vegetative">% of Plants Vegetative</string>
     <string name="population_phenology_buds">% of Plants with Flower Buds</string>
-    <string name="population_phenology_flower">$ of Plants in Flower</string>
-    <string name="population_phenology_fruit">$ of Plants with Fruit</string>
-    <string name="population_phenology_mature_fruit">$ of Plants with Mature Fruit</string>
+    <string name="population_phenology_flower">% of Plants in Flower</string>
+    <string name="population_phenology_fruit">% of Plants with Fruit</string>
+    <string name="population_phenology_mature_fruit">% of Plants with Mature Fruit</string>
+
     <string name="population_condition">Population Condition</string>
     <string name="population_condition_plants_healthy">% of Plants Healthy</string>
     <string name="population_condition_plants_moderate">% of Plants Moderate</string>
     <string name="population_condition_plants_poor">% of Plants Poor</string>
     <string name="population_condition_plants_dead">% of Plants Dead</string>
+
     <string name="population_light_level">Light Level</string>
     <string name="population_light_level_full">% of Plants in Full Sun</string>
     <string name="population_light_level_partial">% of Plants in Partial Sun</string>
     <string name="population_light_level_partialshade">% of Plants in Partial Shade</string>
     <string name="population_light_level_deepshade">% of Plants in Deep Shade</string>
+
+
+    // SECTION 5
+    <string name="habitat_characteristics">Are you Entering Habitat Characteristics?</string>
+    <string name="habitat_overstory_closure">Overstory Closure</string>
+    <string-array name="observatory_closures">
+        <item>Closed 75 to 100%</item>
+        <item>Intermediate 25 to 75%</item>
+        <item>Open 0 to 25%</item>
+    </string-array>
+    <string-array name="observatory_heights">
+        <item>2 to 5m</item>
+        <item>5 to 10m</item>
+        <item>10m or more</item>
+    </string-array>
+    <string-array name="understory_closures">
+        <item>Closed 75 to 100%</item>
+        <item>Intermediate 25 to 75%</item>
+        <item>Open 0 to 25%</item>
+    </string-array>
+    <string-array name="soil_drainage">
+        <item>Well</item>
+        <item>Moderate</item>
+        <item>Poor</item>
+        <item>Hydric</item>
+    </string-array>
+    <string-array name="topography">
+        <item>Crest</item>
+        <item>Upper Slope</item>
+        <item>Mid Slope</item>
+        <item>Lower Slope</item>
+        <item>Gulch Bottom</item>
+        <item>Plateau-Flat</item>
+    </string-array>
+    <string-array name="aspect">
+        <item>North</item>
+        <item>NorthEast</item>
+        <item>East</item>
+        <item>SouthEast</item>
+        <item>South</item>
+        <item>SouthWest</item>
+        <item>West</item>
+        <item>NorthWest</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="substrate">
+        <item>Aa</item>
+        <item>Pahoehoe</item>
+        <item>Soil</item>
+        <item>Rock Talus</item>
+        <item>Sand</item>
+    </string-array>
+    <string name="habitat_overstory_height">Overstory Height</string>
+    <string name="habitat_understory_closure">Overstory Height</string>
+    <string name="habitat_soil_drainage">Soil Drainage</string>
+    <string name="habitat_topography">Topography</string>
+    <string name="habitat_aspect">Aspect</string>
+    <string name="habitat_associated_overstory_species">Associated Overstory Species</string>
+    <string name="habitat_associated_understory_species">Associated Understory Species</string>
+    <string name="habitat_substrate">Substrate</string>
+
+
+    // SECTION 6
+    <string name="threats">Are you entering Threats?</string>
+    <string name="threats_management">Threats and Management</string>
+    <string-array name="threat_types">
+        <item>Pigs</item>
+        <item>Goats</item>
+        <item>Deer</item>
+        <item>Sheep</item>
+        <item>Cattle</item>
+        <item>Weeds</item>
+        <item>Landslides</item>
+        <item>Anthropods</item>
+        <item>Pathogen</item>
+        <item>Other</item>
+    </string-array>
+    <string name="threats_notes">Threat and Management Notes</string>
+    
+    <string name="title_activity_map">Map</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="autocomplete_taxaname">
+        <item>Abutilon eremitopetalum</item>
+        <item>Abutilon incanum </item>
+        <item>Abutilon menziesii</item>
+        <item>Abutilon sandwicense</item>
+        <item>Acacia koa</item>
+        <item>Acacia koaia</item>
+        <item>Acaena exigua</item>
+        <item>Achyranthes atollensis</item>
+        <item>Achyranthes mutica </item>
+        <item>Achyranthes splendens var. rotundata</item>
+        <item>Achyranthes splendens var. splendens</item>
+        <item>Adenophorus abietinus </item>
+        <item>Adenophorus epigaeus</item>
+        <item>Adenophorus haalilioanus </item>
+        <item>Adenophorus hymenophylloides </item>
+        <item>Adenophorus oahuensis</item>
+        <item>Adenophorus periens </item>
+        <item>Adenophorus pinnatifidus var. pinnatifidus</item>
+        <item>Adenophorus pinnatifidus var. rockii</item>
+        <item>Adenophorus tamariscinus var. montanus</item>
+        <item>Adenophorus tamariscinus var. tamariscinus</item>
+        <item>Adenophorus tenellus </item>
+        <item>Adenophorus tripinnatifidus </item>
+        <item>Adenostemma viscosum</item>
+        <item>Adiantum capillus-veneris</item>
+        <item>Agrostis sandwicensis </item>
+        <item>Alectryon macrococcus var. auwahiensis  </item>
+        <item>Alectryon macrococcus var. macrococcus  </item>
+        <item>Alphitonia ponderosa</item>
+        <item>Alyxia stellata</item>
+        <item>Amaranthus brownii  </item>
+        <item>Anoectochilus sandvicensis</item>
+        <item>Antidesma platyphyllum var. hillebrandii</item>
+        <item>Antidesma platyphyllum var. playtphyllum</item>
+        <item>Antidesma pulvinatum</item>
+        <item>Arachniodes insularis</item>
+        <item>Argemone glauca var. decipiens</item>
+        <item>Argemone glauca var. glauca</item>
+        <item>Argyroxiphium caliginis</item>
+        <item>Argyroxiphium grayanum</item>
+        <item>Argyroxiphium kauense</item>
+        <item>Argyroxiphium sandwicense subsp. macrocephalum   </item>
+        <item>Argyroxiphium sandwicense subsp. sandwicense</item>
+        <item>Argyroxiphium virescens</item>
+        <item>Artemisia australis</item>
+        <item>Artemisia kauaiensis</item>
+        <item>Artemisia mauiensis </item>
+        <item>Asplenium acuminatum</item>
+        <item>Asplenium adiantum-nigrum</item>
+        <item>Asplenium aethiopicum</item>
+        <item>Asplenium caudatum</item>
+        <item>Asplenium contiguum var. contiguum</item>
+        <item>Asplenium contiguum var. hirtulum</item>
+        <item>Asplenium dielerectum</item>
+        <item>Asplenium dielfalcatum</item>
+        <item>Asplenium diellaciniatum</item>
+        <item>Asplenium dielmannii </item>
+        <item>Asplenium dielpallidum</item>
+        <item>Asplenium glabratum</item>
+        <item>Asplenium haleakalense</item>
+        <item>Asplenium hobdyi </item>
+        <item>Asplenium insiticium</item>
+        <item>Asplenium kaulfussii </item>
+        <item>Asplenium leucostegioides</item>
+        <item>Asplenium lobulatum</item>
+        <item>Asplenium macraei</item>
+        <item>Asplenium monanthes</item>
+        <item>Asplenium nidus</item>
+        <item>Asplenium normale</item>
+        <item>Asplenium peruvianum var. insulare   </item>
+        <item>Asplenium polyodon</item>
+        <item>Asplenium schizophyllum</item>
+        <item>Asplenium sphenotomum</item>
+        <item>Asplenium trichomanes subsp. densum </item>
+        <item>Asplenium unisorum</item>
+        <item>Asplenium x laui</item>
+        <item>Astelia argyrocoma</item>
+        <item>Astelia menziesiana</item>
+        <item>Astelia waialealae</item>
+        <item>Athyrium haleakalae</item>
+        <item>Athyrium microphyllum</item>
+        <item>Bacopa monnieri </item>
+        <item>Bidens amplectens</item>
+        <item>Bidens asymmetrica</item>
+        <item>Bidens campylotheca subsp. campylotheca</item>
+        <item>Bidens campylotheca subsp. pentamera</item>
+        <item>Bidens campylotheca subsp. waihoiensis</item>
+        <item>Bidens cervicata</item>
+        <item>Bidens conjuncta</item>
+        <item>Bidens cosmoides</item>
+        <item>Bidens forbesii subsp. forbesii</item>
+        <item>Bidens forbesii subsp. kahiliensis</item>
+        <item>Bidens hawaiensis</item>
+        <item>Bidens hillebrandiana subsp. hillebrandiana</item>
+        <item>Bidens hillebrandiana subsp. polycephala</item>
+        <item>Bidens macrocarpa</item>
+        <item>Bidens mauiensis</item>
+        <item>Bidens menziesii subsp. filiformis </item>
+        <item>Bidens menziesii subsp. menziesii</item>
+        <item>Bidens micrantha subsp. ctenophylla</item>
+        <item>Bidens micrantha subsp. kalealaha   </item>
+        <item>Bidens micrantha subsp. micrantha</item>
+        <item>Bidens molokaiensis</item>
+        <item>Bidens populifolia</item>
+        <item>Bidens sandvicensis subsp. confusa</item>
+        <item>Bidens sandvicensis subsp. sandvicensis</item>
+        <item>Bidens torta</item>
+        <item>Bidens valida</item>
+        <item>Bidens wiebkei</item>
+        <item>Bobea brevipes</item>
+        <item>Bobea elatior</item>
+        <item>Bobea sandwicensis</item>
+        <item>Bobea timonioides</item>
+        <item>Boehmeria grandis</item>
+        <item>Boerhavia acutifolia </item>
+        <item>Boerhavia herbstii </item>
+        <item>Boerhavia repens</item>
+        <item>Bolboschoenus maritimus</item>
+        <item>Bonamia menziesii </item>
+        <item>Botrychium subbifoliatum </item>
+        <item>Brighamia insignis   </item>
+        <item>Brighamia rockii   </item>
+        <item>Broussaisia arguta</item>
+        <item>Caesalpinia bonduc </item>
+        <item>Calamagrostis expansa</item>
+        <item>Calamagrostis hillebrandii</item>
+        <item>Callistopteris baldwinii </item>
+        <item>Canavalia galeata </item>
+        <item>Canavalia hawaiiensis</item>
+        <item>Canavalia kauaiensis</item>
+        <item>Canavalia molokaiensis   </item>
+        <item>Canavalia napaliensis   </item>
+        <item>Canavalia pubescens</item>
+        <item>Capparis sandwichiana</item>
+        <item>Carex alligata</item>
+        <item>Carex echinata</item>
+        <item>Carex kauaiensis</item>
+        <item>Carex macloviana subsp. subfusca</item>
+        <item>Carex meyenii</item>
+        <item>Carex montis-eeka</item>
+        <item>Carex nealae</item>
+        <item>Carex wahuensis subsp. herbstii</item>
+        <item>Carex wahuensis subsp. rubiginosa</item>
+        <item>Carex wahuensis subsp. wahuensis</item>
+        <item>Cassytha filiformis </item>
+        <item>Cenchrus agrimoniodes var. agrimonioides  </item>
+        <item>Cenchrus agrimonioides var. laysanensis</item>
+        <item>Charpentiera densiflora </item>
+        <item>Charpentiera elliptica</item>
+        <item>Charpentiera obovata</item>
+        <item>Charpentiera ovata var. niuensis</item>
+        <item>Charpentiera ovata var. ovata</item>
+        <item>Charpentiera tomentosa var. maakuaensis</item>
+        <item>Charpentiera tomentosa var. tomentosa</item>
+        <item>Cheirodendron dominii</item>
+        <item>Cheirodendron fauriei </item>
+        <item>Cheirodendron forbesii</item>
+        <item>Cheirodendron platyphyllum subsp. kauaiense</item>
+        <item>Cheirodendron platyphyllum subsp. platyphyllum</item>
+        <item>Cheirodendron trigynum subsp. helleri</item>
+        <item>Cheirodendron trigynum subsp. trigynum</item>
+        <item>Chenopodium oahuense</item>
+        <item>Chrysodracon aurea</item>
+        <item>Chrysodracon auwahiensis</item>
+        <item>Chrysodracon fernaldii</item>
+        <item>Chrysodracon forbesii</item>
+        <item>Chrysodracon halapepe</item>
+        <item>Chrysodracon hawaiiensis </item>
+        <item>Chrysopogon aciculatus</item>
+        <item>Cibotium chamissoi</item>
+        <item>Cibotium glaucum</item>
+        <item>Cibotium menziesii </item>
+        <item>Cibotium nealiae</item>
+        <item>Cladium jamaicense</item>
+        <item>Cladonia solitaria </item>
+        <item>Claoxylon sandwicense</item>
+        <item>Cleome spinosa</item>
+        <item>Clermontia arborescens subsp. arborescens</item>
+        <item>Clermontia arborescens subsp. waihiae</item>
+        <item>Clermontia arborescens subsp. waikoluensis </item>
+        <item>Clermontia calophylla</item>
+        <item>Clermontia clermontioides subsp. clermontioides</item>
+        <item>Clermontia clermontioides subsp. rockiana</item>
+        <item>Clermontia drepanomorpha   </item>
+        <item>Clermontia fauriei</item>
+        <item>Clermontia grandiflora  subsp. maxima</item>
+        <item>Clermontia grandiflora subsp. grandiflora</item>
+        <item>Clermontia grandiflora subsp. munroi </item>
+        <item>Clermontia hawaiiensis </item>
+        <item>Clermontia kakeana </item>
+        <item>Clermontia kohalae</item>
+        <item>Clermontia lindseyana  </item>
+        <item>Clermontia micrantha </item>
+        <item>Clermontia montis-loa</item>
+        <item>Clermontia multiflora </item>
+        <item>Clermontia oblongifolia subsp. brevipes  </item>
+        <item>Clermontia oblongifolia subsp. mauiensis   </item>
+        <item>Clermontia oblongifolia subsp. oblongifolia</item>
+        <item>Clermontia pallida</item>
+        <item>Clermontia parviflora </item>
+        <item>Clermontia peleana subsp. peleana  </item>
+        <item>Clermontia peleana subsp. singuliflora  </item>
+        <item>Clermontia persicifolia</item>
+        <item>Clermontia pyrularia   </item>
+        <item>Clermontia samuelii subsp. hanaensis   </item>
+        <item>Clermontia samuelii subsp. samuelii  </item>
+        <item>Clermontia tuberculata</item>
+        <item>Clermontia waimeae</item>
+        <item>Cocculus orbiculatus </item>
+        <item>Colubrina asiatica </item>
+        <item>Colubrina oppositifolia  </item>
+        <item>Coniogramme pilosa </item>
+        <item>Coprosma cordicarpa</item>
+        <item>Coprosma cymosa </item>
+        <item>Coprosma elliptica</item>
+        <item>Coprosma ernodeoides</item>
+        <item>Coprosma foliosa </item>
+        <item>Coprosma kauensis</item>
+        <item>Coprosma kawaikiniensis</item>
+        <item>Coprosma longifolia </item>
+        <item>Coprosma menziesii</item>
+        <item>Coprosma montana</item>
+        <item>Coprosma ochracea</item>
+        <item>Coprosma pubens</item>
+        <item>Coprosma rhynchocarpa</item>
+        <item>Coprosma stephanocarpa</item>
+        <item>Coprosma ternata </item>
+        <item>Coprosma waimeae </item>
+        <item>Cordia subcordata</item>
+        <item>Crepidomanes draytonianum</item>
+        <item>Crepidomanes minutum </item>
+        <item>Cressa truxillensis</item>
+        <item>Cryptocarya mannii</item>
+        <item>Cryptocarya oahuensis</item>
+        <item>Ctenitis latifrons </item>
+        <item>Ctenitis squamigera </item>
+        <item>Cuscuta sandwichiana </item>
+        <item>Cyanea aculeatiflora </item>
+        <item>Cyanea acuminata   </item>
+        <item>Cyanea angustifolia </item>
+        <item>Cyanea arborea </item>
+        <item>Cyanea asarifolia</item>
+        <item>Cyanea asplenifolia</item>
+        <item>Cyanea calycina</item>
+        <item>Cyanea cf. fernaldii</item>
+        <item>Cyanea comata</item>
+        <item>Cyanea copelandii subsp. copelandii</item>
+        <item>Cyanea copelandii subsp. haleakalaensis   </item>
+        <item>Cyanea coriaceae</item>
+        <item>Cyanea crispa </item>
+        <item>Cyanea cylindrocalyx </item>
+        <item>Cyanea dolichopoda </item>
+        <item>Cyanea dunbariae  </item>
+        <item>Cyanea duvalliorum</item>
+        <item>Cyanea eleeleensis </item>
+        <item>Cyanea elliptica</item>
+        <item>Cyanea fissa</item>
+        <item>Cyanea floribunda </item>
+        <item>Cyanea gibsonii</item>
+        <item>Cyanea giffardii </item>
+        <item>Cyanea glabra</item>
+        <item>Cyanea grimesiana subsp. grimesiana</item>
+        <item>Cyanea grimesiana subsp. obatae </item>
+        <item>Cyanea habenata</item>
+        <item>Cyanea hamatiflora subsp. carlsonii   </item>
+        <item>Cyanea hamatiflora subsp. hamatiflora   </item>
+        <item>Cyanea hardyi</item>
+        <item>Cyanea hirtella</item>
+        <item>Cyanea horrida</item>
+        <item>Cyanea humboldtiana </item>
+        <item>Cyanea kahiliensis</item>
+        <item>Cyanea kauaulaensis</item>
+        <item>Cyanea kolekoleensis  </item>
+        <item>Cyanea konahuanuiensis</item>
+        <item>Cyanea koolauensis   </item>
+        <item>Cyanea kuhihewa  </item>
+        <item>Cyanea kunthiana</item>
+        <item>Cyanea lanceolata</item>
+        <item>Cyanea leptostegia</item>
+        <item>Cyanea linearifolia</item>
+        <item>Cyanea lobata  subsp. baldwinii</item>
+        <item>Cyanea lobata  subsp. lobata</item>
+        <item>Cyanea longiflora  </item>
+        <item>Cyanea longissima </item>
+        <item>Cyanea macrostegia </item>
+        <item>Cyanea magnicalyx </item>
+        <item>Cyanea mannii   </item>
+        <item>Cyanea maritae</item>
+        <item>Cyanea marksii</item>
+        <item>Cyanea mauiensis</item>
+        <item>Cyanea mceldowneyi   </item>
+        <item>Cyanea membranacea</item>
+        <item>Cyanea minutiflora</item>
+        <item>Cyanea munroi </item>
+        <item>Cyanea obtusa</item>
+        <item>Cyanea parvifolia</item>
+        <item>Cyanea pilosa subsp. longipedunculata</item>
+        <item>Cyanea pilosa subsp. pilosa</item>
+        <item>Cyanea pinnatifida   </item>
+        <item>Cyanea platyphylla   </item>
+        <item>Cyanea pohaku </item>
+        <item>Cyanea procera   </item>
+        <item>Cyanea profuga</item>
+        <item>Cyanea pseudofaurei</item>
+        <item>Cyanea purpurellifolia</item>
+        <item>Cyanea pycnocarpa</item>
+        <item>Cyanea quercifolia</item>
+        <item>Cyanea recta  </item>
+        <item>Cyanea remyi   </item>
+        <item>Cyanea rivularis </item>
+        <item>Cyanea salicina</item>
+        <item>Cyanea scabra</item>
+        <item>Cyanea sessilifolia</item>
+        <item>Cyanea shipmanii   </item>
+        <item>Cyanea solanacea</item>
+        <item>Cyanea solenocalyx</item>
+        <item>Cyanea spathulata </item>
+        <item>Cyanea st.-johnii   </item>
+        <item>Cyanea stictophylla   </item>
+        <item>Cyanea superba subsp. regina </item>
+        <item>Cyanea superba subsp. superba   </item>
+        <item>Cyanea tritomantha</item>
+        <item>Cyanea truncata   </item>
+        <item>Cyanea undulata   </item>
+        <item>Cyclosorus boydiae</item>
+        <item>Cyclosorus cyatheoides</item>
+        <item>Cyclosorus hudsonianus</item>
+        <item>Cyclosorus interruptus</item>
+        <item>Cyclosorus pendens </item>
+        <item>Cyclosorus sandwicensis</item>
+        <item>Cyclosorus wailele</item>
+        <item>Cyperus cyperinus</item>
+        <item>Cyperus fauriei  </item>
+        <item>Cyperus hillebrandii var. decipiens </item>
+        <item>Cyperus hillebrandii var. hillebrandii</item>
+        <item>Cyperus hypochlorus var. brevior </item>
+        <item>Cyperus hypochlorus var. hypochlorus</item>
+        <item>Cyperus javanicus</item>
+        <item>Cyperus laevigatus</item>
+        <item>Cyperus neokunthianus</item>
+        <item>Cyperus odoratus</item>
+        <item>Cyperus pennatiformis subsp. bryanii  </item>
+        <item>Cyperus pennatiformis subsp. pennatiformis</item>
+        <item>Cyperus phleoides var. hawaiiensis</item>
+        <item>Cyperus phleoides var. phleoides</item>
+        <item>Cyperus polystachyos</item>
+        <item>Cyperus rockii</item>
+        <item>Cyperus sandwicensis</item>
+        <item>Cyperus trachysanthos  </item>
+        <item>Cyrtandra biserrata</item>
+        <item>Cyrtandra calpidicarpa </item>
+        <item>Cyrtandra confertiflora</item>
+        <item>Cyrtandra cordifolia</item>
+        <item>Cyrtandra crenata</item>
+        <item>Cyrtandra cyaneoides    </item>
+        <item>Cyrtandra dentata  </item>
+        <item>Cyrtandra ferripilosa</item>
+        <item>Cyrtandra filipes</item>
+        <item>Cyrtandra garnotiana </item>
+        <item>Cyrtandra giffardii   </item>
+        <item>Cyrtandra gracilis</item>
+        <item>Cyrtandra grandiflora </item>
+        <item>Cyrtandra grayana </item>
+        <item>Cyrtandra grayi </item>
+        <item>Cyrtandra halawensis</item>
+        <item>Cyrtandra hashimotoi</item>
+        <item>Cyrtandra hawaiensis</item>
+        <item>Cyrtandra heinrichii</item>
+        <item>Cyrtandra hematos</item>
+        <item>Cyrtandra kalichii </item>
+        <item>Cyrtandra kamoolaensis</item>
+        <item>Cyrtandra kauaiensis </item>
+        <item>Cyrtandra kaulantha</item>
+        <item>Cyrtandra kealiae subsp. kealiae</item>
+        <item>Cyrtandra kealiae subsp. urceolata</item>
+        <item>Cyrtandra kohalae</item>
+        <item>Cyrtandra laxiflora </item>
+        <item>Cyrtandra lessoniana </item>
+        <item>Cyrtandra longifolia </item>
+        <item>Cyrtandra lydgatei</item>
+        <item>Cyrtandra lysiosepala </item>
+        <item>Cyrtandra macraei </item>
+        <item>Cyrtandra macrocalyx</item>
+        <item>Cyrtandra menziesii</item>
+        <item>Cyrtandra munroi </item>
+        <item>Cyrtandra nanawaleensis</item>
+        <item>Cyrtandra oenobarba   </item>
+        <item>Cyrtandra olona</item>
+        <item>Cyrtandra oxybapha</item>
+        <item>Cyrtandra paliku  </item>
+        <item>Cyrtandra paludosa var. microcarpa </item>
+        <item>Cyrtandra paludosa var. paludosa</item>
+        <item>Cyrtandra pickeringii</item>
+        <item>Cyrtandra platyphylla </item>
+        <item>Cyrtandra polyantha  </item>
+        <item>Cyrtandra procera </item>
+        <item>Cyrtandra propinqua </item>
+        <item>Cyrtandra pruinosa </item>
+        <item>Cyrtandra rivularis</item>
+        <item>Cyrtandra sandwicensis</item>
+        <item>Cyrtandra sessilis</item>
+        <item>Cyrtandra spathulata </item>
+        <item>Cyrtandra subumbellata  </item>
+        <item>Cyrtandra tintinnabula   </item>
+        <item>Cyrtandra viridiflora  </item>
+        <item>Cyrtandra wagneri</item>
+        <item>Cyrtandra waianaeensis </item>
+        <item>Cyrtandra wainihaensis</item>
+        <item>Cyrtandra waiolani</item>
+        <item>Cyrtandra wawrae </item>
+        <item>Cyrtomium caryotideum</item>
+        <item>Cystopteris douglasii</item>
+        <item>Cystopteris sandwicensis</item>
+        <item>Delissea argutidentata </item>
+        <item>Delissea fallax</item>
+        <item>Delissea fauriei </item>
+        <item>Delissea kauaiensis</item>
+        <item>Delissea laciniata</item>
+        <item>Delissea lanaiensis</item>
+        <item>Delissea lauliiana</item>
+        <item>Delissea niihauensis </item>
+        <item>Delissea parviflora</item>
+        <item>Delissea rhytidosperma   </item>
+        <item>Delissea sinuata</item>
+        <item>Delissea subcordata subsp. obtusifolia</item>
+        <item>Delissea subcordata subsp. subcordata</item>
+        <item>Delissea takeuchii</item>
+        <item>Delissea undulata</item>
+        <item>Delissea waianaeensis </item>
+        <item>Deparia cataracticola</item>
+        <item>Deparia fenzliana </item>
+        <item>Deparia kaalaana </item>
+        <item>Deparia marginalis </item>
+        <item>Deparia prolifera </item>
+        <item>Deschampsia nubigena</item>
+        <item>Dianella sandwicensis</item>
+        <item>Dichanthelium cynodon</item>
+        <item>Dichanthelium hillebrandianum </item>
+        <item>Dichanthelium isachnoides</item>
+        <item>Dichanthelium koolauense</item>
+        <item>Dicranopteris linearis</item>
+        <item>Digitaria setigera </item>
+        <item>Diospyros hillebrandii</item>
+        <item>Diospyros sandwicensis</item>
+        <item>Diplazium arnottii</item>
+        <item>Diplazium molokaiense  </item>
+        <item>Diplazium sandwichianum</item>
+        <item>Diplopterygium pinnatum </item>
+        <item>Dissochondrus biflorus</item>
+        <item>Dodonaea viscosa</item>
+        <item>Doodia kunthiana</item>
+        <item>Doodia lyonii</item>
+        <item>Doryopteris angelica   </item>
+        <item>Doryopteris decipiens </item>
+        <item>Doryopteris decora </item>
+        <item>Doryopteris takeuchii </item>
+        <item>Drosera anglica </item>
+        <item>Dryopteris crinalis var. crinalis</item>
+        <item>Dryopteris crinalis var. podosorus</item>
+        <item>Dryopteris fuscoatra var. fuscoatra</item>
+        <item>Dryopteris fuscoatra var. lamoureuxii </item>
+        <item>Dryopteris glabra var. alboviridis</item>
+        <item>Dryopteris glabra var. flynnii </item>
+        <item>Dryopteris glabra var. glabra</item>
+        <item>Dryopteris glabra var. hobdyana </item>
+        <item>Dryopteris glabra var. nuda </item>
+        <item>Dryopteris glabra var. pusilla</item>
+        <item>Dryopteris glabra var. soripes </item>
+        <item>Dryopteris hawaiiensis</item>
+        <item>Dryopteris mauiensis </item>
+        <item>Dryopteris rubiginosa</item>
+        <item>Dryopteris sandwicensis</item>
+        <item>Dryopteris subbipinnata</item>
+        <item>Dryopteris tetrapinnata</item>
+        <item>Dryopteris unidentata var. paleacea</item>
+        <item>Dryopteris unidentata var. unidentata</item>
+        <item>Dryopteris wallichiana </item>
+        <item>Dubautia arborea</item>
+        <item>Dubautia carrii</item>
+        <item>Dubautia ciliolata subsp. ciliolata</item>
+        <item>Dubautia ciliolata subsp. glutinosa</item>
+        <item>Dubautia hanaulaensis</item>
+        <item>Dubautia herbstobatae</item>
+        <item>Dubautia imbricata subsp. acronaea</item>
+        <item>Dubautia imbricata subsp. imbricata   </item>
+        <item>Dubautia kalalauensis </item>
+        <item>Dubautia kenwoodii</item>
+        <item>Dubautia knudsenii subsp. filiformis</item>
+        <item>Dubautia knudsenii subsp. knudsenii</item>
+        <item>Dubautia knudsenii subsp. nagatae</item>
+        <item>Dubautia laevigata </item>
+        <item>Dubautia latifolia</item>
+        <item>Dubautia laxa subsp. bryanii </item>
+        <item>Dubautia laxa subsp. hirsuta</item>
+        <item>Dubautia laxa subsp. laxa</item>
+        <item>Dubautia laxa subsp. pseudoplantaginea</item>
+        <item>Dubautia linearis subsp. hillebrandii</item>
+        <item>Dubautia linearis subsp. linearis</item>
+        <item>Dubautia menziesii</item>
+        <item>Dubautia microcephala</item>
+        <item>Dubautia paleata</item>
+        <item>Dubautia pauciflorula </item>
+        <item>Dubautia plantaginea subsp. humilis   </item>
+        <item>Dubautia plantaginea subsp. magnifolia   </item>
+        <item>Dubautia plantaginea subsp. plantaginea</item>
+        <item>Dubautia platyphylla</item>
+        <item>Dubautia raillardioides</item>
+        <item>Dubautia reticulata</item>
+        <item>Dubautia scabra subsp. leiophylla </item>
+        <item>Dubautia scabra subsp. scabra</item>
+        <item>Dubautia sherffiana</item>
+        <item>Dubautia syndetica</item>
+        <item>Dubautia waialealae</item>
+        <item>Dubautia waianapanapaensis </item>
+        <item>Elaeocarpus bifidus</item>
+        <item>Elaphoglossum aemulum </item>
+        <item>Elaphoglossum alatum</item>
+        <item>Elaphoglossum crassicaule </item>
+        <item>Elaphoglossum crassifolium </item>
+        <item>Elaphoglossum fauriei</item>
+        <item>Elaphoglossum paleaceum </item>
+        <item>Elaphoglossum parvisquameum </item>
+        <item>Elaphoglossum pellucidum </item>
+        <item>Elaphoglossum wawrae</item>
+        <item>Eleocharis calva</item>
+        <item>Eleocharis obtusa </item>
+        <item>Embelia pacifica</item>
+        <item>Entada phaseoloides </item>
+        <item>Eragrostis atropioides </item>
+        <item>Eragrostis deflexa</item>
+        <item>Eragrostis fosbergii</item>
+        <item>Eragrostis grandis </item>
+        <item>Eragrostis leptophylla </item>
+        <item>Eragrostis mauiensis </item>
+        <item>Eragrostis monticola</item>
+        <item>Eragrostis paupera </item>
+        <item>Eragrostis variabilis</item>
+        <item>Erythrina sandwicensis</item>
+        <item>Eugenia koolauensis  </item>
+        <item>Eugenia reinwardtiana</item>
+        <item>Euphorbia arnottiana</item>
+        <item>Euphorbia atrococca </item>
+        <item>Euphorbia celastroides var. amplectens</item>
+        <item>Euphorbia celastroides var. celastroides</item>
+        <item>Euphorbia celastroides var. hanapepensis</item>
+        <item>Euphorbia celastroides var. kaenana  </item>
+        <item>Euphorbia celastroides var. laehiensis</item>
+        <item>Euphorbia celastroides var. lorifolia </item>
+        <item>Euphorbia celastroides var. stokesii </item>
+        <item>Euphorbia celastroides var. tomentella</item>
+        <item>Euphorbia clusiifolia</item>
+        <item>Euphorbia degeneri</item>
+        <item>Euphorbia deppeana  </item>
+        <item>Euphorbia eleanoriae  </item>
+        <item>Euphorbia haeleeleana  </item>
+        <item>Euphorbia halemanui    </item>
+        <item>Euphorbia herbstii  </item>
+        <item>Euphorbia kuwaleana  </item>
+        <item>Euphorbia multiformis var. microphylla </item>
+        <item>Euphorbia multiformis var. multiformis</item>
+        <item>Euphorbia olowaluana</item>
+        <item>Euphorbia remyi var. hanaleiensis </item>
+        <item>Euphorbia remyi var. kauaiensis   </item>
+        <item>Euphorbia remyi var. remyi   </item>
+        <item>Euphorbia rockii  </item>
+        <item>Euphorbia skottsbergii var. skottsbergii</item>
+        <item>Euphorbia skottsbergii var. vaccinioides</item>
+        <item>Euphorbia sparsiflora</item>
+        <item>Eurya sandwicensis</item>
+        <item>Exocarpos gaudichaudii</item>
+        <item>Exocarpos luteolus    </item>
+        <item>Exocarpos menziesii</item>
+        <item>Festuca aloha</item>
+        <item>Festuca hawaiiensis </item>
+        <item>Festuca molokaiensis</item>
+        <item>Fimbristylis cymosa subsp. spathacea</item>
+        <item>Fimbristylis cymosa subsp. umbellato-capitata</item>
+        <item>Fimbristylis dichotoma </item>
+        <item>Fimbristylis hawaiiensis</item>
+        <item>Flueggea neowawraea </item>
+        <item>Fragaria chiloensis subsp. sandwicensis</item>
+        <item>Freycinetia arborea</item>
+        <item>Gahnia aspera subsp. globosa</item>
+        <item>Gahnia beecheyi </item>
+        <item>Gahnia vitiensis subsp. kauaiensis </item>
+        <item>Gardenia brighamii</item>
+        <item>Gardenia mannii  </item>
+        <item>Gardenia remyi</item>
+        <item>Geranium arboreum   </item>
+        <item>Geranium cuneatum subsp. cuneatum</item>
+        <item>Geranium cuneatum subsp. hololeucum</item>
+        <item>Geranium cuneatum subsp. hypoleucum</item>
+        <item>Geranium cuneatum subsp. tridens</item>
+        <item>Geranium hanaense</item>
+        <item>Geranium hillebrandii</item>
+        <item>Geranium kauaiense   </item>
+        <item>Geranium multiflorum   </item>
+        <item>Gossypium tomentosum</item>
+        <item>Gouania hillebrandii  </item>
+        <item>Gouania meyenii   </item>
+        <item>Gouania vitifolia   </item>
+        <item>Gunnera kauaiensis</item>
+        <item>Gunnera petaloïdea</item>
+        <item>Gynochthodes trimera</item>
+        <item>Halophila decipiens</item>
+        <item>Halophila hawaiiana</item>
+        <item>Haplopteris elongata </item>
+        <item>Haplostachys bryanii</item>
+        <item>Haplostachys haplostachya</item>
+        <item>Haplostachys linearifolia</item>
+        <item>Haplostachys munroi</item>
+        <item>Haplostachys truncata </item>
+        <item>Heliotropium anomalum var. argenteum</item>
+        <item>Heliotropium curassavicum</item>
+        <item>Hesperocnide sandwicensis</item>
+        <item>Hesperomannia arborescens</item>
+        <item>Hesperomannia lydgatei   </item>
+        <item>Hesperomannia oahuensis   </item>
+        <item>Hesperomannia sweezii   </item>
+        <item>Heteropogon contortus</item>
+        <item>Hibiscadelphus bombycinus </item>
+        <item>Hibiscadelphus crucibracteatus </item>
+        <item>Hibiscadelphus distans</item>
+        <item>Hibiscadelphus giffardianus  </item>
+        <item>Hibiscadelphus hualalaiensis  </item>
+        <item>Hibiscadelphus stellatus</item>
+        <item>Hibiscadelphus wilderianus </item>
+        <item>Hibiscadelphus woodii  </item>
+        <item>Hibiscus arnottianus subsp. arnottianus</item>
+        <item>Hibiscus arnottianus subsp. immaculatus  </item>
+        <item>Hibiscus arnottianus subsp. punaluuensis </item>
+        <item>Hibiscus brackenridgei subsp. brackenridgei  </item>
+        <item>Hibiscus brackenridgei subsp. mokuleianus  </item>
+        <item>Hibiscus brackenridgei subsp. molokaiana </item>
+        <item>Hibiscus clayi  </item>
+        <item>Hibiscus furcellatus </item>
+        <item>Hibiscus kokio subsp. kokio</item>
+        <item>Hibiscus kokio subsp. saintjohnianus</item>
+        <item>Hibiscus tiliaceus</item>
+        <item>Hibiscus waimeae subsp. hannerae</item>
+        <item>Hibiscus waimeae subsp. waimeae</item>
+        <item>Hillebrandia sandwicensis</item>
+        <item>Huperzia erosa </item>
+        <item>Huperzia erubescens</item>
+        <item>Huperzia filiformis</item>
+        <item>Huperzia haleakalae</item>
+        <item>Huperzia mannii  </item>
+        <item>Huperzia nutans  </item>
+        <item>Huperzia phyllantha </item>
+        <item>Huperzia serrata </item>
+        <item>Huperzia stemmermanniae</item>
+        <item>Huperzia subintegra </item>
+        <item>Hymenasplenium unilaterale</item>
+        <item>Hymenophyllum lanceolatum</item>
+        <item>Hymenophyllum obtusum</item>
+        <item>Hymenophyllum recurvum</item>
+        <item>Hypolepis hawaiiensis var. hawaiiensis</item>
+        <item>Hypolepis hawaiiensis var. mauiensis</item>
+        <item>Ilex anomala</item>
+        <item>Ipomoea imperati </item>
+        <item>Ipomoea indica</item>
+        <item>Ipomoea littoralis </item>
+        <item>Ipomoea pes-caprae subsp. brasiliensis</item>
+        <item>Ipomoea tuboides</item>
+        <item>Isachne distichophylla</item>
+        <item>Isachne pallens </item>
+        <item>Ischaemum byrone  </item>
+        <item>Isodendrion hosakae  </item>
+        <item>Isodendrion laurifolium  </item>
+        <item>Isodendrion longifolium  </item>
+        <item>Isodendrion pyrifolium  </item>
+        <item>Isoetes hawaiiensis</item>
+        <item>Jacquemontia sandwicensis</item>
+        <item>Joinvillea ascendens subsp. ascendens</item>
+        <item>Kadua acuminata</item>
+        <item>Kadua affinis</item>
+        <item>Kadua axillaris </item>
+        <item>Kadua centranthoides </item>
+        <item>Kadua cookiana    </item>
+        <item>Kadua cordata subsp. cordata</item>
+        <item>Kadua cordata subsp. remyi</item>
+        <item>Kadua cordata subsp. waimeae </item>
+        <item>Kadua coriacea    </item>
+        <item>Kadua degeneri var. coprosmifolia   </item>
+        <item>Kadua degeneri var. degeneri  </item>
+        <item>Kadua elatior</item>
+        <item>Kadua fluviatilis</item>
+        <item>Kadua flynii</item>
+        <item>Kadua foggiana</item>
+        <item>Kadua foliosa </item>
+        <item>Kadua formosa</item>
+        <item>Kadua fosbergii </item>
+        <item>Kadua haupuensis</item>
+        <item>Kadua knudsenii </item>
+        <item>Kadua laxiflora</item>
+        <item>Kadua littoralis</item>
+        <item>Kadua parvula  </item>
+        <item>Kadua st.-johnii</item>
+        <item>Kadua tryblium</item>
+        <item>Kanaloa kahoolawensis   </item>
+        <item>Keysseria erici  </item>
+        <item>Keysserria helenae</item>
+        <item>Keysserria maviensis</item>
+        <item>Kokia cookei</item>
+        <item>Kokia drynarioides </item>
+        <item>Kokia kauaiensis  </item>
+        <item>Kokia lanceolata </item>
+        <item>Korthalsella complanata </item>
+        <item>Korthalsella cylindrica </item>
+        <item>Korthalsella degeneri</item>
+        <item>Korthalsella latissima</item>
+        <item>Korthalsella platycaula</item>
+        <item>Korthalsella remyana</item>
+        <item>Labordia cyrtandrae   </item>
+        <item>Labordia degeneri</item>
+        <item>Labordia fagraeoidea</item>
+        <item>Labordia hedyosmifolia </item>
+        <item>Labordia helleri</item>
+        <item>Labordia hirtella</item>
+        <item>Labordia hosakana</item>
+        <item>Labordia kaalae</item>
+        <item>Labordia lorenciana</item>
+        <item>Labordia lydgatei   </item>
+        <item>Labordia pumila    </item>
+        <item>Labordia sessilis</item>
+        <item>Labordia tinifolia var. lanaiensis</item>
+        <item>Labordia tinifolia var. tinifolia</item>
+        <item>Labordia tinifolia var. wahiawaensis   </item>
+        <item>Labordia triflora </item>
+        <item>Labordia venosa </item>
+        <item>Labordia waialaeale</item>
+        <item>Labordia waiolani </item>
+        <item>Lachnagrostis filiformis </item>
+        <item>Lepechinia hastata</item>
+        <item>Lepidium arbuscula   </item>
+        <item>Lepidium bidentatum var. o-waihiense</item>
+        <item>Lepidium orbiculare</item>
+        <item>Lepidium remyi</item>
+        <item>Lepidium serra</item>
+        <item>Lepisorus thunbergianus </item>
+        <item>Leptecophylla tameiameiae</item>
+        <item>Lepturus repens</item>
+        <item>Lindsaea repens var. macraeana</item>
+        <item>Liparis hawaiensis</item>
+        <item>Lipochaeta connata subsp. acris</item>
+        <item>Lipochaeta connata subsp. connata</item>
+        <item>Lipochaeta degeneri </item>
+        <item>Lipochaeta heterophylla </item>
+        <item>Lipochaeta lobata subsp. lobata</item>
+        <item>Lipochaeta lobata var. leptophylla   </item>
+        <item>Lipochaeta rockii</item>
+        <item>Lipochaeta succulenta </item>
+        <item>Lobelia dunbariae subsp. dunbariae</item>
+        <item>Lobelia dunbarii subsp. paniculata</item>
+        <item>Lobelia gaudichaudii </item>
+        <item>Lobelia gloria-montis subsp. gloria-montis</item>
+        <item>Lobelia gloria-montis subsp. longibracteata</item>
+        <item>Lobelia grayana </item>
+        <item>Lobelia hillebrandii</item>
+        <item>Lobelia hypoleuca </item>
+        <item>Lobelia kauaensis</item>
+        <item>Lobelia koolauensis  </item>
+        <item>Lobelia monostachya   </item>
+        <item>Lobelia niihauensis   </item>
+        <item>Lobelia oahuensis   </item>
+        <item>Lobelia remyi </item>
+        <item>Lobelia villosa</item>
+        <item>Lobelia wahiawa</item>
+        <item>Lobelia yuccoides</item>
+        <item>Ludwigia octovalvis </item>
+        <item>Luzula hawaiiensis var. glabrata</item>
+        <item>Luzula hawaiiensis var. hawaiiensis</item>
+        <item>Luzula hawaiiensis var. oahuensis </item>
+        <item>Lycium sandwicense </item>
+        <item>Lycopodiella cernua </item>
+        <item>Lycopodium venustulum var. venustulum</item>
+        <item>Lycopodium venustulum var. verticale</item>
+        <item>Lysimachia daphnoides   </item>
+        <item>Lysimachia filifolia </item>
+        <item>Lysimachia forbesii </item>
+        <item>Lysimachia glutinosa </item>
+        <item>Lysimachia hillebrandii</item>
+        <item>Lysimachia iniki </item>
+        <item>Lysimachia kalalauensis </item>
+        <item>Lysimachia lydgatei </item>
+        <item>Lysimachia mauritiana </item>
+        <item>Lysimachia maxima </item>
+        <item>Lysimachia ovoidea</item>
+        <item>Lysimachia pendens  </item>
+        <item>Lysimachia remyi </item>
+        <item>Lysimachia scopulensis </item>
+        <item>Lysimachia sp. Nov (Pohakea, Kauai)</item>
+        <item>Lysimachia sp. Nov (Wainiha, Kauai)</item>
+        <item>Lysimachia venosa  </item>
+        <item>Machaerina angustifolia</item>
+        <item>Machaerina mariscoides subsp. meyenii </item>
+        <item>Marattia douglasii </item>
+        <item>Marsilea villosa  </item>
+        <item>Melanthera bryanii </item>
+        <item>Melanthera fauriei </item>
+        <item>Melanthera integrifolia</item>
+        <item>Melanthera kamolensis    </item>
+        <item>Melanthera lavarum</item>
+        <item>Melanthera micrantha subsp. exigua     </item>
+        <item>Melanthera micrantha subsp. micrantha</item>
+        <item>Melanthera perdita</item>
+        <item>Melanthera populifolia </item>
+        <item>Melanthera remyi</item>
+        <item>Melanthera subcordata</item>
+        <item>Melanthera tenuifolia</item>
+        <item>Melanthera tenuis</item>
+        <item>Melanthera venosa</item>
+        <item>Melanthera waimeaensis</item>
+        <item>Melicope adscendens  </item>
+        <item>Melicope anisata</item>
+        <item>Melicope balloui </item>
+        <item>Melicope barbigera</item>
+        <item>Melicope christophersenii</item>
+        <item>Melicope cinerea</item>
+        <item>Melicope clusiifolia</item>
+        <item>Melicope cornuta var. cornuta</item>
+        <item>Melicope cornuta var. decurrens </item>
+        <item>Melicope cruciata</item>
+        <item>Melicope degeneri </item>
+        <item>Melicope elliptica </item>
+        <item>Melicope feddei </item>
+        <item>Melicope haleakalae</item>
+        <item>Melicope haupuensis  </item>
+        <item>Melicope hawaiensis</item>
+        <item>Melicope hiiakae</item>
+        <item>Melicope hosakae </item>
+        <item>Melicope kaalaensis</item>
+        <item>Melicope kavaiensis</item>
+        <item>Melicope knudsenii  </item>
+        <item>Melicope lydgatei  </item>
+        <item>Melicope macropus</item>
+        <item>Melicope makahae</item>
+        <item>Melicope molokaiensis</item>
+        <item>Melicope mucronulata  </item>
+        <item>Melicope munroi</item>
+        <item>Melicope nealae</item>
+        <item>Melicope oahuensis </item>
+        <item>Melicope obovata</item>
+        <item>Melicope oppenheimeri</item>
+        <item>Melicope orbicularis</item>
+        <item>Melicope ovalis   </item>
+        <item>Melicope ovata</item>
+        <item>Melicope pallida    </item>
+        <item>Melicope paniculata    </item>
+        <item>Melicope peduncularis</item>
+        <item>Melicope pseudoanisata</item>
+        <item>Melicope puberula</item>
+        <item>Melicope quadrangularis</item>
+        <item>Melicope radiata</item>
+        <item>Melicope reflexa  </item>
+        <item>Melicope remyi</item>
+        <item>Melicope rostrata </item>
+        <item>Melicope rotundifolia</item>
+        <item>Melicope saint-johnii </item>
+        <item>Melicope sandwicensis</item>
+        <item>Melicope sessilis</item>
+        <item>Melicope sp. Nov. 2 (Kauai) (stoneii?)</item>
+        <item>Melicope sp. Nov. 2 (Maui) </item>
+        <item>Melicope spathulata</item>
+        <item>Melicope volcanica</item>
+        <item>Melicope waialealae</item>
+        <item>Melicope wailauensis</item>
+        <item>Melicope wawraeana</item>
+        <item>Melicope zahlbruckneri </item>
+        <item>Metrosideros macropus</item>
+        <item>Metrosideros polymorpha var. dieteri </item>
+        <item>Metrosideros polymorpha var. glaberrima</item>
+        <item>Metrosideros polymorpha var. incana </item>
+        <item>Metrosideros polymorpha var. macrophylla</item>
+        <item>Metrosideros polymorpha var. newellii</item>
+        <item>Metrosideros polymorpha var. nuda</item>
+        <item>Metrosideros polymorpha var. polymorpha</item>
+        <item>Metrosideros polymorpha var. pseudorugosa</item>
+        <item>Metrosideros polymorpha var. pumila</item>
+        <item>Metrosideros rugosa</item>
+        <item>Metrosideros tremuloides </item>
+        <item>Metrosideros waialealae var. fauriei</item>
+        <item>Metrosideros waialealae var. waialealae</item>
+        <item>Mezoneuron kavaiense</item>
+        <item>Microlepia speluncae</item>
+        <item>Microlepia strigosa var. mauiensis</item>
+        <item>Microlepia strigosa var. strigosa</item>
+        <item>Microsorum spectrum var. pentadactylum</item>
+        <item>Microsorum spectrum var. spectrum</item>
+        <item>Morelotia gahniiformis </item>
+        <item>Mucuna gigantea subsp. gigantea</item>
+        <item>Mucuna persericea</item>
+        <item>Mucuna sloanei </item>
+        <item>Myoporum sandwicense</item>
+        <item>Myoporum stellatum</item>
+        <item>Myrsine alyxifolia </item>
+        <item>Myrsine degeneri</item>
+        <item>Myrsine denticulata </item>
+        <item>Myrsine fernseei</item>
+        <item>Myrsine fosbergii</item>
+        <item>Myrsine helleri</item>
+        <item>Myrsine juddii  </item>
+        <item>Myrsine kauaiensis </item>
+        <item>Myrsine knudsenii </item>
+        <item>Myrsine lanaiensis </item>
+        <item>Myrsine lessertiana</item>
+        <item>Myrsine linearifolia   </item>
+        <item>Myrsine mezii  </item>
+        <item>Myrsine petiolata</item>
+        <item>Myrsine pukooensis </item>
+        <item>Myrsine punctata</item>
+        <item>Myrsine sandwicensis</item>
+        <item>Myrsine vaccinioides</item>
+        <item>Myrsine wawraea </item>
+        <item>Nama sandwicensis</item>
+        <item>Neraudia angulata var. angulata  </item>
+        <item>Neraudia angulata var. dentata </item>
+        <item>Neraudia kauaiensis</item>
+        <item>Neraudia melastomifolia</item>
+        <item>Neraudia ovata  </item>
+        <item>Neraudia sericea  </item>
+        <item>Nertera granadensis </item>
+        <item>Nestegis sandwicensis</item>
+        <item>Nothocestrum breviflorum   </item>
+        <item>Nothocestrum latifolium</item>
+        <item>Nothocestrum longifolium</item>
+        <item>Nothocestrum peltatum   </item>
+        <item>Nototrichium divaricatum</item>
+        <item>Nototrichium humile  </item>
+        <item>Nototrichium sandwicense</item>
+        <item>Ochrosia compta</item>
+        <item>Ochrosia haleakalae</item>
+        <item>Ochrosia kauaiensis</item>
+        <item>Ochrosia kilaueaensis</item>
+        <item>Ophioglossum nudicaule </item>
+        <item>Ophioglossum pendulum </item>
+        <item>Ophioglossum petiolatum</item>
+        <item>Ophioglossum polyphyllum </item>
+        <item>Oreobolus furcatus</item>
+        <item>Oreogrammitis baldwinii </item>
+        <item>Oreogrammitis forbesiana </item>
+        <item>Oreogrammitis hookeri </item>
+        <item>Osteomeles anthyllidifolia</item>
+        <item>Oxalis corniculata </item>
+        <item>Pandanus tectorius</item>
+        <item>Panicum beecheyi </item>
+        <item>Panicum fauriei var. carteri  </item>
+        <item>Panicum fauriei var. fauriei</item>
+        <item>Panicum fauriei var. latius </item>
+        <item>Panicum konaense </item>
+        <item>Panicum lineale</item>
+        <item>Panicum longivaginatum </item>
+        <item>Panicum nephelophilum </item>
+        <item>Panicum niihauense </item>
+        <item>Panicum pellitum </item>
+        <item>Panicum ramosius</item>
+        <item>Panicum tenuifolium </item>
+        <item>Panicum torridum </item>
+        <item>Panicum xerophilum </item>
+        <item>Paspalum scrobiculatum </item>
+        <item>Pellaea ternifolia </item>
+        <item>Peperomia alternifolia </item>
+        <item>Peperomia blanda  var. floribunda</item>
+        <item>Peperomia cookiana </item>
+        <item>Peperomia degeneri</item>
+        <item>Peperomia eekana </item>
+        <item>Peperomia ellipticibacca </item>
+        <item>Peperomia expallescens </item>
+        <item>Peperomia globulanthera </item>
+        <item>Peperomia hesperomannii </item>
+        <item>Peperomia hirtipetiola</item>
+        <item>Peperomia hypoleuca</item>
+        <item>Peperomia kipahuluensis </item>
+        <item>Peperomia kokeana</item>
+        <item>Peperomia latifolia </item>
+        <item>Peperomia ligustrina</item>
+        <item>Peperomia macraeana</item>
+        <item>Peperomia mauiensis </item>
+        <item>Peperomia membranacea</item>
+        <item>Peperomia oahuensis </item>
+        <item>Peperomia obovatilimba</item>
+        <item>Peperomia remyi </item>
+        <item>Peperomia rockii</item>
+        <item>Peperomia sandwicensis </item>
+        <item>Peperomia subpetiolata</item>
+        <item>Peperomia tetraphylla </item>
+        <item>Perrottetia sandwicensis</item>
+        <item>Peucedanum sandwicense </item>
+        <item>Phyllanthus distichus </item>
+        <item>Phyllostegia ambigua</item>
+        <item>Phyllostegia bracteata</item>
+        <item>Phyllostegia brevidens</item>
+        <item>Phyllostegia electra </item>
+        <item>Phyllostegia floribunda</item>
+        <item>Phyllostegia glabra var. glabra</item>
+        <item>Phyllostegia glabra var. lanaiensis</item>
+        <item>Phyllostegia grandiflora</item>
+        <item>Phyllostegia haliakalae</item>
+        <item>Phyllostegia helleri</item>
+        <item>Phyllostegia hillebrandii</item>
+        <item>Phyllostegia hirsuta</item>
+        <item>Phyllostegia hispida</item>
+        <item>Phyllostegia kaalaensis   </item>
+        <item>Phyllostegia kahiliensis</item>
+        <item>Phyllostegia knudsenii   </item>
+        <item>Phyllostegia lantanoides</item>
+        <item>Phyllostegia macrophylla</item>
+        <item>Phyllostegia mannii   </item>
+        <item>Phyllostegia micrantha</item>
+        <item>Phyllostegia mollis</item>
+        <item>Phyllostegia parviflora var. glabriuscula</item>
+        <item>Phyllostegia parviflora var. lydgatei</item>
+        <item>Phyllostegia parviflora var. parviflora</item>
+        <item>Phyllostegia pilosa</item>
+        <item>Phyllostegia racemosa   </item>
+        <item>Phyllostegia renovans   </item>
+        <item>Phyllostegia rockii</item>
+        <item>Phyllostegia stachyoides</item>
+        <item>Phyllostegia variabilis </item>
+        <item>Phyllostegia velutina</item>
+        <item>Phyllostegia vestita</item>
+        <item>Phyllostegia waimeae   </item>
+        <item>Phyllostegia warshaueri   </item>
+        <item>Phyllostegia wawrana   </item>
+        <item>Phytolacca sandwicensis</item>
+        <item>Pilea peploides</item>
+        <item>Pipturus albidus</item>
+        <item>Pipturus forbesii</item>
+        <item>Pipturus kauaiensis</item>
+        <item>Pipturus ruber</item>
+        <item>Pisonia brunoniana </item>
+        <item>Pisonia grandis </item>
+        <item>Pisonia sandwicensis</item>
+        <item>Pisonia umbellifera</item>
+        <item>Pisonia wagneriana</item>
+        <item>Pittosporum argentifolium</item>
+        <item>Pittosporum confertiflorum </item>
+        <item>Pittosporum flocculosum </item>
+        <item>Pittosporum gayanum </item>
+        <item>Pittosporum glabrum </item>
+        <item>Pittosporum halophilum</item>
+        <item>Pittosporum hawaiiense</item>
+        <item>Pittosporum hosmeri</item>
+        <item>Pittosporum kauaiense </item>
+        <item>Pittosporum napaliense  </item>
+        <item>Pittosporum terminalioides</item>
+        <item>Planchonella sandwicensis</item>
+        <item>Plantago hawaiensis  </item>
+        <item>Plantago pachyphylla </item>
+        <item>Plantago princeps var. anomala  </item>
+        <item>Plantago princeps var. laxifolia</item>
+        <item>Plantago princeps var. longibracteata  </item>
+        <item>Plantago princeps var. princeps  </item>
+        <item>Platanthera holochila  </item>
+        <item>Plectranthus parviflorus </item>
+        <item>Plumbago zeylanica </item>
+        <item>Poa mannii </item>
+        <item>Poa sandvicensis </item>
+        <item>Poa siphonoglossa</item>
+        <item>Polypodium pellucidum var. acuminatum</item>
+        <item>Polypodium pellucidum var. pellucidum</item>
+        <item>Polypodium pellucidum var. vulcanicum </item>
+        <item>Polyscias bisattenuata  </item>
+        <item>Polyscias flynnii</item>
+        <item>Polyscias gymnocarpa  </item>
+        <item>Polyscias hawaiensis</item>
+        <item>Polyscias kavaiensis</item>
+        <item>Polyscias lydgatei</item>
+        <item>Polyscias oahuensis</item>
+        <item>Polyscias racemosa </item>
+        <item>Polyscias sandwicensis</item>
+        <item>Polyscias waialealae</item>
+        <item>Polyscias waimeae</item>
+        <item>Polystichum bonseyi </item>
+        <item>Polystichum haleakalense</item>
+        <item>Polystichum hillebrandii </item>
+        <item>Portulaca lutea </item>
+        <item>Portulaca molokiniensis</item>
+        <item>Portulaca sclerocarpa  </item>
+        <item>Portulaca villosa</item>
+        <item>Potamogeton foliosus </item>
+        <item>Potamogeton nodosus </item>
+        <item>Pritchardia arecina</item>
+        <item>Pritchardia bakeri</item>
+        <item>Pritchardia beccarriana</item>
+        <item>Pritchardia flynii</item>
+        <item>Pritchardia forbesiana</item>
+        <item>Pritchardia glabrata</item>
+        <item>Pritchardia gordonii</item>
+        <item>Pritchardia hardyi</item>
+        <item>Pritchardia hillebrandii</item>
+        <item>Pritchardia kaalae</item>
+        <item>Pritchardia kahukuensis</item>
+        <item>Pritchardia lanigera</item>
+        <item>Pritchardia lowreyana</item>
+        <item>Pritchardia maideniana</item>
+        <item>Pritchardia martii</item>
+        <item>Pritchardia minor</item>
+        <item>Pritchardia munroi</item>
+        <item>Pritchardia napaliensis</item>
+        <item>Pritchardia perlmanii</item>
+        <item>Pritchardia remota</item>
+        <item>Pritchardia schattaueri</item>
+        <item>Pritchardia sp. nov. (Maui)</item>
+        <item>Pritchardia viscosa</item>
+        <item>Pritchardia waialealeana</item>
+        <item>Pritchardia woodii</item>
+        <item>Pseudognaphalium sandwicensium var. hawaiiense</item>
+        <item>Pseudognaphalium sandwicensium var. kilaueanum</item>
+        <item>Pseudognaphalium sandwicensium var. molokaiense</item>
+        <item>Pseudognaphalium sandwicensium var. sandwicensium</item>
+        <item>Pseudophegopteris keraudreniana</item>
+        <item>Psilotum complanatum </item>
+        <item>Psilotum nudum </item>
+        <item>Psychotria fauriei</item>
+        <item>Psychotria grandiflora </item>
+        <item>Psychotria greenwelliae</item>
+        <item>Psychotria hathewayi var. brevipetiolata</item>
+        <item>Psychotria hathewayi var. hathewayi</item>
+        <item>Psychotria hawaiiensis var. hawaiiensis</item>
+        <item>Psychotria hawaiiensis var. hillebrandii</item>
+        <item>Psychotria hawaiiensis var. scoriacea </item>
+        <item>Psychotria hexandra subsp. hexandra var. hexandra</item>
+        <item>Psychotria hexandra subsp. hexandra var. hirta</item>
+        <item>Psychotria hexandra subsp. hexandra var. kealiae</item>
+        <item>Psychotria hexandra subsp. oahuensis var. hosakana</item>
+        <item>Psychotria hexandra subsp. oahuensis var. oahuensis</item>
+        <item>Psychotria hexandra subsp. oahuensis var. rockii</item>
+        <item>Psychotria hobdyi   </item>
+        <item>Psychotria kaduana</item>
+        <item>Psychotria mariniana </item>
+        <item>Psychotria mauiensis </item>
+        <item>Psychotria wawrae</item>
+        <item>Psydrax odorata</item>
+        <item>Pteralyxia kauaiensis  </item>
+        <item>Pteralyxia macrocarpa</item>
+        <item>Pteridium aquilinum subsp. decompositum</item>
+        <item>Pteris cretica </item>
+        <item>Pteris hillebrandii </item>
+        <item>Pteris irregularis </item>
+        <item>Pteris lidgatei</item>
+        <item>Pteris terminalis </item>
+        <item>Ranunculus hawaiensis</item>
+        <item>Ranunculus mauiensis</item>
+        <item>Rauvolfia sandwicensis</item>
+        <item>Remya kauaiensis </item>
+        <item>Remya mauiensis </item>
+        <item>Remya montgomeryi  </item>
+        <item>Rhus sandwicensis</item>
+        <item>Rhynchospora chinensis subsp. spiciformis</item>
+        <item>Rhynchospora rugosa subsp. lavarum </item>
+        <item>Rhynchospora sclerioides </item>
+        <item>Rorippa sarmentosa</item>
+        <item>Rubus hawaiensis</item>
+        <item>Rubus macraei</item>
+        <item>Rumex albescens </item>
+        <item>Rumex giganteus </item>
+        <item>Rumex skottsbergii </item>
+        <item>Ruppia maritima</item>
+        <item>Sadleria cyatheoides</item>
+        <item>Sadleria pallida </item>
+        <item>Sadleria souleyetiana</item>
+        <item>Sadleria squarrosa</item>
+        <item>Sadleria unisora</item>
+        <item>Sadleria wagneriana</item>
+        <item>Sanicula kauaiensis</item>
+        <item>Sanicula mariversa  </item>
+        <item>Sanicula purpurea  </item>
+        <item>Sanicula sandwicensis</item>
+        <item>Santalum ellipticum</item>
+        <item>Santalum freycinetianum</item>
+        <item>Santalum haleakalae var. haleakalae</item>
+        <item>Santalum haleakalae var. lanaiense</item>
+        <item>Santalum involutum</item>
+        <item>Santalum paniculatum var. paniculatum</item>
+        <item>Santalum paniculatum var. pilgeri </item>
+        <item>Santalum pyrularium </item>
+        <item>Sapindus oahuensis</item>
+        <item>Sapindus saponaria</item>
+        <item>Scaevola chamissoniana </item>
+        <item>Scaevola coriacea</item>
+        <item>Scaevola gaudichaudiana</item>
+        <item>Scaevola gaudichaudii </item>
+        <item>Scaevola glabra</item>
+        <item>Scaevola hobdyi</item>
+        <item>Scaevola kilaueae</item>
+        <item>Scaevola mollis </item>
+        <item>Scaevola procera</item>
+        <item>Scaevola taccada</item>
+        <item>Schenkia sebaeoides  </item>
+        <item>Schiedea adamantis</item>
+        <item>Schiedea amplexicaulis</item>
+        <item>Schiedea apokremnos   </item>
+        <item>Schiedea attenuata   </item>
+        <item>Schiedea diffusa subsp. difussa</item>
+        <item>Schiedea diffusa subsp. macraei</item>
+        <item>Schiedea globosa</item>
+        <item>Schiedea haleakalensis   </item>
+        <item>Schiedea hawaiiensis</item>
+        <item>Schiedea helleri   </item>
+        <item>Schiedea hookeri   </item>
+        <item>Schiedea implexa </item>
+        <item>Schiedea jacobii</item>
+        <item>Schiedea kaalae   </item>
+        <item>Schiedea kauaiensis   </item>
+        <item>Schiedea kealiae   </item>
+        <item>Schiedea laui</item>
+        <item>Schiedea ligustrina</item>
+        <item>Schiedea lychnoides</item>
+        <item>Schiedea lydgatei  </item>
+        <item>Schiedea mannii</item>
+        <item>Schiedea membranacea   </item>
+        <item>Schiedea menziesii</item>
+        <item>Schiedea nuttallii</item>
+        <item>Schiedea obovata </item>
+        <item>Schiedea pentandra</item>
+        <item>Schiedea perlmanni  </item>
+        <item>Schiedea pubescens</item>
+        <item>Schiedea salicaria </item>
+        <item>Schiedea sarmentosa   </item>
+        <item>Schiedea spergulina  </item>
+        <item>Schiedea stellarioides   </item>
+        <item>Schiedea trinervis </item>
+        <item>Schiedea verticillata</item>
+        <item>Schiedea viscosa   </item>
+        <item>Schizaea robusta</item>
+        <item>Schoenoplectiella juncoides </item>
+        <item>Schoenoplectus tabernaemontani</item>
+        <item>Scleria testacea</item>
+        <item>Selaginella arbuscula</item>
+        <item>Selaginella deflexa</item>
+        <item>Senna gaudichaudii </item>
+        <item>Sesbania tomentosa  </item>
+        <item>Sesuvium portulacastrum</item>
+        <item>Sicyos albus  </item>
+        <item>Sicyos anunu</item>
+        <item>Sicyos cucumerinus</item>
+        <item>Sicyos erostratus </item>
+        <item>Sicyos herbstii</item>
+        <item>Sicyos hillebrandii</item>
+        <item>Sicyos hispidus </item>
+        <item>Sicyos lanceoloideus</item>
+        <item>Sicyos lasiocephalus </item>
+        <item>Sicyos macrophyllus</item>
+        <item>Sicyos maximowiczii </item>
+        <item>Sicyos pachycarpus</item>
+        <item>Sicyos semitonsus</item>
+        <item>Sicyos waimanaloensis</item>
+        <item>Sida fallax</item>
+        <item>Sideroxylon polynesicum</item>
+        <item>Silene alexandri   </item>
+        <item>Silene cryptopetala </item>
+        <item>Silene degeneri </item>
+        <item>Silene hawaiiensis  </item>
+        <item>Silene lanceolata   </item>
+        <item>Silene perlmanii   </item>
+        <item>Silene struthioloides </item>
+        <item>Sisyrinchium acre</item>
+        <item>Smilax melastomifolia</item>
+        <item>Solanum americanum</item>
+        <item>Solanum incompletum    </item>
+        <item>Solanum nelsonii</item>
+        <item>Solanum sandwicense  </item>
+        <item>Sophora chrysophylla</item>
+        <item>Spermolepis hawaiiensis  </item>
+        <item>Sphenomeris chinensis </item>
+        <item>Spirodela polyrhiza</item>
+        <item>Sporobolus virginicus</item>
+        <item>Stenogrammitis saffordii </item>
+        <item>Stenogyne angustifolia</item>
+        <item>Stenogyne bifida  </item>
+        <item>Stenogyne calaminthoides </item>
+        <item>Stenogyne calycosa</item>
+        <item>Stenogyne campanulata</item>
+        <item>Stenogyne cinerea </item>
+        <item>Stenogyne cranwelliae</item>
+        <item>Stenogyne haliakalae</item>
+        <item>Stenogyne kaalae subsp. kaalae</item>
+        <item>Stenogyne kaalae subsp. sherffii</item>
+        <item>Stenogyne kamehamehae </item>
+        <item>Stenogyne kanehoana </item>
+        <item>Stenogyne kauaulaensis</item>
+        <item>Stenogyne kealiae</item>
+        <item>Stenogyne macrantha</item>
+        <item>Stenogyne microphylla</item>
+        <item>Stenogyne oxygona</item>
+        <item>Stenogyne purpurea</item>
+        <item>Stenogyne rotundifolia </item>
+        <item>Stenogyne rugosa</item>
+        <item>Stenogyne scrophularioides</item>
+        <item>Stenogyne sessilis </item>
+        <item>Stenogyne viridis</item>
+        <item>Sticherus owhyhensis </item>
+        <item>Streblus pendulinus</item>
+        <item>Strongylodon ruber</item>
+        <item>Syzygium sandwicensis</item>
+        <item>Tectaria gaudichaudii </item>
+        <item>Tetramolopium arenarium subsp. arenarium</item>
+        <item>Tetramolopium arenarium subsp. laxum </item>
+        <item>Tetramolopium capillare  </item>
+        <item>Tetramolopium consanguineum subsp. consanguineum</item>
+        <item>Tetramolopium consanguineum subsp. leptophyllum</item>
+        <item>Tetramolopium conyzoides </item>
+        <item>Tetramolopium filiforme var. filiforme</item>
+        <item>Tetramolopium filiforme var. polyphyllum</item>
+        <item>Tetramolopium humile subsp. haleakalae</item>
+        <item>Tetramolopium humile subsp. humile</item>
+        <item>Tetramolopium lepidotum subsp. arbusculum </item>
+        <item>Tetramolopium lepidotum subsp. lepidotum  </item>
+        <item>Tetramolopium remyi   </item>
+        <item>Tetramolopium rockii var. calcisabulorum  </item>
+        <item>Tetramolopium rockii var. rockii </item>
+        <item>Tetramolopium sp. Nov 1</item>
+        <item>Tetramolopium sp. Nov 2</item>
+        <item>Tetramolopium sylvae</item>
+        <item>Tetramolopium tenerrimum</item>
+        <item>Thelypteris globulifera</item>
+        <item>Thespesia populnea </item>
+        <item>Touchardia latifolia</item>
+        <item>Trematolobelia auriculata </item>
+        <item>Trematolobelia grandifolia</item>
+        <item>Trematolobelia kaalae</item>
+        <item>Trematolobelia kauaiensis</item>
+        <item>Trematolobelia macrostachys</item>
+        <item>Trematolobelia rockii</item>
+        <item>Trematolobelia singularis   </item>
+        <item>Trematolobelia wimmeri </item>
+        <item>Tribulus cistoides</item>
+        <item>Trisetum glomeratum </item>
+        <item>Trisetum inaequale</item>
+        <item>Uncinia brevicaulis </item>
+        <item>Uncinia uncinata </item>
+        <item>Urera glabra</item>
+        <item>Urera kaalae  </item>
+        <item>Vaccinium calycinum</item>
+        <item>Vaccinium dentatum</item>
+        <item>Vaccinium reticulatum</item>
+        <item>Vandenboschia cyrtotheca </item>
+        <item>Vandenboschia davallioides </item>
+        <item>Vandenboschia tubiflora</item>
+        <item>Vicia menziesii</item>
+        <item>Vigna adenantha</item>
+        <item>Vigna marina</item>
+        <item>Vigna o-wahuensis    </item>
+        <item>Viola chamissoniana subsp. chamissoniana  </item>
+        <item>Viola chamissoniana subsp. robusta </item>
+        <item>Viola chamissoniana subsp. tracheliifolia</item>
+        <item>Viola helenae   </item>
+        <item>Viola kauaensis var. hosakae</item>
+        <item>Viola kauaensis var. kauaensis</item>
+        <item>Viola kauaensis var. wahiawaensis   </item>
+        <item>Viola lanaiensis</item>
+        <item>Viola maviensis </item>
+        <item>Viola oahuensis  </item>
+        <item>Viola wailenalenae</item>
+        <item>Vitex rotundifolia </item>
+        <item>Waltheria indica</item>
+        <item>Wikstroemia bicornuta</item>
+        <item>Wikstroemia forbesii </item>
+        <item>Wikstroemia furcata </item>
+        <item>Wikstroemia hanalei</item>
+        <item>Wikstroemia monticola</item>
+        <item>Wikstroemia oahuensis var. oahuensis</item>
+        <item>Wikstroemia oahuensis var. palustris</item>
+        <item>Wikstroemia phillyreifolia</item>
+        <item>Wikstroemia pulcherrima</item>
+        <item>Wikstroemia sandwicensis</item>
+        <item>Wikstroemia skottsbergiana</item>
+        <item>Wikstroemia uva-ursi var. kauaiensis </item>
+        <item>Wikstroemia uva-ursi var. uva-ursi</item>
+        <item>Wikstroemia villosa</item>
+        <item>Wilkesia gymnoxiphium</item>
+        <item>Wilkesia hobdyi    </item>
+        <item>Xylosma crenatum   </item>
+        <item>Xylosma hawaiiense</item>
+        <item>Zanthoxylum dipetalum var. dipetalum</item>
+        <item>Zanthoxylum dipetalum var. tomentosum   </item>
+        <item>Zanthoxylum hawaiiense    </item>
+        <item>Zanthoxylum kauaense</item>
+        <item>Zanthoxylum oahuense</item>
+    </string-array>
 </resources>
