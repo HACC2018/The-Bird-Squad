@@ -84,8 +84,13 @@
 			<div class="gSideBar">
 				<!-- Clicked marker results -->
 				<div id="markerRes">
+<<<<<<< HEAD
+				
+					<div><img class="sidebarLogo" src="{{asset('weblogo.png')}}"></div>
+=======
 					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
-					<div id="marker_taxaname" class= "markerTitle">Select a Plant</div>
+>>>>>>> master
+					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
 					<div class= "markerLabel" > Common Name </div>
 					<div id="marker_commonname" class= "markerValue" >  </div>
 					<div class= "markerLabel" > Federal Status </div>
@@ -93,8 +98,14 @@
 					<div class= "markerLabel" > Plant Type </div>
 					<div id="marker_planttype" class= "markerValue" >    </div>
 					<div class= "markerLabel" > Location Notes </div>
-					<div id="marker_locationnotes" class= "markerValue" >     </div>
+					<div id="marker_locationnotes" class= "markerValue" >Grown in ground</div>
+<<<<<<< HEAD
+					<div  class= "markerValue"><p><?php include('lipsum.txt'); ?></p></div>
+					<div id="marker_images" ><a class="image_click" href="#largeImageOnClick"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
+
+=======
 					<div id="marker_plantnotesorstory" class= "markerValue"></div>
+>>>>>>> master
 				</div>
 			</div>
 		</div>
