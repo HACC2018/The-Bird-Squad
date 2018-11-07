@@ -14,9 +14,9 @@ class ApiController extends Controller
 		$image = $request->image;
 
 		$imageName = time().'.'.$image->getClientOriginalName();
+
+		$img = \Image::make($image->getRealPath())->rotate(-90)->save( public_path('/' . $imageName ) );
 		
-		$img = \Image::make($image->getRealPath())->save( public_path('/' . $imageName ) );
-		$img->orientate();
 
 		$resultSet = DB::select('exec ImageInsert_proc ?,?,?,?', [
 			$request->formid,

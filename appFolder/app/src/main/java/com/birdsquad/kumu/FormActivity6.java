@@ -36,6 +36,7 @@ public class FormActivity6 extends BaseActivity {
         // submit
         KumuApp.getAppStorage().getCurrentForm().isFinished = true;
         KumuApp.getAppStorage().saveForms();
+        KumuApp.getAppStorage().syncForms(this);
         Intent intent = new Intent(this, SpeciesNameActivity.class);
         Toast.makeText(FormActivity6.this, "Form submitted. Mahalo!",
                 Toast.LENGTH_SHORT).show();
