@@ -117,53 +117,22 @@
     overflow: auto;
 
   }
+
+
+  .circlePic, .sidebarLogo, #marker_images,  .circlePic img {
+    object-fit: cover;
+    border-radius: 50%;
+    width:200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
   
-  #marker_images {
-    object-fit: cover;
-    border-radius: 50%;
-    width:200px;
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-
-  .circlePic {
-    object-fit: cover;
-    border-radius: 50%;
-    width:200px;
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-
-  
-
-  .circlePic img {
-    object-fit: cover;
-    border-radius: 50%;
-    width:200px;
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
 
 
   .circlePic:hover {

@@ -85,7 +85,7 @@
 				<!-- Clicked marker results -->
 				<div id="markerRes">
 				
-					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
+					<div><img class="sidebarLogo" src="{{asset('weblogo.png')}}"></div>
 					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
 					<div class= "markerLabel" > Common Name </div>
 					<div id="marker_commonname" class= "markerValue" >Taro, Kalo</div>
@@ -96,6 +96,8 @@
 					<div class= "markerLabel" > Location Notes </div>
 					<div id="marker_locationnotes" class= "markerValue" >Grown in ground</div>
 					<div  class= "markerValue"><p><?php include('lipsum.txt'); ?></p></div>
+					<div id="marker_images" ><a class="image_click" href="#largeImageOnClick"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
+
 				</div>
 			</div>
 		</div>
