@@ -6,3 +6,5 @@ appFolder/.idea/misc.xml
 web/\.DS_Store
 
 web/Kumu/public/1541557874\.temporary_file\.jpg
+
+appFolder/app/src/debug/res/values/google_maps_api\.xml
