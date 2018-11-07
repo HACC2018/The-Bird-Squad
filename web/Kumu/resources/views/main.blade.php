@@ -30,9 +30,15 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
-	
-		<!-- When user clicks on image in popup preview, display in large -->
-		<div id="largeImageOnClick">
+		
+
+		<div id="modal" class="modal">
+			<span class="close">&times;</span>
+
+			<img class="modal-content" id="modalImage">
+
+			<!-- Modal Caption (Image Text) -->
+			<div id="caption"></div>
 		</div>
 
 		<div class="grid-container">
@@ -85,18 +91,18 @@
 				<!-- Clicked marker results -->
 				<div id="markerRes">
 					<div><img class="sidebarLogo" src="{{asset('weblogo.png')}}"></div>
-					<div id="marker_taxaname" class= "markerTitle">Select a Plant</div>
+					<div id="marker_taxaname" class= "markerTitle">Select a Marker</div>
 					<div class= "markerLabel" > Common Name </div>
-					<div id="marker_commonname" class= "markerValue" >  </div>
+					<div id="marker_commonname" class= "markerValue" >Empty</div>
 					<div class= "markerLabel" > Federal Status </div>
-					<div id="marker_fedstatus" class= "markerValue" >   </div>
+					<div id="marker_fedstatus" class= "markerValue" >Empty</div>
 					<div class= "markerLabel" > Plant Type </div>
-					<div id="marker_planttype" class= "markerValue" >    </div>
+					<div id="marker_planttype" class= "markerValue" >Empty</div>
 					<div class= "markerLabel" > Location Notes </div>
-					<div id="marker_locationnotes" class= "markerValue" >    </div>
+					<div id="marker_locationnotes" class= "markerValue" >Empty</div>
 					<div class= "markerLabel" > Plant Notes / Story </div>
-					<div id="marker_plantnotesorstory" class= "markerValue"></div>
-					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"/></a></div>
+					<div id="marker_plantnotesorstory" class= "markerValue">Empty</div>
+					<div id="marker_images" ><a ><img class="circlePic"/></a></div>
 
 				</div>
 			</div>
