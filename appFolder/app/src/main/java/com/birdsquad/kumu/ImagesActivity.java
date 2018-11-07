@@ -192,7 +192,7 @@ public class ImagesActivity extends BaseActivity {
 
             if(imageBitmap != null){
                 final Photo newPhoto = new Photo(imageBitmap);
-                newPhoto.setFile(mCurrentPhoto);
+                newPhoto.setFileAbsPath(mCurrentPhoto.getAbsolutePath());
 
                 if (locationEnabled) {
                     mFusedLocationClient.getLastLocation()

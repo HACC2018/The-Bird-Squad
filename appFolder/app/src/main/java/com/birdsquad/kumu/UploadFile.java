@@ -51,7 +51,7 @@ public class UploadFile extends AsyncTask<String, Void, String> {
             options.inJustDecodeBounds = false;
             options.inTempStorage = new byte[16 * 1024];
 
-            Bitmap bm = BitmapFactory.decodeFile(photo.getFile().getAbsolutePath(),options); //changed line code
+            Bitmap bm = BitmapFactory.decodeFile(photo.getFileAbsPath(),options); //changed line code
             bm.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
 
             Log.d("PostToServer", "currently compressed");

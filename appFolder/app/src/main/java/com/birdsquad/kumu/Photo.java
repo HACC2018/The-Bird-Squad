@@ -7,7 +7,7 @@ import java.io.File;
 
 public class Photo {
 
-    private File fileIt;
+    private String absPath;
 
     private Bitmap image;
 
@@ -29,9 +29,9 @@ public class Photo {
         return this.location;
     }
 
-    public File getFile(){return this.fileIt;}
+    public String getFileAbsPath(){return this.absPath;}
 
-    public void setFile(File f){
-        this.fileIt = f;
+    public void setFileAbsPath(String f){
+        this.absPath = f;
     }
 }
