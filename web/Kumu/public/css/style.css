@@ -147,12 +147,6 @@ li {
     display: inline;
 }
 
-#searchBar {
-  float: left;
-  border: none;
-}
-
-
 select {
   -webkit-appearance: button;
   -webkit-border-radius: 2px;
@@ -173,11 +167,11 @@ select {
   white-space: nowrap;
   width: 15vw;
   font-family: 'robotolight', sans-serif;
-  float: left;
+  float: right;
   position: relative;
 }
 
-#searchBar {
+input {
   -webkit-border-radius: 2px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
   -webkit-padding-end: 10px;
@@ -194,6 +188,7 @@ select {
   width: 15vw;
   font-family: 'robotolight', sans-serif;
   float: left;
+  position: absolute;
 }
 
 
