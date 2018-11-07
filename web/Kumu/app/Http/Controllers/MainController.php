@@ -34,7 +34,8 @@ class MainController extends Controller
 					'CommonName' => $val->PlantCommonName,
 					'PlantType' => $val->PlantType,
 					'FedStatus' => $val->PlantFedStatus,
-					'LocationNotes' => $val->LocationNotes
+					'LocationNotes' => $val->LocationNotes,
+					'PlantNotesOrStory' => $val->PlantNotesOrStory
 				));
 		}
 		return json_encode($returnSet);

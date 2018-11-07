@@ -84,7 +84,6 @@
 			<div class="gSideBar">
 				<!-- Clicked marker results -->
 				<div id="markerRes">
-				
 					<div id="marker_images" ><a class="image_click" href="#"><img class="circlePic"  src="{{asset('weblogo.png')}}"/></a></div>
 					<div id="marker_taxaname" class= "markerTitle">Colocasia esculenta</div>
 					<div class= "markerLabel" > Common Name </div>
@@ -95,7 +94,7 @@
 					<div id="marker_planttype" class= "markerValue" >Root Vegetables</div>
 					<div class= "markerLabel" > Location Notes </div>
 					<div id="marker_locationnotes" class= "markerValue" >Grown in ground</div>
-					<div  class= "markerValue"><p><?php include('lipsum.txt'); ?></p></div>
+					<div id="marker_plantnotesorstory" class= "markerValue"></div>
 				</div>
 			</div>
 		</div>
