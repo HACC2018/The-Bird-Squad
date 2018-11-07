@@ -58,7 +58,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             Date formDate = form.dateCreated;
             if (form.images != null) {
                 Location formLocation = form.images.get(0).getLocation();
-                Bitmap image = form.images.get(0).getPhoto();
                 if (formLocation != null) {
                     Log.d("MappingForms", "The location was found as " + formLocation.getLatitude() + ", " + formLocation.getLongitude());
                     LatLng coordinates = new LatLng(formLocation.getLatitude(), formLocation.getLongitude());
