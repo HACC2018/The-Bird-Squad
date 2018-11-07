@@ -50,9 +50,8 @@
 					</li>
 
 					<li id ="filterIsland">
-						<label>Island: </label>
-						<select id="filter_island" class="filter" placeholder="Island">
-							<option value="none">None</option>
+						<select id="filter_island" class="filter" >
+							<option value="none">Any Island</option>
 							<option value="1">Hawaiʻi</option>
 							<option value="2">Maui</option>
 							<option value="3">Oʻahu</option>
@@ -65,18 +64,16 @@
 					</li>
 					
 					<li id="filterPlantAge">
-						<label>Age: </label>
-						<select id="filter_plant_age" class="filter" placeholder="Age">
-							<option value="any">Any</option>
+						<select id="filter_plant_age" class="filter" >
+							<option value="any">Any Age</option>
 							<option value="adult">Adult</option>
 							<option value="seedling">Seedling</option>
 						</select>
 					</li>
 
 					<li id="filterFedStatus">
-						<label>Status: </label>
-						<select id="filter_fed_status" class="filter" placeholder="Status">
-							<option value="any">Any</option>
+						<select id="filter_fed_status" class="filter" >
+							<option value="any">Any Status</option>
 							<option value="e">Endangered</option>
 							<option value="t">Threatened</option>
 						</select>
