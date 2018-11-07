@@ -56,10 +56,10 @@ $(document).ready(function () {
 
 	$("#filter_plant").easyAutocomplete(options);
 
+	//MODAL STUFF
 	$('body').on('click', 'a.image_click', function () {
 		$('#modal').css({'display': 'block'});
 		$('#modalImage').attr('src', $(this).find('img').attr('src'));
-;
 		fullScreenImageVisible = true;
 	});
 	
