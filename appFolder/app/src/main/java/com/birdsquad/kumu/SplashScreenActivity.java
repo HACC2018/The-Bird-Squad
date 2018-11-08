@@ -37,6 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import pl.droidsonroids.gif.GifImageView;
+
 import static com.birdsquad.kumu.KumuApp.getAppStorage;
 
 public class SplashScreenActivity extends Activity {
@@ -73,6 +75,8 @@ public class SplashScreenActivity extends Activity {
 
         //Sync forms
         KumuApp.getAppStorage().syncForms(this);
+        GifImageView logo = (GifImageView)findViewById(R.id.kumulogo);
+        logo.setImageResource(R.drawable.kumu_animated_2);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(KumuApp.getInstance());
         String loginCompleted = preferences.getString("login", null);
