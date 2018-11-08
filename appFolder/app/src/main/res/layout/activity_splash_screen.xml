@@ -7,6 +7,7 @@
     tools:context=".SplashScreenActivity"
     android:id="@+id/splashLayout">
 
+<!--
     <ImageView
         android:id="@+id/imageViewSplash"
         android:layout_width="249dp"
@@ -18,6 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/kumu_logo" />
+    -->
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="249dp"
+        android:layout_height="204dp"
+        android:layout_marginTop="180dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/kumu_animated"
+        />
+
+
 
     <TextView
         android:layout_width="wrap_content"
